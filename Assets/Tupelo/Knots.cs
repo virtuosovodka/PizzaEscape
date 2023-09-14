@@ -4,17 +4,44 @@ using UnityEngine;
 
 public class Knots : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    //Start is called before the first frame update
+    // void Start()
+    //{
+    //    public GameObject torch;
+    //}
+    public GameObject torch;
+    private float timeRemaining = 10;
+    [SerializeField] private float garlicSpeed = 5;
+    [SerializeField] Rigidbody knotBody;
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.W))transform.position += Vector3.forward;
+        var dir = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
         // vector 3 is shrthand for (0,0,1)
-                
+
+        knotBody.velocity = garlicSpeed * dir;
+        //rigid body is in inspector, Y is frozen until we add a floor
+
+        if (timeRemaining > 0)
+
+        {
+
+            timeRemaining -= Time.deltaTime;
+
+        }
+        else if (timeRemaining <= 0 && timeRemaining >= -1)
+        {
+            print("time is up");
+        }
+
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("torch"))
+        {
+            print("garlic knots are burnt.");
+
+        }
     }
 }
