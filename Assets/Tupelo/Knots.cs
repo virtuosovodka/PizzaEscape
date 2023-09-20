@@ -12,7 +12,7 @@ public class Knots : MonoBehaviour
     public GameObject torch;
     private float timeRemaining = 10;
     [SerializeField] private float garlicSpeed = 5;
-    [SerializeField] Rigidbody knotBody;
+    [SerializeField] public Rigidbody knotBody;
 
     // Update is called once per frame
     void Update()
@@ -38,7 +38,7 @@ public class Knots : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("torch"))
+        if (other.CompareTag("garlicKnot"))
         {
             print("garlic knots are burnt.");
 
