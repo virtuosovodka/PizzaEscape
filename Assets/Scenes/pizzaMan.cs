@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.AI;
 
 
-public class garlicKnots : MonoBehaviour
+public class pizzaMan : MonoBehaviour
 {
     [SerializeField] private Transform movePositionTransform;
     private NavMeshAgent navMeshAgent;
@@ -18,6 +18,14 @@ public class garlicKnots : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //navMeshAgent.transform.position = new Vector3(2, 0, 0);
+
+
+        //set up raycasting, if raycast finds something within a few feet then{
+
         navMeshAgent.destination = movePositionTransform.position;
+        //}
+
+
     }
 }

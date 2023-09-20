@@ -2,16 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Knots : MonoBehaviour
+public class TempPlayer : MonoBehaviour
 {
     //Start is called before the first frame update
     // void Start()
     //{
     //    public GameObject torch;
     //}
-    public GameObject torch;
+   
     private float timeRemaining = 10;
-    [SerializeField] private float garlicSpeed = 5;
+    [SerializeField] private float pizzaSpeed = 5;
     [SerializeField] public Rigidbody knotBody;
 
     // Update is called once per frame
@@ -20,7 +20,7 @@ public class Knots : MonoBehaviour
         var dir = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
         // vector 3 is shrthand for (0,0,1)
 
-        knotBody.velocity = garlicSpeed * dir;
+        knotBody.velocity = pizzaSpeed * dir;
         //rigid body is in inspector, Y is frozen until we add a floor
 
         if (timeRemaining > 0)
@@ -38,9 +38,9 @@ public class Knots : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("garlicKnot"))
+        if (other.CompareTag("pizzaMan"))
         {
-            print("garlic knots are burnt.");
+            print("You are dead.");
 
         }
     }
