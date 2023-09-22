@@ -18,12 +18,7 @@ public class DoughPuzzle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-    }
-
-    public void OnCollisionEnter(Collision other)
-    {
-        if (other.gameObject == doughBag)
+        if (placemat.transform.position == transform.position)
         {
             doughPlacement = true;
         }
@@ -31,5 +26,9 @@ public class DoughPuzzle : MonoBehaviour
         {
             doughPlacement = false;
         }
+
+        print(doughPlacement);
     }
+    
+    
 }
