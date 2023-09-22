@@ -8,6 +8,7 @@ TagManager:
   - torch
   - pizzaMan
   - rightPoint
+  - leftPoint
   layers:
   - Default
   - TransparentFX
