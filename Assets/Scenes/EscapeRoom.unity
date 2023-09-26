@@ -729,7 +729,7 @@ GameObject:
   - component: {fileID: 664433933}
   - component: {fileID: 664433937}
   - component: {fileID: 664433938}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Torch
   m_TagString: torch
   m_Icon: {fileID: 0}
@@ -1147,7 +1147,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: deeee85774bfc43159866c835a503369, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 64
   garlicSpeed: 2
+  player: {fileID: 664433931}
 --- !u!135 &1269258241
 SphereCollider:
   m_ObjectHideFlags: 0
