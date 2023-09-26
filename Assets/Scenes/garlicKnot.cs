@@ -19,12 +19,12 @@ public class garlicKnot : MonoBehaviour
         transform.Translate(Vector3.forward * garlicSpeed * Time.deltaTime);
         var ray = new Ray(this.transform.position, this.transform.forward);
         RaycastCommand hit;
-        if (Physics.Raycast(ray, out hit, 25)){
+       // if (Physics.Raycast(ray, out hit, 25)){
 
 
-            lastHit = hit.transform.gameObject;
+           // lastHit = hit.transform.gameObject;
             //collision = hit.point;
-        }
+        //}
       
     }
 
