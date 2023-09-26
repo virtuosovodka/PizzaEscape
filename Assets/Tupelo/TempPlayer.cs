@@ -32,7 +32,7 @@ public class TempPlayer : MonoBehaviour
         }
         else if (timeRemaining <= 0 && timeRemaining >= -1)
         {
-            print("time is up");
+            //print("time is up");
         }
 
     }

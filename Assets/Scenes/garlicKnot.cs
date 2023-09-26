@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class garlicKnot : MonoBehaviour
 {
-
+    public Vector3 collision = Vector3.zero;
     public float garlicSpeed = 1;
-
+    public GameObject lastHit;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,7 +17,14 @@ public class garlicKnot : MonoBehaviour
     void Update()
     {
         transform.Translate(Vector3.forward * garlicSpeed * Time.deltaTime);
+        var ray = new Ray(this.transform.position, this.transform.forward);
+        RaycastCommand hit;
+        if (Physics.Raycast(ray, out hit, 25)){
 
+
+            lastHit = hit.transform.gameObject;
+            //collision = hit.point;
+        }
       
     }
 
@@ -29,5 +36,11 @@ public class garlicKnot : MonoBehaviour
             print("turn");
             transform.Translate(Vector3.back * garlicSpeed * Time.deltaTime);
         }
+        if (other.CompareTag("leftPoint"))
+        {
+            print("turn");
+            transform.Translate(Vector3.forward* garlicSpeed * Time.deltaTime);
+        }
+
     }
 }
