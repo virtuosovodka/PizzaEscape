@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class garlicKnot : MonoBehaviour
 {
-    public Vector3 collision = Vector3.zero;
+    public LayerMask raycastYes;
+    public GameObject player;
     public float garlicSpeed = 1;
-    public GameObject lastHit;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -17,15 +18,16 @@ public class garlicKnot : MonoBehaviour
     void Update()
     {
         transform.Translate(Vector3.forward * garlicSpeed * Time.deltaTime);
-        var ray = new Ray(this.transform.position, this.transform.forward);
-        RaycastCommand hit;
-       // if (Physics.Raycast(ray, out hit, 25)){
-
-
-           // lastHit = hit.transform.gameObject;
-            //collision = hit.point;
-        //}
-      
+        Ray ray = new Ray(transform.position, transform.forward);
+        Debug.DrawRay(transform.position, transform.forward, Color.green);
+        RaycastHit hitData;
+        if (Physics.Raycast(ray, out hitData, 150, raycastYes))
+        {
+            // The Ray hit something less than 50 Units away,
+            // It was on the a certain Layer
+            print("raycast is working");
+            transform.position = Vector3.MoveTowards(transform.position, player.transform.position, garlicSpeed * Time.deltaTime);
+        }
     }
 
 
