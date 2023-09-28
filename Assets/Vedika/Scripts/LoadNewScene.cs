@@ -8,22 +8,33 @@ public class LoadNewScene : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    private GameManager gm;
     private bool _isSecondLevel;
+    private bool _isThirdLevel;
     
     void Start()
     {
-        SceneManager.LoadSceneAsync(0);
+        //SceneManager.LoadSceneAsync(0);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.Space) && !_isSecondLevel)
+        if (Input.GetKey(KeyCode.Space))
         {
             _isSecondLevel = true;
+        }
+        else if (Input.GetKey("a"))
+        {
+            _isThirdLevel = true;
+        }
+
+        if (_isSecondLevel)
+        {
             SceneManager.LoadSceneAsync(1);
         }
-        Debug.Log(_isSecondLevel);
+        else if (_isThirdLevel)
+        {
+            SceneManager.LoadSceneAsync(2);
+        }
     }
 }

@@ -6,14 +6,14 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Vedika/Scenes/OGScene.unity
+    path: Assets/Vedika/Scenes/FirstScene.unity
     guid: 52995366dc671444a8458bdc43505c82
   - enabled: 1
-    path: Assets/Vedika/Scenes/LoadNewScene.unity
+    path: Assets/Vedika/Scenes/SecondScene.unity
     guid: b3dc7cc031ff24c438ac9faeb89897cc
   - enabled: 1
-    path: Assets/Vedika/Scenes/GrabbingObjects.unity
-    guid: 82f1b9168265046709cbbb325811a826
+    path: Assets/Vedika/Scenes/ThirdScene.unity
+    guid: 5855331b789d04b5e9ce66ebd16c1702
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: bfa1182bd221b4ca89619141f66f1260, type: 2}
     Unity.XR.WindowsMR.Settings: {fileID: 11400000, guid: dc5a169419fa04987b057f65238cf3ba, type: 2}
