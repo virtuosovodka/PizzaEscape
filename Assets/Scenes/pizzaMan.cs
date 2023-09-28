@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.AI;
 
 
-public class pizzaMan : MonoBehaviour
+public class PizzaMan : MonoBehaviour
 {
     [SerializeField] private Transform movePositionTransform;
     private NavMeshAgent navMeshAgent;

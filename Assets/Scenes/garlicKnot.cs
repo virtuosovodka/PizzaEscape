@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class garlicKnot : MonoBehaviour
+public class GarlicKnot : MonoBehaviour
 {
     public LayerMask raycastYes;
     public GameObject player;
@@ -18,6 +18,7 @@ public class garlicKnot : MonoBehaviour
     void Update()
     {
         transform.Translate(Vector3.forward * garlicSpeed * Time.deltaTime);
+
         Ray ray = new Ray(transform.position, transform.forward);
         Debug.DrawRay(transform.position, transform.forward, Color.green);
         RaycastHit hitData;
