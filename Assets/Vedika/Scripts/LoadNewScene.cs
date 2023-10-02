@@ -20,33 +20,37 @@ public class LoadNewScene : MonoBehaviour
      * BUGS:
      * person can keep resetting level again and again
      * can go back to previous levels and next levels
+     * everything resets each time scene gets reloaded
      */
     
     private bool _isSecondLevel;
     private bool _isThirdLevel;
     private bool _isFirstLevel;
+    public GameObject cube;
     
-    /*
     void Start()
     {
-        
+        cube.SetActive(false);
     }
-    */
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKeyUp(KeyCode.Space))
         {
             _isSecondLevel = true;
         }
-        else if (Input.GetKey("a"))
+        else if (Input.GetKeyUp("a"))
         {
             _isThirdLevel = true;
         }
-        else if (Input.GetKey("d"))
+        else if (Input.GetKeyUp("d"))
         {
             _isFirstLevel = true;
+        }
+        else if (Input.GetKeyUp("c")) //&& in first scene)
+        {
+            cube.SetActive(true);
         }
 
         if (_isSecondLevel)

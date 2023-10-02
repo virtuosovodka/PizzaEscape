@@ -253,8 +253,8 @@ GameObject:
   - component: {fileID: 1427252003}
   - component: {fileID: 1427252002}
   - component: {fileID: 1427252001}
-  - component: {fileID: 1427252006}
   - component: {fileID: 1427252005}
+  - component: {fileID: 1427252006}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -387,6 +387,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c930a24d4d420417983ab100b972b317, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cube: {fileID: 0}
 --- !u!1 &1978373388
 GameObject:
   m_ObjectHideFlags: 0
