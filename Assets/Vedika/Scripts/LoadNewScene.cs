@@ -1,6 +1,8 @@
-using System;
+/*
+ using System;
 using System.Collections;
 using System.Collections.Generic;
+*/
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -23,12 +25,13 @@ public class LoadNewScene : MonoBehaviour
     private bool _isSecondLevel;
     private bool _isThirdLevel;
     private bool _isFirstLevel;
-    private int count;
     
+    /*
     void Start()
     {
-        //SceneManager.LoadSceneAsync(0);
+        
     }
+    */
 
     // Update is called once per frame
     void Update()
