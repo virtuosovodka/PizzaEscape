@@ -457,7 +457,7 @@ GameObject:
   - component: {fileID: 602222833}
   - component: {fileID: 602222832}
   - component: {fileID: 602222836}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: rightPoint
   m_TagString: rightPoint
   m_Icon: {fileID: 0}
@@ -994,7 +994,7 @@ GameObject:
   - component: {fileID: 1259565884}
   - component: {fileID: 1259565883}
   - component: {fileID: 1259565882}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: leftPoint
   m_TagString: leftPoint
   m_Icon: {fileID: 0}
@@ -1125,9 +1125,9 @@ GameObject:
   - component: {fileID: 1269258244}
   - component: {fileID: 1269258243}
   - component: {fileID: 1269258242}
-  - component: {fileID: 1269258241}
   - component: {fileID: 1269258240}
   - component: {fileID: 1269258245}
+  - component: {fileID: 1269258246}
   m_Layer: 0
   m_Name: garlicKnot
   m_TagString: garlicKnot
@@ -1147,32 +1147,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: deeee85774bfc43159866c835a503369, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  layerMask:
+  raycastYes:
     serializedVersion: 2
     m_Bits: 64
-  garlicSpeed: 2
+  leftPoint:
+    serializedVersion: 2
+    m_Bits: 128
+  rightPoint:
+    serializedVersion: 2
+    m_Bits: 256
   player: {fileID: 664433931}
---- !u!135 &1269258241
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1269258239}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
+  garlicSpeed: 2
 --- !u!23 &1269258242
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1265,6 +1250,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!135 &1269258246
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1269258239}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.5068326
+  m_Center: {x: -0.0068325996, y: 0, z: 0}
 --- !u!1 &1411538391
 GameObject:
   m_ObjectHideFlags: 0
@@ -1532,7 +1538,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 116
   m_CollisionDetection: 0
 --- !u!64 &1791918504
 MeshCollider:
