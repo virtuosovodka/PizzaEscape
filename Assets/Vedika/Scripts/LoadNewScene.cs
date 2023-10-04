@@ -12,7 +12,7 @@ public class LoadNewScene : MonoBehaviour
     
     /*
      * FOR GAME:
-     * create a script that stores specific booleans
+     * create a script that stores specific booleans (game manager for example)
      * test each bool to load a new scene instead of booleans stored locally
      * have same list of build settings on everyone's computers
      * decide camera's position locally within game
@@ -21,47 +21,30 @@ public class LoadNewScene : MonoBehaviour
      * person can keep resetting level again and again
      * can go back to previous levels and next levels
      * everything resets each time scene gets reloaded
+     * https://stackoverflow.com/questions/61204192/save-and-load-entire-scene-in-unity
      */
-    
-    private bool _isSecondLevel;
-    private bool _isThirdLevel;
-    private bool _isFirstLevel;
-    public GameObject cube;
-    
+
+    public GameManager gm;
+  
     void Start()
     {
-        cube.SetActive(false);
+        //cube.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyUp(KeyCode.Space))
-        {
-            _isSecondLevel = true;
-        }
-        else if (Input.GetKeyUp("a"))
-        {
-            _isThirdLevel = true;
-        }
-        else if (Input.GetKeyUp("d"))
-        {
-            _isFirstLevel = true;
-        }
-        else if (Input.GetKeyUp("c")) //&& in first scene)
-        {
-            cube.SetActive(true);
-        }
-
-        if (_isSecondLevel)
+        Debug.Log(gm._isFirstLevel);
+        
+        if (gm._isSecondLevel)
         {
             SceneManager.LoadSceneAsync(1);
         }
-        else if (_isThirdLevel)
+        else if (gm._isThirdLevel)
         {
             SceneManager.LoadSceneAsync(2);
         }
-        else if (_isFirstLevel)
+        else if (gm._isFirstLevel)
         {
             SceneManager.LoadSceneAsync(0);
         }
