@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GetRidOfCube : MonoBehaviour
+public class CubeDisappear : MonoBehaviour
 {
     public GameObject cube;
     
@@ -15,7 +15,7 @@ public class GetRidOfCube : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyUp("g"))
+        if (Input.GetButtonDown("XRI_Right_SecondaryButton"))
         {
             cube.SetActive(false);
         }
