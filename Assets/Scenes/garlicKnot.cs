@@ -8,17 +8,21 @@ public class GarlicKnot : MonoBehaviour
     public LayerMask leftPoint;
     public LayerMask rightPoint;
     public GameObject player;
+    TempPlayer tempPlayer;
     public float garlicSpeed = .5f;
     bool hasRunLeft;
     bool hasRunRight;
-  
-
+    private Rigidbody rb;
+    public float rotationSpeed = 5;
+   // private Vector3 mytransform = target;
 
     // Start is called before the first frame update
     void Start()
     {
-        transform.position = new Vector3(10, 1, 3);
-        
+        transform.position = new Vector3(20, .5f, .25f);
+        tempPlayer = player.GetComponent<TempPlayer>();
+        tempPlayer.chasePlayer = false;
+        rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -27,36 +31,43 @@ public class GarlicKnot : MonoBehaviour
         transform.Translate(Vector3.forward * garlicSpeed * Time.deltaTime);
 
 
-        Ray ray = new Ray(transform.position, new Vector3(-4,0,0));
-        Debug.DrawRay(transform.position, new Vector3(-4, 0, 0), Color.green, 30);
-        RaycastHit hitData;
-
-       /* if (Physics.Raycast(ray, out hitData, 50, rightPoint))
+        if (tempPlayer.chasePlayer == true)
         {
-
-            print("turn");
-            transform.Translate(Vector3.back * garlicSpeed * Time.deltaTime);
-            Vector3 rotationToAdd = new Vector3(0, 180, 0);
-            //if (hasRunRight == false)
-            //{
-            transform.Rotate(rotationToAdd);
-            //hasRunRight = true;
-            //}
-
+            print("garlic knots will chase player");
+            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(player.transform.position - transform.position), garlicSpeed * Time.deltaTime);
+            transform.position += transform.forward * Time.deltaTime * garlicSpeed;
+            // transform.position = Vector3.MoveTowards(transform.position, player.transform.position, garlicSpeed * Time.deltaTime);
         }
+        /*   Ray ray = new Ray(transform.position, new Vector3(-4,0,0));
+         Debug.DrawRay(transform.position, new Vector3(-4, 0, 0), Color.green, 30);
+         RaycastHit hitData;
 
-        if (Physics.Raycast(ray, out hitData, 50, leftPoint))
-        {
-            print("turn");
-            transform.Translate(Vector3.forward * garlicSpeed * Time.deltaTime);
-            Vector3 rotationToAdd = new Vector3(0, 180, 0);
-            //if (hasRunLeft == false)
-            //{
-            transform.Rotate(rotationToAdd);
-            //hasRunLeft = true;
-            //}
-        }
-       */
+       if (Physics.Raycast(ray, out hitData, 50, rightPoint))
+         {
+
+             print("turn");
+             transform.Translate(Vector3.back * garlicSpeed * Time.deltaTime);
+             Vector3 rotationToAdd = new Vector3(0, 180, 0);
+             //if (hasRunRight == false)
+             //{
+             transform.Rotate(rotationToAdd);
+             //hasRunRight = true;
+             //}
+
+         }
+
+         if (Physics.Raycast(ray, out hitData, 50, leftPoint))
+         {
+             print("turn");
+             transform.Translate(Vector3.forward * garlicSpeed * Time.deltaTime);
+             Vector3 rotationToAdd = new Vector3(0, 180, 0);
+             //if (hasRunLeft == false)
+             //{
+             transform.Rotate(rotationToAdd);
+             //hasRunLeft = true;
+             //}
+         }
+       
         if (Physics.Raycast(ray, out hitData, 50, raycastYes))
         {
 
@@ -66,7 +77,7 @@ public class GarlicKnot : MonoBehaviour
             transform.position = Vector3.MoveTowards(transform.position, player.transform.position, garlicSpeed * Time.deltaTime);
 
         }
-
+         */
     }
     private void OnCollisionEnter(Collision other)
     {
@@ -89,11 +100,11 @@ public class GarlicKnot : MonoBehaviour
             //garlicSpeed = -garlicSpeed;
             //transform.eulerAngles = new Vector3(0, 0, 0);
         }
-         else if (other.gameObject.CompareTag("torch"))
+         /*else if (other.gameObject.CompareTag("torch"))
          {
              transform.position = Vector3.MoveTowards(transform.position, player.transform.position, garlicSpeed * Time.deltaTime);
             
-        }
+        }*/
      }
     
 }

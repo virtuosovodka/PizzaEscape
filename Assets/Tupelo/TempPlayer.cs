@@ -9,7 +9,7 @@ public class TempPlayer : MonoBehaviour
     //{
     //    public GameObject torch;
     //}
-   
+    public bool chasePlayer;
     private float timeRemaining = 10;
     [SerializeField] private float pizzaSpeed = 5;
     [SerializeField] public Rigidbody knotBody;
@@ -42,6 +42,10 @@ public class TempPlayer : MonoBehaviour
         {
             print("You are dead.");
 
+        }
+        else if (other.CompareTag("floorTrigger"))
+        {
+            chasePlayer = true;
         }
     }
 }
