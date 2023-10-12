@@ -11,6 +11,7 @@ TagManager:
   - leftPoint
   - Anchor
   - floorTrigger
+  - floorNormal
   layers:
   - Default
   - TransparentFX

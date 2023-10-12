@@ -1157,8 +1157,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   player: {fileID: 664433931}
-  garlicSpeed: 2
+  garlicSpeed: 1
   rotationSpeed: 5
+  target: {x: 20, y: 0.5, z: 0.25}
 --- !u!23 &1269258242
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1259,7 +1260,7 @@ GameObject:
   - component: {fileID: 1411538392}
   m_Layer: 0
   m_Name: Plane (1)
-  m_TagString: Untagged
+  m_TagString: floorNormal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

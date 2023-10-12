@@ -47,5 +47,9 @@ public class TempPlayer : MonoBehaviour
         {
             chasePlayer = true;
         }
+        else if (other.CompareTag("floorNormal"))
+        {
+            chasePlayer = false;
+        }
     }
 }
