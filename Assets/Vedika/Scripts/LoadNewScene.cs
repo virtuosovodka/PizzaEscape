@@ -3,7 +3,11 @@
 using System.Collections;
 using System.Collections.Generic;
 */
+
+using System;
+using System.Net.Mime;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 using UnityEngine.SceneManagement;
 using UnityEngine.XR.OpenXR;
 
@@ -26,6 +30,16 @@ public class LoadNewScene : MonoBehaviour
      */
 
     public GameManager gm;
+    //public Canvas canvas;
+    //private float _maxAlpha = 1.0f;
+    //private float _startAlpha;
+    //private float _canvasGroupAlpha;
+
+    void Start()
+    {
+        //_canvasGroupAlpha = canvas.GetComponent<CanvasGroup>().alpha;
+        //_startAlpha = canvas.GetComponent<CanvasGroup>().alpha;
+    }
 
     // Update is called once per frame
     void Update()
@@ -34,6 +48,7 @@ public class LoadNewScene : MonoBehaviour
 
         if (gm.isSecondLevel)
         {
+            //_startAlpha = Mathf.MoveTowards(_startAlpha, _maxAlpha, 2.0f * Time.deltaTime);
             SceneManager.LoadSceneAsync(1);
         }
         else if (gm.isThirdLevel)
