@@ -6,6 +6,11 @@ using UnityEngine.UIElements;
 
 public class Fade : MonoBehaviour
 {
+    /*
+     * fade from transparent to black in new scene
+     * implement this in all other scenes
+     * make it go slower
+     */
     // Start is called before the first frame update
     public GameObject cube;
     public Color startColor, endColor;
