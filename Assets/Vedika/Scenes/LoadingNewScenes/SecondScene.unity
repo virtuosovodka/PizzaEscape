@@ -760,6 +760,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gm: {fileID: 1255678271}
+  cube: {fileID: 0}
+  startColor: {r: 0, g: 0, b: 0, a: 1}
+  endColor: {r: 0, g: 0, b: 0, a: 0}
+  speed: 0.5
 --- !u!114 &1427252007
 MonoBehaviour:
   m_ObjectHideFlags: 0

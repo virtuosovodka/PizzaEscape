@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("XRI_Left_PrimaryButton"))
+        if (Input.GetButtonDown("XRI_Left_PrimaryButton") || Input.GetKey(KeyCode.S))
         {
             isSecondLevel = true;
         }
