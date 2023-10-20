@@ -31,7 +31,7 @@ public class LoadNewScene : MonoBehaviour
      */
 
     public GameManager gm;
-    public GameObject cube;
+    public GameObject planeToBlack, planeToTrans;
     public Color startColor, endColor;
     //bigger the speed, the faster it goes 
     public float speed;
@@ -47,8 +47,8 @@ public class LoadNewScene : MonoBehaviour
     {
         if (gm.isSecondLevel)
         {
-            StartCoroutine(ChangeColor());
-            StartCoroutine(LoadYourSceneAsync());
+            StartCoroutine(ChangeColor(planeToBlack, startColor, endColor));
+            StartCoroutine(LoadYourSceneAsync(planeToBlack, planeToTrans));
             //SceneManager.LoadSceneAsync(1);
         }
         else if (gm.isThirdLevel)
@@ -61,9 +61,9 @@ public class LoadNewScene : MonoBehaviour
         }
     }
 
-    IEnumerator LoadYourSceneAsync()
+    IEnumerator LoadYourSceneAsync(GameObject cubeToBlack, GameObject cubeToTrans)
     {
-        if (cube.GetComponent<MeshRenderer>().material.color == endColor)
+        if (cubeToBlack.GetComponent<MeshRenderer>().material.color == endColor)
         {
             AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(1);
 
@@ -71,16 +71,21 @@ public class LoadNewScene : MonoBehaviour
             {
                 yield return null;
             }
+
+            if (asyncLoad.isDone)
+            {
+                ChangeColor(cubeToTrans, endColor, startColor);
+            }
         }
     }
     
-    public IEnumerator ChangeColor()
+    public IEnumerator ChangeColor(GameObject cube, Color sColor, Color eColor)
     {
         float tick = 0f;
-        while (cube.GetComponent<MeshRenderer>().material.color != endColor)
+        while (cube.GetComponent<MeshRenderer>().material.color != eColor)
         {
             tick += Time.deltaTime * speed;
-            cube.GetComponent<MeshRenderer>().material.color = Color.Lerp(startColor, endColor, tick);
+            cube.GetComponent<MeshRenderer>().material.color = Color.Lerp(sColor, eColor, tick);
             yield return null;
         }
     }
