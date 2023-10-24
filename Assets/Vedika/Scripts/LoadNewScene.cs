@@ -48,7 +48,7 @@ public class LoadNewScene : MonoBehaviour
         if (gm.isSecondLevel)
         {
             StartCoroutine(ChangeColor(planeToBlack, startColor, endColor));
-            StartCoroutine(LoadYourSceneAsync(planeToBlack, planeToTrans));
+            StartCoroutine(LoadYourSceneAsync(planeToBlack));
             //SceneManager.LoadSceneAsync(1);
         }
         else if (gm.isThirdLevel)
@@ -61,7 +61,7 @@ public class LoadNewScene : MonoBehaviour
         }
     }
 
-    IEnumerator LoadYourSceneAsync(GameObject cubeToBlack, GameObject cubeToTrans)
+    IEnumerator LoadYourSceneAsync(GameObject cubeToBlack)
     {
         if (cubeToBlack.GetComponent<MeshRenderer>().material.color == endColor)
         {
@@ -70,11 +70,6 @@ public class LoadNewScene : MonoBehaviour
             while (!asyncLoad.isDone)
             {
                 yield return null;
-            }
-
-            if (asyncLoad.isDone)
-            {
-                ChangeColor(cubeToTrans, endColor, startColor);
             }
         }
     }

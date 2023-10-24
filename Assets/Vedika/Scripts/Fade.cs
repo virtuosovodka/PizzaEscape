@@ -1,3 +1,4 @@
+
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -19,17 +20,17 @@ public class Fade : MonoBehaviour
     
     void Start()
     {
-        cube.GetComponent<MeshRenderer>().material.color = startColor;
-        //StartCoroutine(ChangeColor());
+        //cube.GetComponent<MeshRenderer>().material.color = startColor;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKey(KeyCode.A))
         {
             StartCoroutine(ChangeColor());
         }
+        
     }
 
     public IEnumerator ChangeColor()
