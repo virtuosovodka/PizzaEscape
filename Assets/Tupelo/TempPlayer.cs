@@ -50,6 +50,7 @@ public class TempPlayer : MonoBehaviour
         else if (other.CompareTag("floorNormal"))
         {
             chasePlayer = false;
+            print("the floor trigger");
         }
     }
 }

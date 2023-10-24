@@ -14,14 +14,14 @@ public class GarlicKnot : MonoBehaviour
     bool hasRunRight;
     private Rigidbody rb;
     public float rotationSpeed = 5;
-    [SerializeField] private Vector3 target = new Vector3(20, .5f, .25f);
+    [SerializeField] private Vector3 target;
     bool marching;
-    // private Vector3 mytransform = target;
+    // private Vector3 mytransform = target;rec
 
     // Start is called before the first frame update
     void Start()
     {
-        transform.position = new Vector3(20, .5f, .25f);
+        target = transform.position;
         tempPlayer = player.GetComponent<TempPlayer>();
         tempPlayer.chasePlayer = false;
         rb = GetComponent<Rigidbody>();
@@ -31,26 +31,32 @@ public class GarlicKnot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector3.forward * garlicSpeed * Time.deltaTime);
+        if (marching)
+        {
 
 
-        if (tempPlayer.chasePlayer == true)
-        
-            {
-                print("garlic knots will chase player");
-                transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(player.transform.position - transform.position), garlicSpeed * Time.deltaTime);
-                transform.position += transform.forward * Time.deltaTime * garlicSpeed;
-            // transform.position = Vector3.MoveTowards(transform.position, player.transform.position, garlicSpeed * Time.deltaTime);
-            marching = false;
-            }
-            else if (tempPlayer.chasePlayer == false)
+            transform.Translate(Vector3.forward * garlicSpeed * Time.deltaTime);
+        }
+        else if (tempPlayer.chasePlayer == true)
+
+        {
+            print("garlic knots will chase player");
+            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(player.transform.position - transform.position), garlicSpeed * Time.deltaTime);
+
+            transform.position = Vector3.MoveTowards(transform.position, player.transform.position, garlicSpeed * Time.deltaTime);
+        }
+        else if (tempPlayer.chasePlayer == false)
         {
             transform.position = Vector3.MoveTowards(transform.position, target, garlicSpeed * Time.deltaTime);
-            marching = true;
+            Vector3 newRotation = new Vector3(0, 0, 0);
+            transform.eulerAngles = newRotation;
+            if (transform.position == target)
+            {
+                marching = true;
+            }
         }
 
-
-
+        
 
 
 
@@ -100,9 +106,10 @@ public class GarlicKnot : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-
+        
         if (marching == true)
         {
+            
 
             if (other.gameObject.CompareTag("rightPoint"))
             {
