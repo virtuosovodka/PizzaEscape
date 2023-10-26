@@ -13,10 +13,13 @@ public class TempPlayer : MonoBehaviour
     private float timeRemaining = 10;
     [SerializeField] private float pizzaSpeed = 5;
     [SerializeField] public Rigidbody knotBody;
-
+    public GameObject knot;
+    GarlicKnot garlicKnot;
+    //garlicKnot = player.GetComponent<garlicKnot>();
     // Update is called once per frame
     void Update()
     {
+        garlicKnot = knot.GetComponent<GarlicKnot>();
         var dir = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
         // vector 3 is shrthand for (0,0,1)
 
@@ -46,6 +49,8 @@ public class TempPlayer : MonoBehaviour
         else if (other.CompareTag("floorTrigger"))
         {
             chasePlayer = true;
+            print(chasePlayer);
+            garlicKnot.marching = false;
         }
         else if (other.CompareTag("floorNormal"))
         {

@@ -15,7 +15,7 @@ public class GarlicKnot : MonoBehaviour
     private Rigidbody rb;
     public float rotationSpeed = 5;
     [SerializeField] private Vector3 target;
-    bool marching;
+    public bool marching;
     // private Vector3 mytransform = target;rec
 
     // Start is called before the first frame update
@@ -31,33 +31,36 @@ public class GarlicKnot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if (marching)
         {
 
 
             transform.Translate(Vector3.forward * garlicSpeed * Time.deltaTime);
         }
-        else if (tempPlayer.chasePlayer == true)
 
-        {
-            print("garlic knots will chase player");
-            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(player.transform.position - transform.position), garlicSpeed * Time.deltaTime);
 
-            transform.position = Vector3.MoveTowards(transform.position, player.transform.position, garlicSpeed * Time.deltaTime);
-        }
-        else if (tempPlayer.chasePlayer == false)
-        {
-            transform.position = Vector3.MoveTowards(transform.position, target, garlicSpeed * Time.deltaTime);
-            Vector3 newRotation = new Vector3(0, 0, 0);
-            transform.eulerAngles = newRotation;
-            if (transform.position == target)
+
+    else if (tempPlayer.chasePlayer == true)
+
             {
-                marching = true;
+                print("garlic knots will chase player");
+                transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(player.transform.position - transform.position), garlicSpeed * Time.deltaTime);
+
+                transform.position = Vector3.MoveTowards(transform.position, player.transform.position, garlicSpeed * Time.deltaTime);
             }
-        }
+    else if (tempPlayer.chasePlayer == false)
+            {
+                transform.position = Vector3.MoveTowards(transform.position, target, garlicSpeed * Time.deltaTime);
+                Vector3 newRotation = new Vector3(0, 0, 0);
+                transform.eulerAngles = newRotation;
+                if (transform.position == target)
+                {
+                    marching = true;
+                }
+            }
 
-        
-
+  
 
 
         /*   Ray ray = new Ray(transform.position, new Vector3(-4,0,0));
