@@ -12,6 +12,7 @@ TagManager:
   - Anchor
   - floorTrigger
   - floorNormal
+  - Grabby
   layers:
   - Default
   - TransparentFX
