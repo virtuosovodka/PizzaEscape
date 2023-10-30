@@ -18,6 +18,14 @@ public class GarlicKnot : MonoBehaviour
     public bool marching;
     // private Vector3 mytransform = target;rec
 
+    //color changing
+
+    Color[] colors;
+    Renderer garlicRenderer;
+    float ombreTime = 5f;
+
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +34,11 @@ public class GarlicKnot : MonoBehaviour
         tempPlayer.chasePlayer = false;
         rb = GetComponent<Rigidbody>();
        marching = true;
+
+        colors[0] = Color.yellow;
+        colors[1] = Color.black;
+
+       // Material.Equals
     }
 
     // Update is called once per frame
@@ -44,7 +57,7 @@ public class GarlicKnot : MonoBehaviour
     else if (tempPlayer.chasePlayer == true)
 
             {
-                print("garlic knots will chase player");
+               // print("garlic knots will chase player");
                 transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(player.transform.position - transform.position), garlicSpeed * Time.deltaTime);
 
                 transform.position = Vector3.MoveTowards(transform.position, player.transform.position, garlicSpeed * Time.deltaTime);
@@ -54,7 +67,7 @@ public class GarlicKnot : MonoBehaviour
                 transform.position = Vector3.MoveTowards(transform.position, target, garlicSpeed * Time.deltaTime);
                 Vector3 newRotation = new Vector3(0, 0, 0);
                 transform.eulerAngles = newRotation;
-                if (transform.position == target)
+                if (Mathf.Abs(Vector3.Distance(transform.position, target))<.1)
                 {
                     marching = true;
                 }
@@ -116,7 +129,7 @@ public class GarlicKnot : MonoBehaviour
 
             if (other.gameObject.CompareTag("rightPoint"))
             {
-                print("turn");
+                //print("turn");
                 // World Rotation
                 transform.eulerAngles = new Vector3(0, 180, 0);
 
@@ -127,7 +140,7 @@ public class GarlicKnot : MonoBehaviour
             }
             else if (other.gameObject.CompareTag("leftPoint"))
             {
-                print("turn");
+                //print("turn");
                 transform.eulerAngles = new Vector3(0, 0, 0);
 
                 //garlicSpeed = -garlicSpeed;
@@ -139,6 +152,13 @@ public class GarlicKnot : MonoBehaviour
                 transform.position = Vector3.MoveTowards(transform.position, player.transform.position, garlicSpeed * Time.deltaTime);
 
            }*/
+        }
+
+
+        if (other.gameObject.CompareTag("torch"))
+        {
+            print("flame has hit");
+
         }
     }
 
