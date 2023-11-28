@@ -286,9 +286,10 @@ GameObject:
   - component: {fileID: 122472444}
   - component: {fileID: 122472443}
   - component: {fileID: 122472442}
+  - component: {fileID: 122472445}
   m_Layer: 0
   m_Name: flame
-  m_TagString: flame
+  m_TagString: FLAME
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -327,10 +328,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5000001
-  m_Height: 2
+  m_Radius: 3.5447774
+  m_Height: 8.478172
   m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+  m_Center: {x: -0.8906717, y: 3.228715, z: -0.0756363}
 --- !u!23 &122472443
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -381,6 +382,33 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 122472440}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!54 &122472445
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 122472440}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 4
+  m_CollisionDetection: 0
 --- !u!1 &521533788
 GameObject:
   m_ObjectHideFlags: 0
@@ -1105,7 +1133,7 @@ GameObject:
   - component: {fileID: 730910113}
   m_Layer: 0
   m_Name: blowTorch
-  m_TagString: blowTorch
+  m_TagString: FLAME
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1379,6 +1407,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: deeee85774bfc43159866c835a503369, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  garlicKnot: {fileID: 1269258239}
   raycastYes:
     serializedVersion: 2
     m_Bits: 64
@@ -1393,6 +1422,7 @@ MonoBehaviour:
   rotationSpeed: 5
   target: {x: 20, y: 0.5, z: 0.25}
   marching: 0
+  fire: {fileID: 0}
 --- !u!23 &1269258242
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1504,7 +1534,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 4
   m_CollisionDetection: 0
 --- !u!1 &1411538391
 GameObject:

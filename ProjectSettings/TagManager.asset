@@ -13,6 +13,9 @@ TagManager:
   - floorTrigger
   - floorNormal
   - Grabby
+  - flame
+  - blowTorch
+  - FLAME
   layers:
   - Default
   - TransparentFX

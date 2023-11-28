@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GarlicKnot : MonoBehaviour
 {
+    public GameObject garlicKnot;
     public LayerMask raycastYes;
     public LayerMask leftPoint;
     public LayerMask rightPoint;
@@ -16,15 +17,15 @@ public class GarlicKnot : MonoBehaviour
     public float rotationSpeed = 5;
     [SerializeField] private Vector3 target;
     public bool marching;
+    public GameObject fire;
     // private Vector3 mytransform = target;rec
 
     //color changing
 
-    Color[] colors;
-    Renderer garlicRenderer;
-    float ombreTime = 5f;
+   
+    //float ombreTime = 5f;
 
-
+   
 
     // Start is called before the first frame update
     void Start()
@@ -35,10 +36,14 @@ public class GarlicKnot : MonoBehaviour
         rb = GetComponent<Rigidbody>();
        marching = true;
 
-        colors[0] = Color.yellow;
-        colors[1] = Color.black;
 
-       // Material.Equals
+
+     
+
+        garlicKnot.GetComponent<Renderer>().material.color = Color.blue;
+        //garlicKnotRenderer.material.SetColor("_Color", Color.red);
+
+
     }
 
     // Update is called once per frame
@@ -122,10 +127,15 @@ public class GarlicKnot : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-        
+        if (other.gameObject.CompareTag("FLAME"))
+        {
+            print("flame has hit");
+            // put this code on a script for the flame
+        }
+
         if (marching == true)
         {
-            
+           
 
             if (other.gameObject.CompareTag("rightPoint"))
             {
@@ -155,15 +165,20 @@ public class GarlicKnot : MonoBehaviour
         }
 
 
-        if (other.gameObject.CompareTag("torch"))
-        {
-            print("flame has hit");
+        //if (other.gameObject.CompareTag("flame"))
+        //{
+        //    print("flame has hit");
 
-        }
+        //}
     }
 
 }
+
+
+
 /*
+ * 
+ * 
 private void OnCollisionEnter(Collision other)
     {
          if (other.gameObject.CompareTag("rightPoint"))
