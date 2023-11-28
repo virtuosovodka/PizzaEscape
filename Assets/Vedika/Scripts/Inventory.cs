@@ -34,14 +34,19 @@ public class Inventory : MonoBehaviour
     void Update()
     {
         text.text = "" + cubes.Count;
+
+        if (Input.GetButtonDown("XRI_Left_PrimaryButton"))
+        {
+            cubeOne.SetActive(true);
+        }
     }
 
     void OnCollisionEnter(Collision collider)
     {
-        if (collider.gameObject.name == "Object")
+        //get name of object colliding and then push to array
+        if (collider.gameObject.CompareTag("Grabby"))
         {
-            cubeOne.SetActive(false);
-            cubes.Add(cubeOne);
+            
         } 
         else if (collider.gameObject.name == "Object (1)")
         {
@@ -57,20 +62,6 @@ public class Inventory : MonoBehaviour
         {
             cubes.Add(cubeFour);
             cubeFour.SetActive(false);
-        }
-        
-        if (collider.gameObject.name == "Left Controller" || collider.gameObject.name == "Right Controller")
-        {
-            if (Input.GetButtonDown("XRI_Right_PrimaryButton"))
-            {
-                cubes[0].SetActive(true);
-                /*
-                for (int i = 0; i < cubes.Count; i++)
-                {
-                    cubes[i].SetActive(true);
-                }
-                */
-            }
         }
     }
 }
