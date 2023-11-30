@@ -1977,8 +1977,8 @@ GameObject:
   - component: {fileID: 736246320}
   - component: {fileID: 736246319}
   - component: {fileID: 736246318}
-  - component: {fileID: 736246324}
   - component: {fileID: 736246323}
+  - component: {fileID: 736246324}
   m_Layer: 0
   m_Name: Object (2)
   m_TagString: Grabby
@@ -3444,6 +3444,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Inventory: {fileID: 1452450367}
   Anchor: {fileID: 1442091769}
+  text: {fileID: 1558589230}
 --- !u!4 &1452450369
 Transform:
   m_ObjectHideFlags: 0
@@ -4985,7 +4986,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!54 &2126951923
 Rigidbody:
   m_ObjectHideFlags: 0

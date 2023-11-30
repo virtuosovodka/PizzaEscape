@@ -3,7 +3,7 @@
 using System.Collections;
 using System.Collections.Generic;
 */
-
+/*
 using System;
 using System.Collections;
 using System.Net.Mime;
@@ -29,8 +29,9 @@ public class LoadNewScene : MonoBehaviour
      * everything resets each time scene gets reloaded
      * https://stackoverflow.com/questions/61204192/save-and-load-entire-scene-in-unity
      */
+/*
 
-    public GameManager gm;
+    //public GameManager gm;
     public GameObject planeToBlack, planeToTrans;
     public Color startColor, endColor;
     //bigger the speed, the faster it goes 
@@ -45,17 +46,17 @@ public class LoadNewScene : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (gm.isSecondLevel)
+        if (isSecondLevel)
         {
             StartCoroutine(ChangeColor(planeToBlack, startColor, endColor));
             StartCoroutine(LoadYourSceneAsync(planeToBlack));
             //SceneManager.LoadSceneAsync(1);
         }
-        else if (gm.isThirdLevel)
+        else if (isThirdLevel)
         {
             //SceneManager.LoadSceneAsync(2);
         }
-        else if (gm.isFirstLevel)
+        else if (isFirstLevel)
         {
             //SceneManager.LoadSceneAsync(0);
         }
@@ -85,3 +86,4 @@ public class LoadNewScene : MonoBehaviour
         }
     }
 }
+*/

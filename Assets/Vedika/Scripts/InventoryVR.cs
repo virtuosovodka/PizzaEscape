@@ -6,22 +6,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class InventoryVR : MonoBehaviour
 {
     public GameObject Inventory;
     public GameObject Anchor;
     bool UIActive;
+    public TextMeshProUGUI text;
 
     private void Start()
     {
-        Inventory.SetActive(false);
+        Inventory.SetActive(true);
         UIActive = false;
     }
 
     private void Update()
     {
-        if (Input.GetButtonDown("XRI_Left_PrimaryButton"))
+        text.text = "" + UIActive;
+        if (Input.GetButtonUp("XRI_Left_PrimaryButton"))
         {
             UIActive = !UIActive;
             Inventory.SetActive(UIActive);
