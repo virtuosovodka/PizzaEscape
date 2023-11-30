@@ -46,17 +46,17 @@ public class LoadNewScene : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isSecondLevel)
+        if (gm.isSecondLevel)
         {
             StartCoroutine(ChangeColor(planeToBlack, startColor, endColor));
             StartCoroutine(LoadYourSceneAsync(planeToBlack));
             //SceneManager.LoadSceneAsync(1);
         }
-        else if (isThirdLevel)
+        else if (gm.isThirdLevel)
         {
             //SceneManager.LoadSceneAsync(2);
         }
-        else if (isFirstLevel)
+        else if (gm.isFirstLevel)
         {
             //SceneManager.LoadSceneAsync(0);
         }
@@ -86,4 +86,18 @@ public class LoadNewScene : MonoBehaviour
         }
     }
 }
+
+put in gamemanager
+if (Input.GetButtonDown("XRI_Left_PrimaryButton"))
+   {
+   isSecondLevel = true;
+   }
+   else if (Input.GetButtonDown("XRI_Right_PrimaryButton"))
+   {
+   isThirdLevel = true;
+   }
+   else if (Input.GetButtonDown("XRI_Left_SecondaryButton"))
+   {
+   isFirstLevel = true;
+   }
 */

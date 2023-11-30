@@ -17,14 +17,15 @@ public class InventoryVR : MonoBehaviour
 
     private void Start()
     {
-        Inventory.SetActive(true);
+        //text.text = "I work!";
         UIActive = false;
+        Inventory.SetActive(false);
     }
 
     private void Update()
     {
-        text.text = "" + UIActive;
-        if (Input.GetButtonUp("XRI_Left_PrimaryButton"))
+        //text.text = "" + UIActive;
+        if (Input.GetButtonDown("XRI_Left_PrimaryButton"))
         {
             UIActive = !UIActive;
             Inventory.SetActive(UIActive);
