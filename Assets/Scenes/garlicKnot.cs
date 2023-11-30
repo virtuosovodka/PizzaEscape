@@ -18,6 +18,7 @@ public class GarlicKnot : MonoBehaviour
     [SerializeField] private Vector3 target;
     public bool marching;
     public GameObject fire;
+    public bool burn;
     // private Vector3 mytransform = target;rec
 
     //color changing
@@ -35,7 +36,7 @@ public class GarlicKnot : MonoBehaviour
         tempPlayer.chasePlayer = false;
         rb = GetComponent<Rigidbody>();
        marching = true;
-
+        burn = false;
 
 
      
@@ -50,14 +51,18 @@ public class GarlicKnot : MonoBehaviour
     void Update()
     {
 
+        if (burn)
+        {
+            garlicKnot.GetComponent<Renderer>().material.color = Color.red;
+            garlicSpeed = .2f;
+        }
+
         if (marching)
         {
 
 
             transform.Translate(Vector3.forward * garlicSpeed * Time.deltaTime);
         }
-
-
 
     else if (tempPlayer.chasePlayer == true)
 
@@ -127,11 +132,7 @@ public class GarlicKnot : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.CompareTag("FLAME"))
-        {
-            print("flame has hit");
-            // put this code on a script for the flame
-        }
+       
 
         if (marching == true)
         {
