@@ -286,7 +286,8 @@ GameObject:
   - component: {fileID: 122472444}
   - component: {fileID: 122472443}
   - component: {fileID: 122472442}
-  - component: {fileID: 122472445}
+  - component: {fileID: 122472446}
+  - component: {fileID: 122472447}
   m_Layer: 0
   m_Name: flame
   m_TagString: FLAME
@@ -328,10 +329,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 3.5447774
-  m_Height: 8.478172
+  m_Radius: 2.705432
+  m_Height: 5.4108644
   m_Direction: 1
-  m_Center: {x: -0.8906717, y: 3.228715, z: -0.0756363}
+  m_Center: {x: -0.8906722, y: 1.0032219, z: -0.04967133}
 --- !u!23 &122472443
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -382,7 +383,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 122472440}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
---- !u!54 &122472445
+--- !u!114 &122472446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 122472440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1be1e0b3378084156b379b39228a2a7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  garlic: {fileID: 1269258239}
+--- !u!54 &122472447
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1423,6 +1437,7 @@ MonoBehaviour:
   target: {x: 20, y: 0.5, z: 0.25}
   marching: 0
   fire: {fileID: 0}
+  burn: 0
 --- !u!23 &1269258242
 MeshRenderer:
   m_ObjectHideFlags: 0

@@ -4,22 +4,26 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class Slot : MonoBehaviour
 {
     public GameObject ItemInSlot;
     public Image slotImage;
     private Color originalColor;
+    public TextMeshProUGUI text;
     
     // Start is called before the first frame update
     void Start()
     {
+        text.text = "On and ready to work!";
         slotImage = GetComponentInChildren<Image>();
         originalColor = slotImage.color;
     }
 
     private void OnTriggerStay(Collider other)
     {
+        text.text = "" + other.name + name;
         if (ItemInSlot != null) return;
         GameObject obj = other.gameObject;
         if (!ItemCheck(obj)) return;
