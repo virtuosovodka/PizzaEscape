@@ -5,48 +5,48 @@ using UnityEngine;
 
 public class DoughPuzzle : MonoBehaviour
 {
-    //public GameObject doughBag;
-    public GameObject placemat;
-    public bool doughPlacement;
+   public GameManager gm;
+   
+   public GameObject placemat;
+   //public bool doughPlacement;
         
     // Start is called before the first frame update
     void Start()
     {
-        doughPlacement = false;
+        gm = FindObjectOfType<GameManager>();
+        //set doughPlacement to false
+        //doughPlacement = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        /*if (placemat.transform.position == transform.position)
-        {
-            doughPlacement = true;
-        }
-        else
-        {
-            doughPlacement = false;
-        }
-
-        print(doughPlacement);*/
+        //gm.UpdateDoughPlacement(placement);
     }
 
     private void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.CompareTag("Placemat"))
+        //if the object the dough bag collided with is the placemat, set doughPlacement to true
+        if (other.gameObject == placemat)
         {
-            doughPlacement = true;
+            gm.doughPlacement = true;
         }
+        //if the dough bag collided with any other object keep doughPlacement set to false
         else
         {
-            doughPlacement = false;
+            gm.doughPlacement = false; 
         }
+        
     }
 
     private void OnCollisionExit(Collision other)
     {
-        if (other.gameObject.CompareTag("Placemat"))
+        //if the dough bag is no longer touching the placemat, set doughPlacement to false
+        if (other.gameObject == placemat)
         {
-            doughPlacement = false;
+            gm.doughPlacement = false;
         }
     }
 }
+
+
