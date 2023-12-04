@@ -21,6 +21,12 @@ public class blowTorch : MonoBehaviour
             print("L key is down");
             fire.SetActive(true);
         }
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            print("K key is down");
+            fire.SetActive(false);
+        }
+
     }
 
     private void OnCollisionEnter(Collision other)

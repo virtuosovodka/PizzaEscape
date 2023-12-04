@@ -19,6 +19,7 @@ public class GarlicKnot : MonoBehaviour
     public bool marching;
     public GameObject fire;
     public bool burn;
+    public float forwardTimer = 2.0f;
     // private Vector3 mytransform = target;rec
 
     //color changing
@@ -37,6 +38,7 @@ public class GarlicKnot : MonoBehaviour
         rb = GetComponent<Rigidbody>();
        marching = true;
         burn = false;
+        
 
 
      
@@ -136,9 +138,16 @@ public class GarlicKnot : MonoBehaviour
 
         if (marching == true)
         {
-           
+            forwardTimer -= Time.deltaTime;
 
-            if (other.gameObject.CompareTag("rightPoint"))
+            if( forwardTimer <= 0.0f)
+            {
+                transform.eulerAngles = new Vector3(0, -90, 0);
+
+            }
+
+            /*
+            if (other.gameObject.CompareTag("rightPoint") )
             {
                 //print("turn");
                 // World Rotation
@@ -158,6 +167,8 @@ public class GarlicKnot : MonoBehaviour
                 //transform.eulerAngles = new Vector3(0, 0, 0);
                
             }
+            
+            */
             /*else if (other.gameObject.CompareTag("torch"))
             {
                 transform.position = Vector3.MoveTowards(transform.position, player.transform.position, garlicSpeed * Time.deltaTime);
@@ -165,48 +176,8 @@ public class GarlicKnot : MonoBehaviour
            }*/
         }
 
-
-        //if (other.gameObject.CompareTag("flame"))
-        //{
-        //    print("flame has hit");
-
-        //}
     }
 
 }
 
 
-
-/*
- * 
- * 
-private void OnCollisionEnter(Collision other)
-    {
-         if (other.gameObject.CompareTag("rightPoint"))
-         {
-             print("turn");
-             // World Rotation
-             transform.eulerAngles = new Vector3(0, 180, 0);
-
-            //garlicSpeed = -garlicSpeed;
-            //transform.Translate(Vector3.forward * garlicSpeed * Time.deltaTime);
-            marching = true;
-
-
-        }
-         else if (other.gameObject.CompareTag("leftPoint"))
-         {
-             print("turn");
-            transform.eulerAngles = new Vector3(0, 0, 0);
-
-            //garlicSpeed = -garlicSpeed;
-            //transform.eulerAngles = new Vector3(0, 0, 0);
-            marching = true;
-        }
-         /*else if (other.gameObject.CompareTag("torch"))
-         {
-             transform.position = Vector3.MoveTowards(transform.position, player.transform.position, garlicSpeed * Time.deltaTime);
-            
-        }*/
- //   } 
-//}
