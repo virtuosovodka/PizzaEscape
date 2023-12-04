@@ -27,11 +27,9 @@ public class Slot : MonoBehaviour
         if (ItemInSlot != null) return;
         GameObject obj = other.gameObject;
         if (!ItemCheck(obj)) return;
-        if (Input.GetButtonDown("XRI_Left_GripButton"))
-        {
-            InsertItem(obj);
-        }
+        InsertItem(obj);
     }
+    
 
     bool ItemCheck(GameObject obj)
     {
@@ -40,24 +38,18 @@ public class Slot : MonoBehaviour
 
     void InsertItem(GameObject obj)
     {
+        obj.transform.SetParent(this.transform, false);
         obj.GetComponent<Rigidbody>().isKinematic = true;
-        obj.transform.SetParent(gameObject.transform, true);
         obj.transform.localPosition = Vector3.zero;
         obj.transform.localEulerAngles = obj.GetComponent<Item>().slotRotation;
         obj.GetComponent<Item>().inSlot = true;
         obj.GetComponent<Item>().currentSlot = this;
         ItemInSlot = obj;
-        //slotImage.color = Color.gray;
+        slotImage.color = Color.gray;
     }
 
     public void ResetColor()
     {
         slotImage.color = originalColor;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
