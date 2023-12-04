@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     
     //Lily
-    public bool doughPlacement;
+    public int doughPlacement;
 
     
     private void Awake()
@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        doughPlacement = 0;
     }
 
     // Update is called once per frame

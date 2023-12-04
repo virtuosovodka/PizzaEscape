@@ -8,43 +8,42 @@ public class DoughPuzzle : MonoBehaviour
    public GameManager gm;
    
    public GameObject placemat;
-   //public bool doughPlacement;
         
     // Start is called before the first frame update
     void Start()
     {
+        //provide gm with a value (the script "GameManager")
         gm = FindObjectOfType<GameManager>();
-        //set doughPlacement to false
-        //doughPlacement = false;
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        //gm.UpdateDoughPlacement(placement);
+       
     }
 
     private void OnCollisionEnter(Collision other)
     {
-        //if the object the dough bag collided with is the placemat, set doughPlacement to true
+        //if the object the dough bag collided with is the placemat, add 1 to doughPlacement
         if (other.gameObject == placemat)
         {
-            gm.doughPlacement = true;
+            gm.doughPlacement ++;
         }
-        //if the dough bag collided with any other object keep doughPlacement set to false
+        //if the dough bag collided with any other object keep doughPlacement at its' current value
         else
         {
-            gm.doughPlacement = false; 
+            gm.doughPlacement = gm.doughPlacement; 
         }
         
     }
 
     private void OnCollisionExit(Collision other)
     {
-        //if the dough bag is no longer touching the placemat, set doughPlacement to false
+        //if the dough bag is removed from/ is no longer touching the placemat, subtract 1 from doughPlacement
         if (other.gameObject == placemat)
         {
-            gm.doughPlacement = false;
+            gm.doughPlacement --;
         }
     }
 }
