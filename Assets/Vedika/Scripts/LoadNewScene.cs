@@ -1,9 +1,6 @@
-/*
- using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
-*/
-/*
 using System;
 using System.Collections;
 using System.Net.Mime;
@@ -29,9 +26,8 @@ public class LoadNewScene : MonoBehaviour
      * everything resets each time scene gets reloaded
      * https://stackoverflow.com/questions/61204192/save-and-load-entire-scene-in-unity
      */
-/*
 
-    //public GameManager gm;
+    public GameManager gm;
     public GameObject planeToBlack, planeToTrans;
     public Color startColor, endColor;
     //bigger the speed, the faster it goes 
@@ -41,6 +37,7 @@ public class LoadNewScene : MonoBehaviour
     {
         //_canvasGroupAlpha = canvas.GetComponent<CanvasGroup>().alpha;
         //_startAlpha = canvas.GetComponent<CanvasGroup>().alpha;
+        gm = FindObjectOfType<GameManager>();
     }
 
     // Update is called once per frame
@@ -48,25 +45,29 @@ public class LoadNewScene : MonoBehaviour
     {
         if (gm.isSecondLevel)
         {
-            StartCoroutine(ChangeColor(planeToBlack, startColor, endColor));
-            StartCoroutine(LoadYourSceneAsync(planeToBlack));
-            //SceneManager.LoadSceneAsync(1);
+            //StartCoroutine(ChangeColor(planeToBlack, startColor, endColor));
+            //StartCoroutine(LoadYourSceneAsync(planeToBlack, 1));
+            SceneManager.LoadScene(1);
         }
-        else if (gm.isThirdLevel)
+        if (gm.isThirdLevel)
         {
-            //SceneManager.LoadSceneAsync(2);
+            //StartCoroutine(ChangeColor(planeToBlack, startColor, endColor));
+            //StartCoroutine(LoadYourSceneAsync(planeToBlack, 2));
+            SceneManager.LoadScene(2);
         }
-        else if (gm.isFirstLevel)
+        if (gm.isFirstLevel)
         {
-            //SceneManager.LoadSceneAsync(0);
+            //StartCoroutine(ChangeColor(planeToBlack, startColor, endColor));
+            //StartCoroutine(LoadYourSceneAsync(planeToBlack, 0));
+            SceneManager.LoadScene(0);
         }
     }
 
-    IEnumerator LoadYourSceneAsync(GameObject cubeToBlack)
+    IEnumerator LoadYourSceneAsync(GameObject cubeToBlack, int sceneToBeLoaded)
     {
         if (cubeToBlack.GetComponent<MeshRenderer>().material.color == endColor)
         {
-            AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(1);
+            AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneToBeLoaded);
 
             while (!asyncLoad.isDone)
             {
@@ -86,18 +87,3 @@ public class LoadNewScene : MonoBehaviour
         }
     }
 }
-
-put in gamemanager
-if (Input.GetButtonDown("XRI_Left_PrimaryButton"))
-   {
-   isSecondLevel = true;
-   }
-   else if (Input.GetButtonDown("XRI_Right_PrimaryButton"))
-   {
-   isThirdLevel = true;
-   }
-   else if (Input.GetButtonDown("XRI_Left_SecondaryButton"))
-   {
-   isFirstLevel = true;
-   }
-*/

@@ -7,6 +7,8 @@ using TMPro;
 public class ControllerInput : MonoBehaviour
 {
     public TextMeshProUGUI text;
+
+    public GameManager gm;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,6 +18,8 @@ public class ControllerInput : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        text.text = "" + gm.isFirstLevel + gm.isSecondLevel + gm.isThirdLevel;
+        
         if (Input.GetButtonDown("XRI_Left_PrimaryButton"))
         {
             text.text = "Button X pressed";

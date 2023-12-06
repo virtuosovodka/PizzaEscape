@@ -6,6 +6,11 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     
+    //Vedika
+    public bool isSecondLevel;
+    public bool isThirdLevel;
+    public bool isFirstLevel;
+    
     //Lily
     public int doughPlacement;
 
@@ -32,6 +37,21 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetButtonDown("XRI_Left_PrimaryButton") || Input.GetKey(KeyCode.S))
+        {
+            isSecondLevel = true;
+        }
+        else if (Input.GetButtonDown("XRI_Right_PrimaryButton") || Input.GetKey(KeyCode.A))
+        {
+            isThirdLevel = true;
+        }
+        else if (Input.GetButtonDown("XRI_Left_SecondaryButton") || Input.GetKey(KeyCode.D))
+        {
+            isFirstLevel = true;
+        }
+        else
+        {
+            isFirstLevel = isSecondLevel = isThirdLevel = false;
+        }
     }
 }
