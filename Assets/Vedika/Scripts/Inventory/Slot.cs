@@ -40,7 +40,7 @@ public class Slot : MonoBehaviour
     {
         obj.transform.SetParent(this.transform, false);
         obj.GetComponent<Rigidbody>().isKinematic = true;
-        obj.transform.localPosition = Vector3.zero;
+        obj.transform.localPosition = new Vector3(0,0,0);
         obj.transform.localEulerAngles = obj.GetComponent<Item>().slotRotation;
         obj.GetComponent<Item>().inSlot = true;
         obj.GetComponent<Item>().currentSlot = this;
