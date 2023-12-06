@@ -19,15 +19,24 @@ public class GarlicKnot : MonoBehaviour
     public bool marching;
     public GameObject fire;
     public bool burn;
-    public float forwardTimer = 2.0f;
+    private bool start2ndTimer = false;
+    private bool start3rdTimer = false;
+    private bool start4thTimer = false;
+    private bool start5thTimer = false;
+    private bool startTimer = false;
+    public float fourthTimer;
+    public float fifthTimer;
+    public float thirdTimer;
+    public float forwardTimer;
+    public float secondTimer;
     // private Vector3 mytransform = target;rec
 
     //color changing
 
-   
+
     //float ombreTime = 5f;
 
-   
+
 
     // Start is called before the first frame update
     void Start()
@@ -36,12 +45,12 @@ public class GarlicKnot : MonoBehaviour
         tempPlayer = player.GetComponent<TempPlayer>();
         tempPlayer.chasePlayer = false;
         rb = GetComponent<Rigidbody>();
-       marching = true;
+        marching = true;
         burn = false;
-        
+        startTimer = true;
 
 
-     
+
 
         garlicKnot.GetComponent<Renderer>().material.color = Color.blue;
         //garlicKnotRenderer.material.SetColor("_Color", Color.red);
@@ -61,31 +70,101 @@ public class GarlicKnot : MonoBehaviour
 
         if (marching)
         {
-
-
+           
+           
             transform.Translate(Vector3.forward * garlicSpeed * Time.deltaTime);
+           
+        }
+        if (startTimer)
+        {
+            forwardTimer -= Time.deltaTime;
+
+            if (forwardTimer <= 0)
+            {
+                print("time's up");
+                transform.eulerAngles = new Vector3(0, 270, 0);
+                start2ndTimer = true;
+                startTimer = false;
+            }
+        }
+        else if (start2ndTimer)
+        {
+            secondTimer -= Time.deltaTime;
+
+            if (secondTimer <= 0)
+            {
+                transform.eulerAngles = new Vector3(0, 180, 0);
+                start2ndTimer = false;
+                start3rdTimer = true;
+            }
+        }
+     
+          else if (start3rdTimer)
+      {
+         thirdTimer -= Time.deltaTime;
+
+          if (thirdTimer <= 0)
+          {
+              transform.eulerAngles = new Vector3(0, 90, 0);
+              start3rdTimer = false;
+              start4thTimer = true;
+                thirdTimer = 8;
+          }
+      }
+        else if (start4thTimer)
+      {
+          fourthTimer -= Time.deltaTime;
+
+          if (fourthTimer <= 0)
+          {
+              transform.eulerAngles = new Vector3(0, 0, 0);
+              start4thTimer = false;
+              start5thTimer = true;
+          }
+      }
+      //   else if (start3rdTimer)
+      //{
+      //    thirdTimer -= Time.deltaTime;
+
+      //    if (thirdTimer <= 0)
+      //    {
+      //        transform.eulerAngles = new Vector3(0, 270, 0);
+      //        start3rdTimer = false;
+      //        start4thTimer = true;
+      //    }
+      //}
+          else if (start5thTimer)
+      {
+          fifthTimer -= Time.deltaTime;
+
+          if (fifthTimer <= 0)
+          {
+              transform.eulerAngles = new Vector3(0, 270, 0);
+              start5thTimer = false;
+              start2ndTimer = true;
+          }
+      }
+    
+        else if (tempPlayer.chasePlayer == true)
+
+        {
+            // print("garlic knots will chase player");
+            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(player.transform.position - transform.position), garlicSpeed * Time.deltaTime);
+
+            transform.position = Vector3.MoveTowards(transform.position, player.transform.position, garlicSpeed * Time.deltaTime);
+        }
+        else if (tempPlayer.chasePlayer == false)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, target, garlicSpeed * Time.deltaTime);
+            Vector3 newRotation = new Vector3(0, 0, 0);
+            transform.eulerAngles = newRotation;
+            if (Mathf.Abs(Vector3.Distance(transform.position, target)) < .1)
+            {
+                marching = true;
+            }
         }
 
-    else if (tempPlayer.chasePlayer == true)
 
-            {
-               // print("garlic knots will chase player");
-                transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(player.transform.position - transform.position), garlicSpeed * Time.deltaTime);
-
-                transform.position = Vector3.MoveTowards(transform.position, player.transform.position, garlicSpeed * Time.deltaTime);
-            }
-    else if (tempPlayer.chasePlayer == false)
-            {
-                transform.position = Vector3.MoveTowards(transform.position, target, garlicSpeed * Time.deltaTime);
-                Vector3 newRotation = new Vector3(0, 0, 0);
-                transform.eulerAngles = newRotation;
-                if (Mathf.Abs(Vector3.Distance(transform.position, target))<.1)
-                {
-                    marching = true;
-                }
-            }
-
-  
 
 
         /*   Ray ray = new Ray(transform.position, new Vector3(-4,0,0));
@@ -132,21 +211,22 @@ public class GarlicKnot : MonoBehaviour
 
 
 
-    private void OnCollisionEnter(Collision other)
+    /*private void OnCollisionEnter(Collision other)
     {
        
 
         if (marching == true)
         {
-            forwardTimer -= Time.deltaTime;
+            
 
             if( forwardTimer <= 0.0f)
             {
+                print("time's up");
                 transform.eulerAngles = new Vector3(0, -90, 0);
 
             }
 
-            /*
+            
             if (other.gameObject.CompareTag("rightPoint") )
             {
                 //print("turn");
@@ -169,14 +249,14 @@ public class GarlicKnot : MonoBehaviour
             }
             
             */
-            /*else if (other.gameObject.CompareTag("torch"))
-            {
-                transform.position = Vector3.MoveTowards(transform.position, player.transform.position, garlicSpeed * Time.deltaTime);
+    /*else if (other.gameObject.CompareTag("torch"))
+    {
+        transform.position = Vector3.MoveTowards(transform.position, player.transform.position, garlicSpeed * Time.deltaTime);
 
-           }*/
-        }
+   }
+}
 
-    }
+   } */
 
 }
 
