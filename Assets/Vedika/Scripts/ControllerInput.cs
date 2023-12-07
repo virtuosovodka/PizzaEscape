@@ -18,8 +18,6 @@ public class ControllerInput : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        text.text = "" + gm.isFirstLevel + gm.isSecondLevel + gm.isThirdLevel;
-        
         if (Input.GetButtonDown("XRI_Left_PrimaryButton"))
         {
             text.text = "Button X pressed";
