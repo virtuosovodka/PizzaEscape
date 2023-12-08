@@ -20,7 +20,10 @@ public class DoughPuzzle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
+        if (gm.doughPlacement == 2)
+        {
+            print("Puzzle solved");
+        }
     }
 
     private void OnCollisionEnter(Collision other)
