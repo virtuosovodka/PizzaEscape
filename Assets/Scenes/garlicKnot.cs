@@ -85,6 +85,7 @@ public class GarlicKnot : MonoBehaviour
                 transform.eulerAngles = new Vector3(0, 270, 0);
                 start2ndTimer = true;
                 startTimer = false;
+                forwardTimer = 4;
             }
         }
         else if (start2ndTimer)
@@ -96,11 +97,12 @@ public class GarlicKnot : MonoBehaviour
                 transform.eulerAngles = new Vector3(0, 180, 0);
                 start2ndTimer = false;
                 start3rdTimer = true;
+                secondTimer = 1;
             }
         }
      
           else if (start3rdTimer)
-      {
+        {
          thirdTimer -= Time.deltaTime;
 
           if (thirdTimer <= 0)
@@ -108,9 +110,9 @@ public class GarlicKnot : MonoBehaviour
               transform.eulerAngles = new Vector3(0, 90, 0);
               start3rdTimer = false;
               start4thTimer = true;
-                thirdTimer = 8;
+              thirdTimer = 8;
           }
-      }
+        }
         else if (start4thTimer)
       {
           fourthTimer -= Time.deltaTime;
@@ -120,6 +122,7 @@ public class GarlicKnot : MonoBehaviour
               transform.eulerAngles = new Vector3(0, 0, 0);
               start4thTimer = false;
               start5thTimer = true;
+                fourthTimer = 1;
           }
       }
       //   else if (start3rdTimer)
@@ -139,9 +142,10 @@ public class GarlicKnot : MonoBehaviour
 
           if (fifthTimer <= 0)
           {
-              transform.eulerAngles = new Vector3(0, 270, 0);
+              transform.eulerAngles = new Vector3(0, -90, 0);
               start5thTimer = false;
               start2ndTimer = true;
+              fifthTimer = 8;
           }
       }
     
@@ -149,9 +153,15 @@ public class GarlicKnot : MonoBehaviour
 
         {
             // print("garlic knots will chase player");
+            start2ndTimer = false;
+            start3rdTimer = false;
+            start4thTimer = false;
+            start5thTimer = false;
+            startTimer = false;
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(player.transform.position - transform.position), garlicSpeed * Time.deltaTime);
 
             transform.position = Vector3.MoveTowards(transform.position, player.transform.position, garlicSpeed * Time.deltaTime);
+
         }
         else if (tempPlayer.chasePlayer == false)
         {
