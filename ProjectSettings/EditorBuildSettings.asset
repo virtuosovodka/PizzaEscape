@@ -5,19 +5,19 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Vedika/Scenes/LoadingNewScenes/FirstScene.unity
     guid: 52995366dc671444a8458bdc43505c82
-  - enabled: 1
+  - enabled: 0
     path: Assets/Vedika/Scenes/LoadingNewScenes/SecondScene.unity
     guid: b3dc7cc031ff24c438ac9faeb89897cc
-  - enabled: 1
+  - enabled: 0
     path: Assets/Vedika/Scenes/LoadingNewScenes/ThirdScene.unity
     guid: 5855331b789d04b5e9ce66ebd16c1702
   - enabled: 0
     path: Assets/Vedika/Scenes/TestControllerInput.unity
     guid: a42b2a2ebbb6345b1b0db70f752a3887
-  - enabled: 0
+  - enabled: 1
     path: Assets/Vedika/Scenes/Inventory.unity
     guid: 729f91a4c4ed143998b884f88d2da13b
   m_configObjects:
