@@ -271,8 +271,8 @@ Transform:
   - {fileID: 272466199}
   - {fileID: 8591249}
   - {fileID: 1300487360}
-  - {fileID: 1718020004}
   - {fileID: 19630951}
+  - {fileID: 1718020004}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &19630948
@@ -405,7 +405,7 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
@@ -490,7 +490,7 @@ Transform:
   m_GameObject: {fileID: 34570672}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.093291, y: -2.258268, z: 0.4972446}
+  m_LocalPosition: {x: 0.161, y: -0.149, z: -0.2}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -709,6 +709,7 @@ MonoBehaviour:
   itemInSlot: {fileID: 0}
   slotImage: {fileID: 283785584}
   text: {fileID: 1558589230}
+  grabbableObjects: {fileID: 0}
 --- !u!54 &171234249
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2421,6 +2422,7 @@ MonoBehaviour:
   itemInSlot: {fileID: 0}
   slotImage: {fileID: 1783926936}
   text: {fileID: 1558589230}
+  grabbableObjects: {fileID: 0}
 --- !u!54 &687648085
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2919,6 +2921,7 @@ MonoBehaviour:
   itemInSlot: {fileID: 0}
   slotImage: {fileID: 1243673260}
   text: {fileID: 1558589230}
+  grabbableObjects: {fileID: 0}
 --- !u!54 &761107684
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3686,6 +3689,7 @@ MonoBehaviour:
   itemInSlot: {fileID: 0}
   slotImage: {fileID: 1259320575}
   text: {fileID: 1558589230}
+  grabbableObjects: {fileID: 0}
 --- !u!54 &1179832700
 Rigidbody:
   m_ObjectHideFlags: 0
