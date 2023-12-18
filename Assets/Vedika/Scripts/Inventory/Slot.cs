@@ -33,22 +33,29 @@ public class Slot : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        //text.text = "" + other.name + name;
-        if (itemInSlot) return;
-        GameObject obj = other.gameObject;
-        if (!ItemCheck(obj)) return;
-        InsertItem(obj);
+        if (other.gameObject.CompareTag("Grabby"))
+        {
+            //text.text = "" + other.name + name;
+            if (itemInSlot) return;
+            GameObject obj = other.gameObject;
+            if (!ItemCheck(obj)) return;
+            InsertItem(obj);
+        }
     }
     
     private void OnTriggerExit(Collider other)
     {
-        GameObject obj = other.gameObject;
-        //if (ItemCheck(obj)) return;
-        RemoveItem(obj);
-        
-        //DELETE
-        gameObject.SetActive(false);
+        if (other.gameObject.CompareTag("Grabby"))
+        {
+            GameObject obj = other.gameObject;
+            //if (ItemCheck(obj)) return;
+            RemoveItem(obj);
+
+            //DELETE
+            // gameObject.SetActive(false);
+        }
     }
+
 
     bool ItemCheck(GameObject obj)
     {
@@ -70,11 +77,11 @@ public class Slot : MonoBehaviour
 
     void RemoveItem(GameObject obj)
     {
-        obj.transform.SetParent(grabbableObjects);
+        // obj.transform.SetParent(grabbableObjects);
         obj.GetComponent<Rigidbody>().isKinematic = false;
         obj.GetComponent<Rigidbody>().useGravity = true;
-        obj.transform.localPosition = new Vector3(0,0,0);
-        obj.GetComponent<Item>().inSlot = false;
+        // obj.transform.localPosition = new Vector3(0,0,0);
+        obj.GetComponent<Item>().inSlot = false; 
         obj.GetComponent<Item>().currentSlot = null;
         itemInSlot = null;
         ResetColor();
