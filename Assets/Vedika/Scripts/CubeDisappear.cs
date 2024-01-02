@@ -1,17 +1,19 @@
 //using System.Collections;
 //using System.Collections.Generic;
+
+using System;
 using UnityEngine;
 
 public class CubeDisappear : MonoBehaviour
 {
     public GameObject cube;
+    public GameManager gm;
     
-    // Update is called once per frame
-    void Update()
+    private void OnCollisionEnter(Collision other)
     {
-        if (Input.GetButtonDown("XRI_Right_SecondaryButton"))
+        if (other.gameObject.CompareTag("Grabby"))
         {
-            cube.SetActive(false);
+            gm.doughPlacement = 10;
         }
     }
 }

@@ -6,7 +6,6 @@ using UnityEngine;
 public class DoughPuzzle : MonoBehaviour
 {
    public GameManager gm;
-   
    public GameObject placemat;
         
     // Start is called before the first frame update

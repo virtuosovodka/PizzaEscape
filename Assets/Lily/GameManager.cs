@@ -37,7 +37,9 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("XRI_Left_PrimaryButton") || Input.GetKey(KeyCode.S))
+        //first level opens new scene when ten bags are matched up are however many bags are matched up
+        // 
+        if (Input.GetButtonDown("XRI_Left_PrimaryButton") || Input.GetKey(KeyCode.S) || doughPlacement == 2) //|| doughPlacement == 10)
         {
             isSecondLevel = true;
         }

@@ -531,7 +531,7 @@ GameObject:
   - component: {fileID: 804201114}
   m_Layer: 0
   m_Name: SecondCube
-  m_TagString: Untagged
+  m_TagString: Grabby
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1296,6 +1296,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cube: {fileID: 804201108}
+  gm: {fileID: 1991237179}
 --- !u!114 &1612864405
 MonoBehaviour:
   m_ObjectHideFlags: 0
