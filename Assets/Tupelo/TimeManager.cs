@@ -20,6 +20,7 @@ public class TimeManager : MonoBehaviour
     {
         totalTime += Time.deltaTime;
         currentTime = totalTime % dayDuration;
+  
     }
 
     public float GetHour()
@@ -56,4 +57,4 @@ public class TimeManager : MonoBehaviour
 
         return hour.ToString("00") + ":" + minutes.ToString("00") + " " + abbreviation;
     }
-}
+} 
