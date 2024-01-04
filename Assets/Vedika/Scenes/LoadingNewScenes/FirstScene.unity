@@ -1785,10 +1785,6 @@ PrefabInstance:
       propertyPath: placemat
       value: 
       objectReference: {fileID: 8572664154241589714}
-    - target: {fileID: 676031263510389015, guid: 073d4b4af6b594247be164a87a4de342, type: 3}
-      propertyPath: m_UseGravity
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1833529415708893858, guid: 073d4b4af6b594247be164a87a4de342, type: 3}
       propertyPath: m_Name
       value: Doughbag
@@ -1889,10 +1885,6 @@ PrefabInstance:
     - target: {fileID: 6365983125830222121, guid: dc84423d94e5f45c2be8bd8a2a31ce17, type: 3}
       propertyPath: m_Name
       value: Placemat
-      objectReference: {fileID: 0}
-    - target: {fileID: 6427182629898968242, guid: dc84423d94e5f45c2be8bd8a2a31ce17, type: 3}
-      propertyPath: m_Constraints
-      value: 126
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
