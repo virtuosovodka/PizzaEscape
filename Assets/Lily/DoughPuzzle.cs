@@ -1,27 +1,30 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class DoughPuzzle : MonoBehaviour
 {
    public GameManager gm;
    public GameObject placemat;
+   public TextMeshProUGUI text;
         
     // Start is called before the first frame update
     void Start()
     {
         //provide gm with a value (the script "GameManager")
         gm = FindObjectOfType<GameManager>();
-
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (gm.doughPlacement == 2)
+        //add more bags and placemat and then change 1 to however many we want and change in game manager
+        if (gm.doughPlacement == 1)
         {
             print("Puzzle solved");
+            text.text = "" + gm.doughPlacement;
         }
     }
 

@@ -38,10 +38,11 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         //first level opens new scene when ten bags are matched up are however many bags are matched up
-        // 
-        if (Input.GetButtonDown("XRI_Left_PrimaryButton") || Input.GetKey(KeyCode.S) || doughPlacement == 2) //|| doughPlacement == 10)
+        // change this 1 to however there are 
+        if (doughPlacement == 1)
         {
             isSecondLevel = true;
+            doughPlacement = 0;
         }
         else if (Input.GetButtonDown("XRI_Right_PrimaryButton") || Input.GetKey(KeyCode.A))
         {
