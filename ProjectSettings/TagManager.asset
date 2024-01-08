@@ -16,6 +16,13 @@ TagManager:
   - flame
   - blowTorch
   - FLAME
+  - C
+  - D
+  - E
+  - F
+  - G
+  - A
+  - B
   layers:
   - Default
   - TransparentFX
