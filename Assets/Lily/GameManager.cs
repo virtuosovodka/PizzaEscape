@@ -39,7 +39,7 @@ public class GameManager : MonoBehaviour
     {
         //first level opens new scene when ten bags are matched up are however many bags are matched up
         // change this 1 to however there are 
-        if (doughPlacement == 1)
+        if (doughPlacement == 2)
         {
             isSecondLevel = true;
             doughPlacement = 0;

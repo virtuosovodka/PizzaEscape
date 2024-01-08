@@ -21,7 +21,7 @@ public class DoughPuzzle : MonoBehaviour
     void Update()
     {
         //add more bags and placemat and then change 1 to however many we want and change in game manager
-        if (gm.doughPlacement == 1)
+        if (gm.doughPlacement == 2)
         {
             print("Puzzle solved");
             text.text = "" + gm.doughPlacement;
@@ -34,6 +34,7 @@ public class DoughPuzzle : MonoBehaviour
         if (other.gameObject == placemat)
         {
             gm.doughPlacement ++;
+            this.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
         }
         //if the dough bag collided with any other object keep doughPlacement at its' current value
         else
@@ -49,6 +50,7 @@ public class DoughPuzzle : MonoBehaviour
         if (other.gameObject == placemat)
         {
             gm.doughPlacement --;
+            this.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
         }
     }
 }
