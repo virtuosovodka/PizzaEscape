@@ -9,6 +9,7 @@ public class ClockScript : MonoBehaviour
     public Transform hourHand;
     public int hourCode;
     public int minuteCode;
+    public string theCode;
 
     const float hoursToDegrees = 360 / 12, minutesToDegrees = 360 / 60;
     // Start is called before the first frame update
@@ -42,4 +43,5 @@ public class ClockScript : MonoBehaviour
         //LSG
         // ToString("00")
     }
+
 }
