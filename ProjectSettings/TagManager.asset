@@ -23,6 +23,7 @@ TagManager:
   - G
   - A
   - B
+  - player
   layers:
   - Default
   - TransparentFX
