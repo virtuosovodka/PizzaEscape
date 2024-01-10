@@ -21,7 +21,7 @@ public class DoughPuzzle : MonoBehaviour
     void Update()
     {
         //add more bags and placemat and then change 1 to however many we want and change in game manager
-        if (gm.doughPlacement == 2)
+        if (gm.doughPlacement == 10)
         {
             print("Puzzle solved");
             text.text = "" + gm.doughPlacement;
