@@ -39,7 +39,7 @@ public class ClockScript : MonoBehaviour
             hourCode = 12;
         }
         //print(minuteCode.ToString("00"));
-        print(hourCode.ToString("00") + minuteCode.ToString("00"));
+        theCode = (hourCode.ToString("00") + minuteCode.ToString("00"));
         //LSG
         // ToString("00")
     }

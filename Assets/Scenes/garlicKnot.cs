@@ -152,7 +152,7 @@ public class GarlicKnot : MonoBehaviour
         else if (tempPlayer.chasePlayer == true)
 
         {
-            // print("garlic knots will chase player");
+            print("garlic knots will chase player");
             start2ndTimer = false;
             start3rdTimer = false;
             start4thTimer = false;
@@ -161,14 +161,14 @@ public class GarlicKnot : MonoBehaviour
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(player.transform.position - transform.position), garlicSpeed * Time.deltaTime);
 
             transform.position = Vector3.MoveTowards(transform.position, player.transform.position, garlicSpeed * Time.deltaTime);
-
+           
         }
         else if (tempPlayer.chasePlayer == false)
         {
             transform.position = Vector3.MoveTowards(transform.position, target, garlicSpeed * Time.deltaTime);
             Vector3 newRotation = new Vector3(0, 0, 0);
             transform.eulerAngles = newRotation;
-            if (Mathf.Abs(Vector3.Distance(transform.position, target)) < .1)
+            if (Mathf.Abs(Vector3.Distance(transform.position, target)) < .2)
             {
                 marching = true;
             }

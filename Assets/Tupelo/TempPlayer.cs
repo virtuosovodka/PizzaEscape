@@ -49,8 +49,8 @@ public class TempPlayer : MonoBehaviour
         else if (other.CompareTag("floorTrigger"))
         {
             chasePlayer = true;
-           // print(chasePlayer);
-            garlicKnot.marching = false;
+           //print(chasePlayer);
+           //garlicKnot.marching = false;
         }
         else if (other.CompareTag("floorNormal"))
         {

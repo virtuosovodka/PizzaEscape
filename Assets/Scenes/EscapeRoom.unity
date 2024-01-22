@@ -1051,7 +1051,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 462075748}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1903279499}
+        m_TargetAssemblyTypeName: DoorKitchen, Assembly-CSharp
+        m_MethodName: AddDigit
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 5
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &462075748
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2703,7 +2715,7 @@ Transform:
   m_GameObject: {fileID: 904919584}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0.28, z: 0.08}
+  m_LocalPosition: {x: 0, y: 0.28, z: 0.06}
   m_LocalScale: {x: 2.134864, y: 0.88, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3055,7 +3067,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 983306259}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1903279499}
+        m_TargetAssemblyTypeName: DoorKitchen, Assembly-CSharp
+        m_MethodName: AddDigit
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 9
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &983306259
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3176,7 +3200,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1056497087}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1903279499}
+        m_TargetAssemblyTypeName: DoorKitchen, Assembly-CSharp
+        m_MethodName: AddDigit
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 7
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1056497087
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3297,7 +3333,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1101881338}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1903279499}
+        m_TargetAssemblyTypeName: DoorKitchen, Assembly-CSharp
+        m_MethodName: AddDigit
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 2
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1101881338
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3621,7 +3669,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1244449363}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1903279499}
+        m_TargetAssemblyTypeName: DoorKitchen, Assembly-CSharp
+        m_MethodName: AddDigit
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 3
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1244449363
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4601,7 +4661,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1534543624}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1903279499}
+        m_TargetAssemblyTypeName: DoorKitchen, Assembly-CSharp
+        m_MethodName: AddDigit
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 4
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1534543624
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5775,7 +5847,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1898309901}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1903279499}
+        m_TargetAssemblyTypeName: DoorKitchen, Assembly-CSharp
+        m_MethodName: AddDigit
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 8
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1898309901
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5962,8 +6046,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   door: {fileID: 1903279493}
   openDoor: 0
+  clockScript: {fileID: 0}
   codeText: {fileID: 33023905}
-  doorCode: 852
+  doorCode: 1012
   codePanel: {fileID: 1786158530}
 --- !u!1 &1928845180
 GameObject:
@@ -6047,7 +6132,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1928845183}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1903279499}
+        m_TargetAssemblyTypeName: DoorKitchen, Assembly-CSharp
+        m_MethodName: AddDigit
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 0
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1928845183
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6168,7 +6265,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1930588115}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1903279499}
+        m_TargetAssemblyTypeName: DoorKitchen, Assembly-CSharp
+        m_MethodName: AddDigit
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 1
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1930588115
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6233,7 +6342,7 @@ Transform:
   m_GameObject: {fileID: 1968564579}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0.18, z: 0.087}
+  m_LocalPosition: {x: 0, y: 0.18, z: 0.06}
   m_LocalScale: {x: 1.3596, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6373,7 +6482,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1973607321}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1903279499}
+        m_TargetAssemblyTypeName: DoorKitchen, Assembly-CSharp
+        m_MethodName: AddDigit
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 6
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1973607321
 MonoBehaviour:
   m_ObjectHideFlags: 0

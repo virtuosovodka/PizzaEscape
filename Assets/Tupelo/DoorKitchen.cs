@@ -7,7 +7,7 @@ public class DoorKitchen : MonoBehaviour
     public GameObject door;
     public bool openDoor;
     private bool isAtDoor = false;
-   
+    public ClockScript clockScript;
   
 
     [SerializeField]private TextMeshProUGUI codeText;
@@ -27,11 +27,18 @@ public class DoorKitchen : MonoBehaviour
         codeText.text = codeTextValue;
 
         if (codeTextValue == doorCode)
+
+
+            //codeTextValue >= clockScript.theCode.int.Parse -8 && codeTextValue <= clockScript.theCode ++ 8
+            //DO THIS NEXT CLASS CONVERT TO INTEGER
+            //also figure out the issue with templayer chasing bool
+
+
         {
             openDoor = true;
         }
 
-        if(codeTextValue.Length >= 4)
+        if(codeTextValue.Length >= 5)
         {
             codeTextValue = "";
         }
