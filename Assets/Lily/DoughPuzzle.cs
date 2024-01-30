@@ -10,32 +10,45 @@ public class DoughPuzzle : MonoBehaviour
    public GameObject placemat;
    public TextMeshProUGUI text;
    public float timer = 0.0f;
+   private bool onSurface;
+   private RigidbodyConstraints _constraints;
         
     // Start is called before the first frame update
     void Start()
     {
         //provide gm with a value (the script "GameManager")
         gm = FindObjectOfType<GameManager>();
+
+        _constraints = this.GetComponent<Rigidbody>().constraints;
     }
 
     // Update is called once per frame
     void Update()
     {
+        
         //add more bags and placemat and then change 1 to however many we want and change in game manager
         if (gm.doughPlacement == 10)
         {
             print("Puzzle solved");
             text.text = "" + gm.doughPlacement;
         }
+
+        if (onSurface && _constraints != RigidbodyConstraints.FreezeAll)
+        {
+            timer += Time.deltaTime;
+            if (timer > .3)
+            {
+                _constraints = RigidbodyConstraints.FreezeAll;
+            }
+        }
     }
 
     private void OnCollisionEnter(Collision other)
     {
-        timer += Time.deltaTime;
-        if (timer > .1)
-        {
-            this.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
-        }
+
+        timer = 0;
+        onSurface = true;
+      
         //if the object the dough bag collided with is the placemat, add 1 to doughPlacement
         if (other.gameObject == placemat)
         {
@@ -54,7 +67,7 @@ public class DoughPuzzle : MonoBehaviour
     private void OnCollisionExit(Collision other)
     {
         this.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
-        timer = 0.0f;
+        onSurface = false;
         //if the dough bag is removed from/ is no longer touching the placemat, subtract 1 from doughPlacement
         if (other.gameObject == placemat)
         {
