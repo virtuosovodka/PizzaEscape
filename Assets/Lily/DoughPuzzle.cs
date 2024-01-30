@@ -11,7 +11,7 @@ public class DoughPuzzle : MonoBehaviour
    public TextMeshProUGUI text;
    public float timer = 0.0f;
    private bool onSurface;
-   private RigidbodyConstraints _constraints;
+   private Rigidbody rb;
         
     // Start is called before the first frame update
     void Start()
@@ -19,7 +19,7 @@ public class DoughPuzzle : MonoBehaviour
         //provide gm with a value (the script "GameManager")
         gm = FindObjectOfType<GameManager>();
 
-        _constraints = this.GetComponent<Rigidbody>().constraints;
+        rb = this.GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -32,21 +32,24 @@ public class DoughPuzzle : MonoBehaviour
             print("Puzzle solved");
             text.text = "" + gm.doughPlacement;
         }
+        
+        print(onSurface);
 
-        if (onSurface && _constraints != RigidbodyConstraints.FreezeAll)
+        if (onSurface && rb.constraints != RigidbodyConstraints.FreezeAll)
         {
+            
             timer += Time.deltaTime;
-            if (timer > .3)
+            if (timer > .3f)
             {
-                _constraints = RigidbodyConstraints.FreezeAll;
+                rb.constraints = RigidbodyConstraints.FreezeAll;
             }
         }
     }
 
     private void OnCollisionEnter(Collision other)
     {
-
-        timer = 0;
+        
+        timer = 0f;
         onSurface = true;
       
         //if the object the dough bag collided with is the placemat, add 1 to doughPlacement
