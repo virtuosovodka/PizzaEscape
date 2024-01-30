@@ -55,7 +55,7 @@ public class DoughPuzzle : MonoBehaviour
         //if the object the dough bag collided with is the placemat, add 1 to doughPlacement
         if (other.gameObject == placemat)
         {
-            gm.doughPlacement ++;
+            gm.doughPlacement++;
             this.GetComponent<Transform>().rotation = Quaternion.identity;
             this.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
         }
@@ -74,7 +74,7 @@ public class DoughPuzzle : MonoBehaviour
         //if the dough bag is removed from/ is no longer touching the placemat, subtract 1 from doughPlacement
         if (other.gameObject == placemat)
         {
-            gm.doughPlacement --;
+            gm.doughPlacement--;
             this.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
         }
     }
