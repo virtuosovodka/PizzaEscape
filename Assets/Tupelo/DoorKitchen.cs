@@ -8,10 +8,10 @@ public class DoorKitchen : MonoBehaviour
     public bool openDoor;
     private bool isAtDoor = false;
     public ClockScript clockScript;
-  
+    public GameObject button1;
 
     [SerializeField]private TextMeshProUGUI codeText;
-    string codeTextValue = "";
+    public string codeTextValue = "";
     int codeTextValueInt;
     public string doorCode;
     public GameObject codePanel;
@@ -74,4 +74,12 @@ public class DoorKitchen : MonoBehaviour
     {
         codeTextValue += digit;
     }
+    //private void OnCollisionEnter(Collision collision)
+    //{
+    //    if (button1.coll)
+    //    {
+    //        codeText.text = codeTextValue;
+    //    }
+    //}
 }
+
