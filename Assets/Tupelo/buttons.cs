@@ -30,9 +30,6 @@ public class buttons : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.name == "button1")
-        {
-            doorKitchen.codeTextValue = "2";
-        }
+        //doorKitchen.addingDig = true;   
     }
 }

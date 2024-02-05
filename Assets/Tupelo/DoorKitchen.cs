@@ -17,11 +17,13 @@ public class DoorKitchen : MonoBehaviour
     public GameObject codePanel;
     int doorCodeInt;
     int tolerance = 8;
+    public bool addingDig;
 
     // Start is called before the first frame update
     void Start()
     {
         clockScript = GameObject.FindObjectOfType<ClockScript>();
+        //addingDig = false;
     }
 
     // Update is called once per frame
@@ -57,6 +59,7 @@ public class DoorKitchen : MonoBehaviour
         {
             openDoor = false;
         }
+        
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -72,7 +75,10 @@ public class DoorKitchen : MonoBehaviour
 
     public void AddDigit(string digit)
     {
-        codeTextValue += digit;
+        //if (addingDig)
+        //{
+            codeTextValue += digit;
+        //}
     }
     //private void OnCollisionEnter(Collision collision)
     //{
@@ -82,4 +88,4 @@ public class DoorKitchen : MonoBehaviour
     //    }
     //}
 }
-
+// next class you need to get the buttons working in VR, they should be already but they are not
