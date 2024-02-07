@@ -76,6 +76,7 @@ public class DoorKitchen : MonoBehaviour
     public void AddDigit(string digit)
     {
         codeTextValue += digit;
+        print("itar is working");
     }
     //private void OnCollisionEnter(Collision collision)
     //{
