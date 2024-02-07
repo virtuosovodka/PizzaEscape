@@ -75,10 +75,7 @@ public class DoorKitchen : MonoBehaviour
 
     public void AddDigit(string digit)
     {
-        //if (addingDig)
-        //{
-            codeTextValue += digit;
-        //}
+        codeTextValue += digit;
     }
     //private void OnCollisionEnter(Collision collision)
     //{
