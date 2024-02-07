@@ -11,7 +11,9 @@ public class GameManager : MonoBehaviour
     public bool isSecondLevel;
     public bool isThirdLevel;
     public bool isFirstLevel;
-    public TextMeshProUGUI text;
+
+    public float timer;
+    //public TextMeshProUGUI text;
     
     //Lily
     public int doughPlacement;
@@ -19,6 +21,7 @@ public class GameManager : MonoBehaviour
     
     private void Awake()
     {
+        //text.text = "I exist!";
         if (instance != null && instance != this)
         {
             Destroy(this.gameObject);
@@ -39,13 +42,13 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        text.text = "" + doughPlacement;
+        //text.text = "" + (doughPlacement);
         //first level opens new scene when ten bags are matched up are however many bags are matched up
         // change this 1 to however there are 
         if (doughPlacement == 10)
         {
+            timer = Time.deltaTime;
             isSecondLevel = true;
-            doughPlacement = 0;
         }
         else if (Input.GetButtonDown("XRI_Right_PrimaryButton") || Input.GetKey(KeyCode.A))
         {

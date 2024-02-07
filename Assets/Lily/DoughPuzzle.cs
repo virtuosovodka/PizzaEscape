@@ -8,7 +8,7 @@ public class DoughPuzzle : MonoBehaviour
 {
    public GameManager gm;
    public GameObject placemat;
-   //public TextMeshProUGUI text;
+   public TextMeshProUGUI text;
    public float timer = 0.0f;
    private bool onSurface;
    private Rigidbody rb;
@@ -26,12 +26,11 @@ public class DoughPuzzle : MonoBehaviour
     void Update()
     {
         //print(onSurface);
-        print("" + gm.doughPlacement + "" + onSurface);
-        //text.text = "" + gm.doughPlacement + "" + onSurface;
+        //print("" + gm.doughPlacement + "" + onSurface);
+        text.text = "" + gm.doughPlacement;
 
         if (onSurface && rb.constraints != RigidbodyConstraints.FreezeAll)
         {
-            
             timer += Time.deltaTime;
             if (timer > .3f)
             {
@@ -42,16 +41,14 @@ public class DoughPuzzle : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-        
         timer = 0f;
         onSurface = true;
       
         //if the object the dough bag collided with is the placemat, add 1 to doughPlacement
-        if (other.gameObject == placemat)
+        if (other.gameObject == placemat)// && timer == 0f)
         {
+            //text.text = "" + (other.gameObject) + " " + "" + gm.doughPlacement;
             gm.doughPlacement++;
-            //this.GetComponent<Transform>().rotation = Quaternion.identity;
-            //this.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
         }
     }
 
@@ -59,11 +56,11 @@ public class DoughPuzzle : MonoBehaviour
     {
         this.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
         onSurface = false;
+        
         //if the dough bag is removed from/ is no longer touching the placemat, subtract 1 from doughPlacement
         if (other.gameObject == placemat)
         {
             gm.doughPlacement--;
-            this.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
         }
     }
 }

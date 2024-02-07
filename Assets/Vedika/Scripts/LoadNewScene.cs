@@ -32,6 +32,7 @@ public class LoadNewScene : MonoBehaviour
     public Color startColor, endColor;
     //bigger the speed, the faster it goes 
     public float speed;
+    public float startTime;
 
     void Start()
     {
@@ -48,6 +49,7 @@ public class LoadNewScene : MonoBehaviour
             //StartCoroutine(ChangeColor(planeToBlack, startColor, endColor));
             //StartCoroutine(LoadYourSceneAsync(planeToBlack, 1));
             SceneManager.LoadScene(1);
+            gm.doughPlacement = 0;
         }
         if (gm.isThirdLevel)
         {

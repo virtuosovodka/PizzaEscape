@@ -5,16 +5,16 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/EscapeRoom.unity
     guid: 4088a16c2d8fc4cdf8a1a9975442637e
-  - enabled: 0
+  - enabled: 1
     path: Assets/Vedika/Scenes/LoadingNewScenes/FirstScene.unity
     guid: 52995366dc671444a8458bdc43505c82
-  - enabled: 0
+  - enabled: 1
     path: Assets/Vedika/Scenes/LoadingNewScenes/SecondScene.unity
     guid: b3dc7cc031ff24c438ac9faeb89897cc
-  - enabled: 0
+  - enabled: 1
     path: Assets/Vedika/Scenes/LoadingNewScenes/ThirdScene.unity
     guid: 5855331b789d04b5e9ce66ebd16c1702
   - enabled: 0
