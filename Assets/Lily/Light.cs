@@ -7,7 +7,7 @@ public class Light : MonoBehaviour
 {
     public GameObject Player;
     public GameObject light;
-    public GameObject scaredText;
+    public GameObject lockerCombo;
 
     public bool lightOn;
     public float buttonCoolDownTimer = 0;
@@ -17,8 +17,9 @@ public class Light : MonoBehaviour
     void Start()
     {
         //On start turn the light on and the "Pizza monster is scared of the dark" text off
+        lightOn = true;
         light.SetActive(true);
-        scaredText.SetActive(false);
+        lockerCombo.SetActive(false);
     }
 
     // Update is called once per frame
@@ -32,14 +33,14 @@ public class Light : MonoBehaviour
     {
         //If the object touching the light switch (object this script is attached to) is the player and the button
         //cool down timer is greater than 0.5 frames, set the button cool down timer to zero, change the value of 
-        //lightOn. Then change whether or not the light is on based on the value of lightOn, make scaredText.SetActive
+        //lightOn. Then change whether or not the light is on based on the value of lightOn, make lockerCombo.SetActive
         //the opposite of lightOn.
         if (other.gameObject == Player && buttonCoolDownTimer > .5f)
         {
             buttonCoolDownTimer = 0;
             lightOn = !lightOn;
             light.SetActive(lightOn);
-            scaredText.SetActive(!lightOn);
+            lockerCombo.SetActive(!lightOn);
         }
     }
 }
