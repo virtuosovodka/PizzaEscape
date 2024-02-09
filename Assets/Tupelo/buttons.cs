@@ -15,6 +15,8 @@ public class buttons : MonoBehaviour
     public GameObject button9;
     public GameObject button0;
 
+    public GameObject mainObject;
+
     public DoorKitchen doorKitchen;
 
     // Start is called before the first frame update
@@ -30,6 +32,7 @@ public class buttons : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        //doorKitchen.addingDig = true;   
+        //if(gameObject.mainObject.CompareTag(5)){
+        //doorKitchen.addingDig("5")
     }
 }

@@ -24,6 +24,7 @@ TagManager:
   - A
   - B
   - player
+  - 5
   layers:
   - Default
   - TransparentFX
