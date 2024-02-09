@@ -25,8 +25,6 @@ public class DoughPuzzle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //print(onSurface);
-        //print("" + gm.doughPlacement + "" + onSurface);
         text.text = "" + gm.doughPlacement;
 
         if (onSurface && rb.constraints != RigidbodyConstraints.FreezeAll)
