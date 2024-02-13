@@ -30,8 +30,11 @@ public class buttons : MonoBehaviour
     {
         //next class you need to figure out why the trigger is not working in VR, because it works with the player cube. Also figure out how to keep the cubes stationary when touched, and why one cubes marching bool doesnt work when player cube comes onto pltform.
     }
+
+    
     private void OnTriggerEnter(Collider collision)
     {
+        print("triggered " +collision.gameObject.name); 
         if (collision.gameObject.CompareTag("player"))
         {
             if (mainObject.tag == "0")
