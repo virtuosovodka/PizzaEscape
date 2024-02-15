@@ -18,12 +18,14 @@ public class DoorKitchen : MonoBehaviour
     int doorCodeInt;
     int tolerance = 8;
     public bool addingDig;
+   
 
     // Start is called before the first frame update
     void Start()
     {
         clockScript = GameObject.FindObjectOfType<ClockScript>();
         //addingDig = false;
+        
     }
 
     // Update is called once per frame
@@ -77,6 +79,7 @@ public class DoorKitchen : MonoBehaviour
     {
         codeTextValue += digit;
         print("itar is working");
+        
     }
     //private void OnCollisionEnter(Collision collision)
     //{

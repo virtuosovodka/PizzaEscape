@@ -6,7 +6,7 @@ public class TimeManager : MonoBehaviour
 {
 
     public const int hoursInDay = 24, minutesInHour = 60;
-    public float dayDuration = 43200f;
+    public float dayDuration; //set in the inspector
     float currentTime = 0f;
     float totalTime = 0f;
     // Start is called before the first frame update

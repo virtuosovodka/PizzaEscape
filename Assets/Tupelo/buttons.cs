@@ -14,8 +14,10 @@ public class buttons : MonoBehaviour
     //public GameObject button8;
     //public GameObject button9;
     //public GameObject button0;
-
+    public float timerOne = 2f;
     public GameObject mainObject;
+    public bool timerOn;
+    public float delay = .3f;
 
     public DoorKitchen doorKitchen;
 
@@ -28,80 +30,84 @@ public class buttons : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        timerOne += Time.deltaTime;
+        
         //next class you need to figure out why the trigger is not working in VR, because it works with the player cube. Also figure out how to keep the cubes stationary when touched, and why one cubes marching bool doesnt work when player cube comes onto pltform.
     }
 
     
     private void OnTriggerEnter(Collider collision)
     {
-        print("triggered " +collision.gameObject.name); 
-        if (collision.gameObject.CompareTag("player"))
+        //print("triggered " +collision.gameObject.name); 
+        if (collision.gameObject.CompareTag("player") && timerOne > delay)
         {
-            if (mainObject.tag == "0")
+            timerOne = 0f;
+            if (mainObject.tag == "0" )
             {
                 doorKitchen.AddDigit("0");
+                
                
-                mainObject.SetActive(false);
+                //mainObject.SetActive(false);
             }
             if (mainObject.tag == "1")
             {
                 doorKitchen.AddDigit("1");
 
-                mainObject.SetActive(false);
+                //mainObject.SetActive(false);
             }
             if (mainObject.tag == "2")
             {
                 doorKitchen.AddDigit("2");
 
-                mainObject.SetActive(false);
+                //mainObject.SetActive(false);
             }
             if (mainObject.tag == "3")
             {
                 doorKitchen.AddDigit("3");
 
-                mainObject.SetActive(false);
+                //mainObject.SetActive(false);
             }
             if (mainObject.tag == "4")
             {
                 doorKitchen.AddDigit("4");
 
-                mainObject.SetActive(false);
+                //mainObject.SetActive(false);
             }
             if (mainObject.tag == "5")
             {
                 doorKitchen.AddDigit("5");
 
-                mainObject.SetActive(false);
+                //mainObject.SetActive(false);
             }
             if (mainObject.tag == "6")
             {
                 doorKitchen.AddDigit("6");
 
-                mainObject.SetActive(false);
+                //mainObject.SetActive(false);
             }
             if (mainObject.tag == "7")
             {
                 doorKitchen.AddDigit("7");
 
-                mainObject.SetActive(false);
+                //mainObject.SetActive(false);
             }
             if (mainObject.tag == "8")
             {
                 doorKitchen.AddDigit("8");
 
-                mainObject.SetActive(false);
+                //mainObject.SetActive(false);
             }
             if (mainObject.tag == "8")
             {
                 doorKitchen.AddDigit("8");
 
-                mainObject.SetActive(false);
+                //mainObject.SetActive(false);
             }
             else if (mainObject.tag == "9")
             {
                 doorKitchen.AddDigit("9");
 
-                mainObject.SetActive(false);
+                //mainObject.SetActive(false);
             }
         }
     }
