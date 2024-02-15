@@ -42,12 +42,9 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //text.text = "" + (doughPlacement);
-        //first level opens new scene when ten bags are matched up are however many bags are matched up
-        // change this 1 to however there are 
-        if (doughPlacement == 10)
+        if (doughPlacement == 12)
         {
-            timer = Time.deltaTime;
+            //timer = Time.deltaTime;
             isSecondLevel = true;
         }
         else if (Input.GetButtonDown("XRI_Right_PrimaryButton") || Input.GetKey(KeyCode.A))
