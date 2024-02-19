@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     
     //Vedika
+    public bool isFourthLevel;
     public bool isSecondLevel;
     public bool isThirdLevel;
     public bool isFirstLevel;
@@ -44,20 +45,23 @@ public class GameManager : MonoBehaviour
     {
         if (doughPlacement == 12)
         {
-            //timer = Time.deltaTime;
             isSecondLevel = true;
         }
-        else if (Input.GetButtonDown("XRI_Right_PrimaryButton") || Input.GetKey(KeyCode.A))
+        else if (Input.GetButtonDown("XRI_Right_PrimaryButton"))
         {
             isThirdLevel = true;
         }
-        else if (Input.GetButtonDown("XRI_Left_SecondaryButton") || Input.GetKey(KeyCode.D))
+        else if (Input.GetButtonDown("XRI_Left_SecondaryButton"))
         {
             isFirstLevel = true;
         }
+        else if (Input.GetButtonDown("XRI_Right_SecondaryButton"))
+        {
+            isFourthLevel = true;
+        }
         else
         {
-            isFirstLevel = isSecondLevel = isThirdLevel = false;
+            isFirstLevel = isSecondLevel = isThirdLevel = isFourthLevel = false;
         }
     }
 }

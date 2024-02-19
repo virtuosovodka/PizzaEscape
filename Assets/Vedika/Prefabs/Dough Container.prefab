@@ -353,6 +353,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -2867603562488604470, guid: 1b8a4854790ec4a849777de4c9175ce6, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a0f0463960bc347619291ab7442af21b, type: 2}
     - target: {fileID: 919132149155446097, guid: 1b8a4854790ec4a849777de4c9175ce6, type: 3}
       propertyPath: m_Name
       value: Dough Container
@@ -360,7 +364,11 @@ PrefabInstance:
     - target: {fileID: 4739536021944941679, guid: 1b8a4854790ec4a849777de4c9175ce6, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: c6383c3c80cd24fd0aac677852d35022, type: 2}
+      objectReference: {fileID: 2100000, guid: def01ef7dc9294fa5bb85e6431e2f9fe, type: 2}
+    - target: {fileID: 7418098771544918504, guid: 1b8a4854790ec4a849777de4c9175ce6, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a0f0463960bc347619291ab7442af21b, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:

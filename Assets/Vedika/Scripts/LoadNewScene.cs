@@ -63,6 +63,12 @@ public class LoadNewScene : MonoBehaviour
             //StartCoroutine(LoadYourSceneAsync(planeToBlack, 0));
             SceneManager.LoadScene(0);
         }
+        if (gm.isFourthLevel)
+        {
+            //StartCoroutine(ChangeColor(planeToBlack, startColor, endColor));
+            //StartCoroutine(LoadYourSceneAsync(planeToBlack, 0));
+            SceneManager.LoadScene(3);
+        }
     }
 
     IEnumerator LoadYourSceneAsync(GameObject cubeToBlack, int sceneToBeLoaded)
