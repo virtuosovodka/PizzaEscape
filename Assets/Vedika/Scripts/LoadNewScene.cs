@@ -7,6 +7,7 @@ using System.Net.Mime;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.SceneManagement;
+using UnityEngine.UIElements;
 using UnityEngine.XR.OpenXR;
 
 public class LoadNewScene : MonoBehaviour
@@ -33,6 +34,9 @@ public class LoadNewScene : MonoBehaviour
     //bigger the speed, the faster it goes 
     public float speed;
     public float startTime;
+    
+    //cold room
+    public GameObject doorHinge;
 
     void Start()
     {
@@ -48,8 +52,14 @@ public class LoadNewScene : MonoBehaviour
         {
             //StartCoroutine(ChangeColor(planeToBlack, startColor, endColor));
             //StartCoroutine(LoadYourSceneAsync(planeToBlack, 1));
+            //before loading the scene, start timer and rotate door for 1.5 seconds
+            while (gm.timer >= 1.5f)
+            {
+                doorHinge.transform.rotation = Quaternion.Euler(0, gm.timer * 1, 0);
+            }
             SceneManager.LoadScene(1);
             gm.doughPlacement = 0;
+            gm.timer = 0;
         }
         if (gm.isThirdLevel)
         {

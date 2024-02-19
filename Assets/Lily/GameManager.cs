@@ -45,6 +45,7 @@ public class GameManager : MonoBehaviour
     {
         if (doughPlacement == 12)
         {
+            timer = Time.deltaTime;
             isSecondLevel = true;
         }
         else if (Input.GetButtonDown("XRI_Right_PrimaryButton"))
