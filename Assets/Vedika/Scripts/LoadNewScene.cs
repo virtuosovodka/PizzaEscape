@@ -31,7 +31,7 @@ public class LoadNewScene : MonoBehaviour
     public GameManager gm;
     public GameObject planeToBlack, planeToTrans;
     public Color startColor, endColor;
-    //bigger the speed, the faster it goes 
+    //bigger the speed, the faster the fade screen to black goes 
     public float speed;
     public float startTime;
     
@@ -52,14 +52,20 @@ public class LoadNewScene : MonoBehaviour
         {
             //StartCoroutine(ChangeColor(planeToBlack, startColor, endColor));
             //StartCoroutine(LoadYourSceneAsync(planeToBlack, 1));
+            
             //before loading the scene, start timer and rotate door for 1.5 seconds
-            while (gm.timer >= 1.5f)
+            if (gm.timer <= 1.5f && gm.doughPlacement == 12)
             {
-                doorHinge.transform.rotation = Quaternion.Euler(0, gm.timer * 1, 0);
+               //change the y of the door to make it open
+               doorHinge.transform.rotation = Quaternion.Euler(0, gm.timer * 1, 0);
             }
-            SceneManager.LoadScene(1);
-            gm.doughPlacement = 0;
-            gm.timer = 0;
+            else if (gm.timer > 1.5f)
+            {
+                //when timer is 1.5 seconds, the scene changes
+                SceneManager.LoadScene(1);
+                gm.doughPlacement = 0;
+                gm.timer = 0;
+            }
         }
         if (gm.isThirdLevel)
         {

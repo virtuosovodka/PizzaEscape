@@ -25,8 +25,7 @@ public class DoughPuzzle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        text.text = "" + gm.doughPlacement;
-
+        text.text = "" + gm.doughPlacement + " " + "" + gm.timer;
         if (onSurface && rb.constraints != RigidbodyConstraints.FreezeAll)
         {
             timer += Time.deltaTime;
@@ -45,7 +44,6 @@ public class DoughPuzzle : MonoBehaviour
         //if the object the dough bag collided with is the placemat, add 1 to doughPlacement
         if (other.gameObject == placemat)// && timer == 0f)
         {
-            //text.text = "" + (other.gameObject) + " " + "" + gm.doughPlacement;
             gm.doughPlacement++;
         }
     }

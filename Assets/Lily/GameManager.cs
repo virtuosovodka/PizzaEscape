@@ -38,6 +38,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         doughPlacement = 0;
+        timer = 0;
     }
 
     // Update is called once per frame
@@ -45,7 +46,8 @@ public class GameManager : MonoBehaviour
     {
         if (doughPlacement == 12)
         {
-            timer = Time.deltaTime;
+            
+            timer += Time.deltaTime;
             isSecondLevel = true;
         }
         else if (Input.GetButtonDown("XRI_Right_PrimaryButton"))
