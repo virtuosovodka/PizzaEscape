@@ -18,25 +18,33 @@ public class DoorKitchen : MonoBehaviour
     int doorCodeInt;
     int tolerance = 8;
     public bool addingDig;
-   
+    Rigidbody doorRigid;
+    public bool freezePos = true;
+    public bool freezeOthers = true;
+    public GameObject doorRotate1;
+    public GameObject doorRotate2;
+    float lerpDuration = .5f;
+    bool rotating;
 
     // Start is called before the first frame update
     void Start()
     {
         clockScript = GameObject.FindObjectOfType<ClockScript>();
         //addingDig = false;
-        
+        doorRigid = door.GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        doorRigid.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezePositionZ| RigidbodyConstraints.FreezeRotation;
         codeText.text = codeTextValue;
         //codeTextValueInt = int.Parse(codeTextValue.Trim());
         //doorCodeInt = int.Parse(doorCode.Trim());
 
         //print(int.Parse(clockScript.theCode)+int.Parse(codeTextValue));
         //print(codeTextValue);
+       
 
         if (((int.Parse(clockScript.theCode)+tolerance) >= int.Parse(codeTextValue)&& (int.Parse(clockScript.theCode) - tolerance)<= int.Parse(codeTextValue))) {
 
@@ -54,7 +62,17 @@ public class DoorKitchen : MonoBehaviour
 
         if (openDoor)
         {
-            transform.Translate(Vector3.left * 1f * Time.deltaTime);
+            doorRigid.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezeRotation;
+            //rotating = true;
+            float timeElapsed = 0;
+            Quaternion startRotation = doorRotate1.transform.rotation;
+            Quaternion targetRotation = doorRotate1.transform.rotation * Quaternion.Euler(0, 0, -90);
+            while (timeElapsed < lerpDuration)
+            {
+                //doorRotate1.transform.rotation = Quaternion.Slerp(startRotation, targetRotation);
+            }
+            doorRotate1.transform.Rotate(0f, 0f, -90f);
+
         }
 
         if (door.transform.position.z >= 5)
