@@ -44,8 +44,10 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (doughPlacement == 12)
+        if (doughPlacement == 12 || Input.GetButton("XRI_Right_SecondaryButton"))
         {
+            //delete when done testing
+            doughPlacement = 12;
             
             timer += Time.deltaTime;
             isSecondLevel = true;
@@ -58,7 +60,7 @@ public class GameManager : MonoBehaviour
         {
             isFirstLevel = true;
         }
-        else if (Input.GetButtonDown("XRI_Right_SecondaryButton"))
+        else if (Input.GetButtonDown("XRI_Left_PrimaryButton"))
         {
             isFourthLevel = true;
         }

@@ -54,12 +54,12 @@ public class LoadNewScene : MonoBehaviour
             //StartCoroutine(LoadYourSceneAsync(planeToBlack, 1));
             
             //before loading the scene, start timer and rotate door for 1.5 seconds
-            if (gm.timer <= 1.5f && gm.doughPlacement == 12)
+            if (gm.timer <= 2.5f && gm.doughPlacement == 12)
             {
                //change the y of the door to make it open
-               doorHinge.transform.rotation = Quaternion.Euler(0, gm.timer * 1, 0);
+               doorHinge.transform.Rotate(0,0,1);
             }
-            else if (gm.timer > 1.5f)
+            else if (gm.timer > 2.5f)
             {
                 //when timer is 1.5 seconds, the scene changes
                 SceneManager.LoadScene(1);
