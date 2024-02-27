@@ -922,7 +922,7 @@ Transform:
   m_GameObject: {fileID: 111386198}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 26.447, y: 1.44, z: -0.269}
+  m_LocalPosition: {x: 26.55, y: 1.44, z: -0.32}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -959,8 +959,8 @@ Transform:
   m_GameObject: {fileID: 114136190}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0.1894989, y: 1.0450001, z: 0.56900007}
-  m_LocalScale: {x: 1.1875, y: 2.19, z: 0.15}
+  m_LocalPosition: {x: 0.08650017, y: 1.0450001, z: 0.62000006}
+  m_LocalScale: {x: 1.1875002, y: 2.19, z: 0.15000004}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 111386199}
@@ -988,8 +988,8 @@ MonoBehaviour:
   addingDig: 0
   freezePos: 1
   freezeOthers: 1
-  doorRotate1: {fileID: 0}
-  doorRotate2: {fileID: 0}
+  doorRotate1: {fileID: 983023363}
+  doorRotate2: {fileID: 111386198}
 --- !u!54 &114136193
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3426,7 +3426,7 @@ Transform:
   m_GameObject: {fileID: 619487385}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -30.4, y: -2.8, z: -1.59}
+  m_LocalPosition: {x: 4.35, y: -2.8, z: -2.58}
   m_LocalScale: {x: 1.37, y: 1, z: 1.4}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3623,7 +3623,7 @@ Transform:
   m_GameObject: {fileID: 664433931}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -26.73, y: -2.15, z: 0.14601898}
+  m_LocalPosition: {x: -20.29, y: -2.15, z: 0.14601898}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5121,7 +5121,7 @@ Transform:
   m_GameObject: {fileID: 983023363}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 26.543, y: 1.44, z: 2.075}
+  m_LocalPosition: {x: 26.54, y: 1.44, z: 2.075}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -7397,8 +7397,8 @@ Transform:
   m_GameObject: {fileID: 1411538391}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -15.71, y: -2.8, z: -1.46}
-  m_LocalScale: {x: 1.55, y: 1, z: 1.39}
+  m_LocalPosition: {x: -7.91, y: -2.8, z: -1.46}
+  m_LocalScale: {x: 5.79, y: 1, z: 1.39}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1681865137}
@@ -8082,8 +8082,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -16.4, y: 1.2, z: 5.47}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.83, y: 0.83, z: 1.66}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 90054214}
   - {fileID: 1314254441}
@@ -8943,7 +8943,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8f24bebc383b7403686fbddbc746d8a7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -29.525845
+      value: -0.24
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8f24bebc383b7403686fbddbc746d8a7, type: 3}
       propertyPath: m_LocalPosition.y
@@ -9318,7 +9318,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 1.5
+  m_Speed: 0.5
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -10211,8 +10211,8 @@ Transform:
   m_GameObject: {fileID: 1903279493}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0.093, y: 1.0450001, z: -0.59000003}
-  m_LocalScale: {x: 1.1875002, y: 2.19, z: 0.15000004}
+  m_LocalPosition: {x: 0.095998764, y: 1.0450001, z: -0.59000003}
+  m_LocalScale: {x: 1.1875005, y: 2.19, z: 0.15000007}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 983023364}
@@ -10242,7 +10242,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 118
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!114 &1903279499
 MonoBehaviour:
@@ -10267,8 +10267,8 @@ MonoBehaviour:
   addingDig: 0
   freezePos: 1
   freezeOthers: 1
-  doorRotate1: {fileID: 0}
-  doorRotate2: {fileID: 0}
+  doorRotate1: {fileID: 983023363}
+  doorRotate2: {fileID: 111386198}
 --- !u!1 &1928845180
 GameObject:
   m_ObjectHideFlags: 0
