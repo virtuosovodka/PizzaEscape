@@ -23,7 +23,8 @@ public class DoorKitchen : MonoBehaviour
     public bool freezeOthers = true;
     public GameObject doorRotate1;
     public GameObject doorRotate2;
-    float lerpDuration = .5f;
+    float lerpDuration = .0f;
+    float speed = .002f;
     bool rotating;
 
     // Start is called before the first frame update
@@ -37,6 +38,37 @@ public class DoorKitchen : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (openDoor)
+        {
+            doorRigid.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionY;
+
+            rotating = true;
+            if (rotating)
+            {
+                Quaternion startRotation = doorRotate1.transform.rotation;
+                Quaternion startRotation2 = doorRotate2.transform.rotation;
+                Quaternion targetRotation = doorRotate1.transform.rotation * Quaternion.Euler(0, -90, 0);
+                Quaternion targetRotation2 = doorRotate2.transform.rotation * Quaternion.Euler(0, 90, 0);
+                doorRotate1.transform.rotation = Quaternion.Lerp(startRotation, targetRotation, lerpDuration * speed);
+                doorRotate2.transform.rotation = Quaternion.Lerp(startRotation2, targetRotation2, lerpDuration * speed);
+                lerpDuration = lerpDuration + Time.deltaTime;
+                print(doorRotate1.transform.rotation.y);
+                if (doorRotate1.transform.rotation.y <= -.97 && doorRotate2.transform.rotation.y >= .97)
+                {
+                    rotating = false;
+                    openDoor = false;
+                    /*
+                    TODO: Vedika put in the timer for the room change here
+
+                    
+
+                     */
+                }
+            }
+        }
+
+        
+
         doorRigid.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezePositionZ| RigidbodyConstraints.FreezeRotation;
         codeText.text = codeTextValue;
         //codeTextValueInt = int.Parse(codeTextValue.Trim());
@@ -62,23 +94,23 @@ public class DoorKitchen : MonoBehaviour
 
         if (openDoor)
         {
-            doorRigid.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezeRotation;
-            //rotating = true;
-            float timeElapsed = 0;
-            Quaternion startRotation = doorRotate1.transform.rotation;
-            Quaternion targetRotation = doorRotate1.transform.rotation * Quaternion.Euler(0, 0, -90);
-            while (timeElapsed < lerpDuration)
-            {
-                //doorRotate1.transform.rotation = Quaternion.Slerp(startRotation, targetRotation);
-            }
-            doorRotate1.transform.Rotate(0f, 0f, -90f);
-
+            doorRigid.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionY;
+            
+            rotating = true;
+            //if (rotating)
+            //{
+            //    Quaternion startRotation = doorRotate1.transform.rotation;
+            //    Quaternion targetRotation = doorRotate1.transform.rotation * Quaternion.Euler(0, -90, 0);
+            //    doorRotate1.transform.rotation = Quaternion.Lerp(startRotation, targetRotation, lerpDuration * speed);
+            //    lerpDuration = lerpDuration + Time.deltaTime;
+            //    print(doorRotate1.transform.rotation.y);
+            //    if (doorRotate1.transform.rotation.y <= -.97)// || doorRotate1.transform.rotation == targetRotation)
+            //    {
+            //        rotating = false;
+            //    }
+            //}
         }
 
-        if (door.transform.position.z >= 5)
-        {
-            openDoor = false;
-        }
         
     }
     private void OnTriggerEnter(Collider other)
