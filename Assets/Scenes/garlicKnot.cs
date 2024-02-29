@@ -174,6 +174,7 @@ public class GarlicKnot : MonoBehaviour
             }
         }
 
+        
 
 
 
@@ -219,7 +220,10 @@ public class GarlicKnot : MonoBehaviour
          */
     }
 
-
+    private void OnCollisionEnter(Collision collision)
+    {
+        print(collision.gameObject.tag);
+    }
 
     /*private void OnCollisionEnter(Collision other)
     {
