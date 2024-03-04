@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public bool isSecondLevel;
     public bool isThirdLevel;
     public bool isFirstLevel;
+    public bool kitchenDoor;
 
     public float timer;
     //public TextMeshProUGUI text;
@@ -39,6 +40,7 @@ public class GameManager : MonoBehaviour
     {
         doughPlacement = 0;
         timer = 0;
+        kitchenDoor = false;
     }
 
     // Update is called once per frame
@@ -52,7 +54,7 @@ public class GameManager : MonoBehaviour
             timer += Time.deltaTime;
             isSecondLevel = true;
         }
-        else if (Input.GetButtonDown("XRI_Right_PrimaryButton"))
+        else if (kitchenDoor)//Input.GetButtonDown("XRI_Right_PrimaryButton"))
         {
             isThirdLevel = true;
         }

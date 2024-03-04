@@ -9,7 +9,7 @@ public class DoorKitchen : MonoBehaviour
     private bool isAtDoor = false;
     public ClockScript clockScript;
     public GameObject button1;
-
+    public GameManager gm;
     [SerializeField]private TextMeshProUGUI codeText;
     public string codeTextValue = "";
     int codeTextValueInt;
@@ -27,10 +27,12 @@ public class DoorKitchen : MonoBehaviour
     float speed = .002f;
     bool rotating;
 
+
     // Start is called before the first frame update
     void Start()
     {
         clockScript = GameObject.FindObjectOfType<ClockScript>();
+        gm = GameObject.FindObjectOfType<GameManager>();
         //addingDig = false;
         doorRigid = door.GetComponent<Rigidbody>();
     }
@@ -57,6 +59,7 @@ public class DoorKitchen : MonoBehaviour
                 {
                     rotating = false;
                     openDoor = false;
+                    gm.kitchenDoor = true;
                     /*
                     TODO: Vedika put in the timer for the room change here
 
