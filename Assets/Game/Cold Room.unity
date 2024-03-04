@@ -13571,6 +13571,7 @@ MonoBehaviour:
   isSecondLevel: 0
   isThirdLevel: 0
   isFirstLevel: 0
+  kitchenDoor: 0
   timer: 0
   doughPlacement: 0
 --- !u!4 &1991237180
@@ -15387,13 +15388,13 @@ SceneRoots:
   - {fileID: 302041421}
   - {fileID: 1106083032}
   - {fileID: 1991237180}
+  - {fileID: 218198355}
   - {fileID: 1395711037}
   - {fileID: 165870507}
   - {fileID: 256675445}
   - {fileID: 1464489585}
   - {fileID: 165870504}
   - {fileID: 954297093}
-  - {fileID: 218198355}
   - {fileID: 330537799}
   - {fileID: 1238728913}
   - {fileID: 574361160}

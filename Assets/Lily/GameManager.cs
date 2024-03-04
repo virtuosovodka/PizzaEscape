@@ -12,13 +12,15 @@ public class GameManager : MonoBehaviour
     public bool isSecondLevel;
     public bool isThirdLevel;
     public bool isFirstLevel;
-    public bool kitchenDoor;
 
     public float timer;
     //public TextMeshProUGUI text;
     
-    //Lily
+    //Coldroom
     public int doughPlacement;
+    
+    //Kitchen
+    public bool kitchenDoor;
 
     
     private void Awake()
@@ -54,7 +56,7 @@ public class GameManager : MonoBehaviour
             timer += Time.deltaTime;
             isSecondLevel = true;
         }
-        else if (kitchenDoor)//Input.GetButtonDown("XRI_Right_PrimaryButton"))
+        else if (kitchenDoor)
         {
             isThirdLevel = true;
         }
