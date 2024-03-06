@@ -755,9 +755,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   door: {fileID: 79651550}
   openDoor: 0
-  clockScript: {fileID: 0}
+  clockScript: {fileID: 1543378248}
   button1: {fileID: 1446801950}
-  codeText: {fileID: 0}
+  codeText: {fileID: 33023905}
   codeTextValue: 
   doorCode: 
   codePanel: {fileID: 1786158530}
@@ -4741,7 +4741,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4736739424615509372, guid: 71d00e0c8f4944f25b605bd8fdcf0cfe, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 24.834
+      value: 25.44
       objectReference: {fileID: 0}
     - target: {fileID: 4736739424615509372, guid: 71d00e0c8f4944f25b605bd8fdcf0cfe, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4749,7 +4749,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4736739424615509372, guid: 71d00e0c8f4944f25b605bd8fdcf0cfe, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.317
+      value: 2.429
       objectReference: {fileID: 0}
     - target: {fileID: 4736739424615509372, guid: 71d00e0c8f4944f25b605bd8fdcf0cfe, type: 3}
       propertyPath: m_LocalRotation.w
@@ -16849,9 +16849,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   door: {fileID: 1814688980}
   openDoor: 0
-  clockScript: {fileID: 0}
+  clockScript: {fileID: 1543378248}
   button1: {fileID: 1446801950}
-  codeText: {fileID: 0}
+  codeText: {fileID: 33023905}
   codeTextValue: 
   doorCode: 
   codePanel: {fileID: 1786158530}

@@ -38,7 +38,7 @@ public class buttons : MonoBehaviour
     
     private void OnTriggerEnter(Collider collision)
     {
-        //print("triggered " +collision.gameObject.name); 
+        print("triggered " +collision.gameObject.name); 
         if (collision.gameObject.CompareTag("player") && timerOne > delay)
         {
             timerOne = 0f;
