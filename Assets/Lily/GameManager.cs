@@ -21,6 +21,9 @@ public class GameManager : MonoBehaviour
     
     //Kitchen
     public bool kitchenDoor;
+    
+    //Dining Room
+    public bool keyboardPlayed;
 
     
     private void Awake()
@@ -43,6 +46,7 @@ public class GameManager : MonoBehaviour
         doughPlacement = 0;
         timer = 0;
         kitchenDoor = false;
+        keyboardPlayed = false;
     }
 
     // Update is called once per frame
@@ -56,7 +60,7 @@ public class GameManager : MonoBehaviour
             timer += Time.deltaTime;
             isSecondLevel = true;
         }
-        else if (kitchenDoor)
+        else if (kitchenDoor || Input.GetButtonDown("XRI_Right_PrimaryButton"))
         {
             isThirdLevel = true;
         }
@@ -64,7 +68,7 @@ public class GameManager : MonoBehaviour
         {
             isFirstLevel = true;
         }
-        else if (Input.GetButtonDown("XRI_Left_PrimaryButton"))
+        else if (keyboardPlayed || Input.GetButtonDown("XRI_Left_PrimaryButton"))
         {
             isFourthLevel = true;
         }

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,7 +11,7 @@ public class PianoKeySounds : MonoBehaviour
     public string[] keylist = new string[3];
     bool enterLoop = true;
     //IPk, stands for Input Keys.
-    public GameObject Pinao;
+    public GameObject piano;
     public AudioSource C;
     public AudioSource D;
     public AudioSource E;
@@ -18,8 +19,13 @@ public class PianoKeySounds : MonoBehaviour
     public AudioSource G;
     public AudioSource A;
     public AudioSource B;
+    public GameManager gm;
     
     // Start is called before the first frame update
+    public void Start()
+    {
+        gm = FindObjectOfType<GameManager>();
+    }
 
     private void Update()
     {
@@ -27,6 +33,7 @@ public class PianoKeySounds : MonoBehaviour
         {
             if (IPK.Count >= 3)
             {
+                Compare(password, keylist);
                 keylist = IPK.GetRange(IPK.Count - 3, 3).ToArray();
                 //(GetRange(index,Count)
                 /*keylist = new string[IPK.Count];
@@ -69,37 +76,44 @@ public class PianoKeySounds : MonoBehaviour
         
         C.Play();
         IPK.Add("C");
+        print("C");
     }
     public void D_play()
     {
         D.Play();
         IPK.Add("D");
+        print("D");
     }
     public void E_play()
     {
         E.Play();
         IPK.Add("E");
+        print("E");
     }
     public void F_play()
     {
         F.Play();
         IPK.Add("F");
+        print("F");
     }
     public void G_play()
     {
         G.Play();
         IPK.Add("G");
+        print("G");
     }
     public void A_play()
     {
         A.Play();
         IPK.Add("A");
+        print("A");
 
     }
     public void B_play()
     {
         B.Play();
         IPK.Add("B");
+        print("B");
     }
     private void OnCollisionEnter(Collision collision)
     {
@@ -151,15 +165,15 @@ public class PianoKeySounds : MonoBehaviour
    
     
 
-    bool compare (string[] password, string[] keylist)
+    void Compare (string[] password, string[] keylist)
     {
         if (password[0] == keylist[0] && password[1] == keylist[1] && password[2] == keylist[2])
         {
-            return true;
+            gm.keyboardPlayed = true;
         }
         else
         {
-            return false;
+            gm.keyboardPlayed = false;
         }
     }
     
