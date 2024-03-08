@@ -64,11 +64,11 @@ public class GameManager : MonoBehaviour
         {
             isThirdLevel = true;
         }
-        else if (Input.GetButtonDown("XRI_Left_SecondaryButton"))
+        else if (keyboardPlayed || Input.GetButtonDown("XRI_Left_SecondaryButton"))
         {
-            isFirstLevel = true;
+            //release the pizza monster
         }
-        else if (keyboardPlayed || Input.GetButtonDown("XRI_Left_PrimaryButton"))
+        else if (Input.GetButtonDown("XRI_Left_PrimaryButton"))
         {
             isFourthLevel = true;
         }

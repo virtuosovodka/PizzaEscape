@@ -5,13 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Game/Cold Room.unity
     guid: c4f37b9c9301d413ca0f919cdb319130
-  - enabled: 1
+  - enabled: 0
     path: Assets/Game/Kitchen2.unity
     guid: e0b702d2b7436474192e5410dab41b01
-  - enabled: 1
+  - enabled: 0
     path: Assets/Vedika/Scenes/LoadingNewScenes/ThirdScene.unity
     guid: 5855331b789d04b5e9ce66ebd16c1702
   - enabled: 1

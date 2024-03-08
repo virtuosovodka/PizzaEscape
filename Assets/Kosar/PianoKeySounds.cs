@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class PianoKeySounds : MonoBehaviour
 
@@ -9,6 +10,7 @@ public class PianoKeySounds : MonoBehaviour
     public string[] password = new string[3] { "G", "C", "E" };
     public List<string> IPK = new List<string>();
     public string[] keylist = new string[3];
+    public TextMeshProUGUI text;
     bool enterLoop = true;
     //IPk, stands for Input Keys.
     public GameObject piano;
@@ -29,6 +31,7 @@ public class PianoKeySounds : MonoBehaviour
 
     private void Update()
     {
+        
         if (enterLoop)
         {
             if (IPK.Count >= 3)
@@ -73,40 +76,45 @@ public class PianoKeySounds : MonoBehaviour
     }
     public void C_play()
     {
-        
         C.Play();
         IPK.Add("C");
         print("C");
+        text.text = "C Pressed!";
     }
     public void D_play()
     {
         D.Play();
         IPK.Add("D");
         print("D");
+        text.text = "D Pressed!";
     }
     public void E_play()
     {
         E.Play();
         IPK.Add("E");
         print("E");
+        text.text = "E Pressed!";
     }
     public void F_play()
     {
         F.Play();
         IPK.Add("F");
         print("F");
+        text.text = "F Pressed!";
     }
     public void G_play()
     {
         G.Play();
         IPK.Add("G");
         print("G");
+        text.text = "G Pressed!";
     }
     public void A_play()
     {
         A.Play();
         IPK.Add("A");
         print("A");
+        text.text = "A Pressed!";
 
     }
     public void B_play()
@@ -114,37 +122,41 @@ public class PianoKeySounds : MonoBehaviour
         B.Play();
         IPK.Add("B");
         print("B");
+        text.text = "B Pressed!";
     }
     private void OnCollisionEnter(Collision collision)
     {
-
-        if (collision.gameObject.tag == "C")
+        if (collision.gameObject.CompareTag("C"))
         {
             C_play();
         }
-        if (collision.gameObject.tag == "D")
+        else if (collision.gameObject.CompareTag("D"))
         {
             D_play();
         }
-        if (collision.gameObject.tag == "E")
+        else if (collision.gameObject.CompareTag("E"))
         {
             E_play();
         }
-        if (collision.gameObject.tag == "F")
+        else if (collision.gameObject.CompareTag("F"))
         {
             F_play();
         }
-        if (collision.gameObject.tag == "G")
+        else if (collision.gameObject.CompareTag("G"))
         {
             G_play();
         }
-        if (collision.gameObject.tag == "A")
+        else if (collision.gameObject.CompareTag("A"))
         {
             A_play();
         }
-        if (collision.gameObject.tag == "B")
+        else if (collision.gameObject.CompareTag("B"))
         {
             B_play();
+        }
+        else
+        {
+            text.text = ":)";
         }
     }
 
