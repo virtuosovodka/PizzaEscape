@@ -5,9 +5,9 @@ using UnityEngine;
 
 public class LockerCombo : MonoBehaviour
 {
-    private float numOne; // right fly up at 0 degrees
-    private float numTwo; // right fly up, left fly down
-    private float numThree; // left fly down
+    public float numOne; // right fly up at 0 degrees
+    public float numTwo; // right fly up, left fly down
+    public float numThree; // left fly down
     private float error = 2f / 40f;
     private float flySize = 1f / 40f;
     
@@ -33,8 +33,11 @@ public class LockerCombo : MonoBehaviour
 
         if (checkCombo())
         {
+            print("yeehaw");
             // Do something when solved
         }
+        
+       
     }
 
     // Rotation of next wheel once they have locked together
@@ -109,7 +112,7 @@ public class LockerCombo : MonoBehaviour
 
     float position()
     {
-        return transform.localRotation.eulerAngles.x;
+        return transform.localRotation.eulerAngles.x / 360f;
     }
 
     bool checkCombo()
