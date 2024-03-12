@@ -7,7 +7,6 @@ public class blowTorch : MonoBehaviour
 
     public GameObject player;
     public GameObject fire;
-    public bool extuingisherOn;
     GarlicKnot garlicKnot;
     // Start is called before the first frame update
     void Start()
@@ -22,13 +21,11 @@ public class blowTorch : MonoBehaviour
         {
             print("L key is down");
             fire.SetActive(true);
-            extuingisherOn = true;
         }
         if (Input.GetKeyDown(KeyCode.K))
         {
             print("K key is down");
             fire.SetActive(false);
-            extuingisherOn = false;
         }
 
     }

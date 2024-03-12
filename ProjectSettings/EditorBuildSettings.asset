@@ -5,8 +5,28 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
+  - enabled: 0
+    path: Assets/Game/Cold Room.unity
+    guid: c4f37b9c9301d413ca0f919cdb319130
+  - enabled: 0
+    path: Assets/Game/Kitchen2.unity
+    guid: e0b702d2b7436474192e5410dab41b01
+  - enabled: 0
+    path: Assets/Vedika/Scenes/LoadingNewScenes/ThirdScene.unity
+    guid: 5855331b789d04b5e9ce66ebd16c1702
   - enabled: 1
-    path: Assets/Scenes/EscapeRoom.unity
-    guid: 4088a16c2d8fc4cdf8a1a9975442637e
+    path: Assets/Game/Dining Room 2.unity
+    guid: 406c0ba45d2274af59d6f51d3a11c0ce
+  - enabled: 0
+    path: Assets/Game/Dining Room.unity
+    guid: 5859a0f8f1b5d4fc086ced1258f1e715
+  - enabled: 0
+    path: Assets/Game/Kitchen.unity
+    guid: f6351b2685336460f84ac4a5caf33fe5
   m_configObjects:
-    com.unity.xr.openxr.settings4: {fileID: 11400000, guid: c3bb2dce12ed44b5da26f2862b9b2084, type: 2}
+    Unity.XR.Oculus.Settings: {fileID: 11400000, guid: bfa1182bd221b4ca89619141f66f1260, type: 2}
+    Unity.XR.WindowsMR.Settings: {fileID: 11400000, guid: dc5a169419fa04987b057f65238cf3ba, type: 2}
+    UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 9bec1ce6a03ccba4b9a8215241b32e63, type: 2}
+    UnityEditor.XR.ARKit.ARKitSettings: {fileID: 11400000, guid: a49cadc1a815591479693b955ccf08c1, type: 2}
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 1a4c68ca72a83449f938d669337cb305, type: 2}
+    com.unity.xr.openxr.settings4: {fileID: 11400000, guid: a9a6963505ddf7f4d886008c6dc86122, type: 2}
