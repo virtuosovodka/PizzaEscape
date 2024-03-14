@@ -34,6 +34,10 @@ TagManager:
   - 7
   - 8
   - 9
+  - pepperoni
+  - mushroom
+  - pineapple
+  - ham
   layers:
   - Default
   - TransparentFX
