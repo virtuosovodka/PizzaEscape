@@ -60,11 +60,11 @@ public class GameManager : MonoBehaviour
             timer += Time.deltaTime;
             isSecondLevel = true;
         }
-        else if (kitchenDoor || Input.GetButtonDown("XRI_Right_PrimaryButton"))
+        else if (keyboardPlayed || Input.GetButtonDown("XRI_Right_PrimaryButton"))
         {
             isThirdLevel = true;
         }
-        else if (keyboardPlayed || Input.GetButtonDown("XRI_Left_SecondaryButton"))
+        else if (Input.GetButtonDown("XRI_Left_SecondaryButton"))
         {
             //release the pizza monster
         }

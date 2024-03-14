@@ -5,13 +5,12 @@ using UnityEngine;
 using TMPro;
 
 public class PianoKeySounds : MonoBehaviour
-
 {
     public string[] password = new string[3] { "G", "C", "E" };
-    public List<string> IPK = new List<string>();
-    public string[] keylist = new string[3];
+    public List<string> ipk = new List<string>();
+    public string[] keyList = new string[3];
     public TextMeshProUGUI text;
-    bool enterLoop = true;
+    //bool enterLoop = true;
     //IPk, stands for Input Keys.
     public GameObject piano;
     public AudioSource C;
@@ -31,99 +30,59 @@ public class PianoKeySounds : MonoBehaviour
 
     private void Update()
     {
-        
-        if (enterLoop)
+        print(ipk.Count);
+        print(ipk);
+        text.text = "" + ipk.Count;
+        if (ipk.Count >= 3)
         {
-            if (IPK.Count >= 3)
-            {
-                Compare(password, keylist);
-                keylist = IPK.GetRange(IPK.Count - 3, 3).ToArray();
-                //(GetRange(index,Count)
-                /*keylist = new string[IPK.Count];
-
-
-                 for (int i = 0; i < IPK.Count; i++)
-                 {
-                     keylist[i] = IPK[IPK.Count - 3+i];
-
-                     if (i == IPK.Count - 1)
-                     {
-
-                         bool success = compare(password, keylist);
-                         print(success);
-                         Debug.Log(keylist[0] + "" + keylist[1] + "" + keylist[2] );
-
-                         enterLoop = false;
-
-                     }
-                 }
-
-                 IPK[0] = IPK[1];
-                 IPK[1] = IPK[2];
-                 IPK.RemoveAt(2);
-
-               if (compare)
-                 {
-                     Debug.Log("Success");
-                 }
-             }*/
-
-
-
-            }
-
+            keyList = ipk.GetRange(ipk.Count - 3, 3).ToArray();
+            Compare(password, keyList);
         }
     }
-    public void C_play()
+    private void C_play()
     {
         C.Play();
-        IPK.Add("C");
-        print("C");
+        ipk.Add("C");
         text.text = "C Pressed!";
     }
-    public void D_play()
+    private void D_play()
     {
         D.Play();
-        IPK.Add("D");
-        print("D");
+        ipk.Add("D");
         text.text = "D Pressed!";
     }
-    public void E_play()
+    private void E_play()
     {
         E.Play();
-        IPK.Add("E");
-        print("E");
+        ipk.Add("E");
         text.text = "E Pressed!";
     }
-    public void F_play()
+    private void F_play()
     {
         F.Play();
-        IPK.Add("F");
-        print("F");
+        ipk.Add("F");
         text.text = "F Pressed!";
     }
-    public void G_play()
+    private void G_play()
     {
         G.Play();
-        IPK.Add("G");
-        print("G");
+        ipk.Add("G");
         text.text = "G Pressed!";
     }
-    public void A_play()
+    private void A_play()
     {
         A.Play();
-        IPK.Add("A");
-        print("A");
+        ipk.Add("A");
         text.text = "A Pressed!";
 
     }
-    public void B_play()
+    private void B_play()
     {
         B.Play();
-        IPK.Add("B");
-        print("B");
+        ipk.Add("B");
         text.text = "B Pressed!";
     }
+    
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("C"))
@@ -154,28 +113,7 @@ public class PianoKeySounds : MonoBehaviour
         {
             B_play();
         }
-        else
-        {
-            text.text = ":)";
-        }
     }
-
-   /*string[] Convert(List<string> list)
-    {
-        
-        if (list.Count == password.Length)
-        {
-            //list.FindLast();
-            keylist = list.ToArray();
-        }
-        else
-        {
-            keylist = null;
-        }
-        return keylist;
-    }*/
-   
-    
 
     void Compare (string[] password, string[] keylist)
     {
