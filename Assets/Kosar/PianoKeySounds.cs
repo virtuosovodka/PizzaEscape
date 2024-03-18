@@ -6,9 +6,8 @@ using TMPro;
 
 public class PianoKeySounds : MonoBehaviour
 {
-    public string[] password = new string[3] { "G", "C", "E" };
+    public List<string> password = new List<string>(){ "G", "C", "E" };
     public List<string> ipk = new List<string>();
-    public string[] keyList = new string[3];
     public TextMeshProUGUI text;
     //bool enterLoop = true;
     //IPk, stands for Input Keys.
@@ -25,62 +24,71 @@ public class PianoKeySounds : MonoBehaviour
     // Start is called before the first frame update
     public void Start()
     {
-        gm = FindObjectOfType<GameManager>();
+        if (password[0] == ipk[0] && password[1] == ipk[1] && password[2] == ipk[2])
+        {
+            //gm.keyboardPlayed = true;
+            print(true);
+        }
+        else
+        {
+            //gm.keyboardPlayed = false;
+            print(false);
+        }
     }
 
     private void Update()
     {
-        print(ipk.Count);
-        print(ipk);
-        text.text = "" + ipk.Count;
-        if (ipk.Count >= 3)
-        {
-            keyList = ipk.GetRange(ipk.Count - 3, 3).ToArray();
-            Compare(password, keyList);
-        }
+        Compare(password, ipk);
     }
     private void C_play()
     {
         C.Play();
-        ipk.Add("C");
-        text.text = "C Pressed!";
+        ipk.Insert(0, "C");
+        //text.text = "C Pressed!";
+        Compare(password, ipk);
     }
     private void D_play()
     {
         D.Play();
-        ipk.Add("D");
-        text.text = "D Pressed!";
+        ipk.Insert(0, "D");
+        //text.text = "D Pressed!";
+        Compare(password, ipk);
     }
     private void E_play()
     {
         E.Play();
-        ipk.Add("E");
-        text.text = "E Pressed!";
+        ipk.Insert(0, "E");
+        //text.text = "E Pressed!";
+        Compare(password, ipk);
     }
     private void F_play()
     {
         F.Play();
-        ipk.Add("F");
-        text.text = "F Pressed!";
+        ipk.Insert(0, "F");
+        //text.text = "F Pressed!";
+        Compare(password, ipk);
     }
     private void G_play()
     {
         G.Play();
-        ipk.Add("G");
-        text.text = "G Pressed!";
+        ipk.Insert(0, "G");
+        //text.text = "G Pressed!";
+        Compare(password, ipk);
     }
     private void A_play()
     {
         A.Play();
-        ipk.Add("A");
-        text.text = "A Pressed!";
+        ipk.Insert(0, "A");
+        //text.text = "A Pressed!";
+        Compare(password, ipk);
 
     }
     private void B_play()
     {
         B.Play();
-        ipk.Add("B");
-        text.text = "B Pressed!";
+        ipk.Insert(0, "B");
+        //text.text = "B Pressed!";
+        Compare(password, ipk);
     }
     
     private void OnCollisionEnter(Collision collision)
@@ -115,15 +123,22 @@ public class PianoKeySounds : MonoBehaviour
         }
     }
 
-    void Compare (string[] password, string[] keylist)
+    void Compare (List<string> password, List<string> keyList)
     {
-        if (password[0] == keylist[0] && password[1] == keylist[1] && password[2] == keylist[2])
+        if (keyList.Count < 3)
+        {
+            return;
+        }
+
+        if (password[0] == keyList[0] && password[1] == keyList[1] && password[2] == keyList[2])
         {
             gm.keyboardPlayed = true;
+            print(true);
         }
         else
         {
             gm.keyboardPlayed = false;
+            print(false);
         }
     }
     
