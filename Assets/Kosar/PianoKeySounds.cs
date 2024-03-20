@@ -11,7 +11,7 @@ public class PianoKeySounds : MonoBehaviour
     public TextMeshProUGUI text;
     //bool enterLoop = true;
     //IPk, stands for Input Keys.
-    public GameObject piano;
+    //public GameObject piano;
     public AudioSource C;
     public AudioSource D;
     public AudioSource E;
@@ -20,26 +20,7 @@ public class PianoKeySounds : MonoBehaviour
     public AudioSource A;
     public AudioSource B;
     public GameManager gm;
-    
-    // Start is called before the first frame update
-    public void Start()
-    {
-        if (password[0] == ipk[0] && password[1] == ipk[1] && password[2] == ipk[2])
-        {
-            //gm.keyboardPlayed = true;
-            print(true);
-        }
-        else
-        {
-            //gm.keyboardPlayed = false;
-            print(false);
-        }
-    }
 
-    private void Update()
-    {
-        Compare(password, ipk);
-    }
     private void C_play()
     {
         C.Play();
@@ -133,12 +114,12 @@ public class PianoKeySounds : MonoBehaviour
         if (password[0] == keyList[0] && password[1] == keyList[1] && password[2] == keyList[2])
         {
             gm.keyboardPlayed = true;
-            print(true);
+            text.text = "True";
         }
         else
         {
             gm.keyboardPlayed = false;
-            print(false);
+            text.text = "False";
         }
     }
     

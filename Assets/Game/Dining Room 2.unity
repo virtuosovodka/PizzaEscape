@@ -4292,12 +4292,7 @@ MonoBehaviour:
   - C
   - E
   ipk: []
-  keyList:
-  - 
-  - 
-  - 
   text: {fileID: 0}
-  piano: {fileID: 0}
   C: {fileID: 358032740}
   D: {fileID: 1189141656}
   E: {fileID: 919685966}
@@ -6648,12 +6643,7 @@ MonoBehaviour:
   - C
   - E
   ipk: []
-  keyList:
-  - 
-  - 
-  - 
   text: {fileID: 1022720486}
-  piano: {fileID: 0}
   C: {fileID: 146215125}
   D: {fileID: 289227827}
   E: {fileID: 1951374815}
@@ -7939,12 +7929,7 @@ MonoBehaviour:
   - C
   - E
   ipk: []
-  keyList:
-  - 
-  - 
-  - 
-  text: {fileID: 0}
-  piano: {fileID: 0}
+  text: {fileID: 1022720486}
   C: {fileID: 146215125}
   D: {fileID: 289227827}
   E: {fileID: 1951374815}
@@ -10165,12 +10150,7 @@ MonoBehaviour:
   - C
   - E
   ipk: []
-  keyList:
-  - 
-  - 
-  - 
   text: {fileID: 1022720486}
-  piano: {fileID: 0}
   C: {fileID: 146215125}
   D: {fileID: 289227827}
   E: {fileID: 1951374815}

@@ -2522,9 +2522,9 @@ MonoBehaviour:
   - G
   - C
   - E
-  IPK: []
-  keylist: []
-  Pinao: {fileID: 0}
+  ipk: []
+  text: {fileID: 0}
+  piano: {fileID: 0}
   C: {fileID: 1420489673}
   D: {fileID: 334033014}
   E: {fileID: 1132171046}
@@ -2532,6 +2532,7 @@ MonoBehaviour:
   G: {fileID: 1017468059}
   A: {fileID: 611792410}
   B: {fileID: 1503462123}
+  gm: {fileID: 0}
 --- !u!54 &1321815578
 Rigidbody:
   m_ObjectHideFlags: 0
