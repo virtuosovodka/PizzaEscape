@@ -2437,9 +2437,8 @@ MonoBehaviour:
   - G
   - C
   - E
-  IPK: []
-  keylist: []
-  piano: {fileID: 0}
+  ipk: []
+  text: {fileID: 0}
   C: {fileID: 1420489673}
   D: {fileID: 334033014}
   E: {fileID: 1132171046}
