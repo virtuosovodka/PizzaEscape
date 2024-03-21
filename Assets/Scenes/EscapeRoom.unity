@@ -2348,7 +2348,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1903279499}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: DoorKitchen, Assembly-CSharp
         m_MethodName: AddDigit
         m_Mode: 5
@@ -2411,7 +2411,7 @@ GameObject:
   - component: {fileID: 337840198}
   m_Layer: 5
   m_Name: Text (TMP)
-  m_TagString: Untagged
+  m_TagString: 0
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2778,7 +2778,7 @@ MonoBehaviour:
   mainObject: {fileID: 648655030}
   timerOn: 0
   delay: 0.3
-  doorKitchen: {fileID: 1903279499}
+  doorKitchen: {fileID: 0}
 --- !u!65 &420072570
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7784,7 +7784,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1903279499}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: DoorKitchen, Assembly-CSharp
         m_MethodName: AddDigit
         m_Mode: 5
@@ -7889,17 +7889,33 @@ PrefabInstance:
       propertyPath: m_Radius
       value: 0.2
       objectReference: {fileID: 0}
+    - target: {fileID: 3194355772462353664, guid: 71d00e0c8f4944f25b605bd8fdcf0cfe, type: 3}
+      propertyPath: m_Radius
+      value: 0.5708436
+      objectReference: {fileID: 0}
+    - target: {fileID: 3194355772462353664, guid: 71d00e0c8f4944f25b605bd8fdcf0cfe, type: 3}
+      propertyPath: m_Center.x
+      value: 0.03486686
+      objectReference: {fileID: 0}
+    - target: {fileID: 3194355772462353664, guid: 71d00e0c8f4944f25b605bd8fdcf0cfe, type: 3}
+      propertyPath: m_Center.y
+      value: 0.00002980235
+      objectReference: {fileID: 0}
+    - target: {fileID: 3194355772462353664, guid: 71d00e0c8f4944f25b605bd8fdcf0cfe, type: 3}
+      propertyPath: m_Center.z
+      value: -0.000030547057
+      objectReference: {fileID: 0}
     - target: {fileID: 4736739424615509372, guid: 71d00e0c8f4944f25b605bd8fdcf0cfe, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 24.834
+      value: 26.092
       objectReference: {fileID: 0}
     - target: {fileID: 4736739424615509372, guid: 71d00e0c8f4944f25b605bd8fdcf0cfe, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.576
+      value: 1.667
       objectReference: {fileID: 0}
     - target: {fileID: 4736739424615509372, guid: 71d00e0c8f4944f25b605bd8fdcf0cfe, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.317
+      value: 2.395
       objectReference: {fileID: 0}
     - target: {fileID: 4736739424615509372, guid: 71d00e0c8f4944f25b605bd8fdcf0cfe, type: 3}
       propertyPath: m_LocalRotation.w
@@ -9403,7 +9419,7 @@ MonoBehaviour:
   mainObject: {fileID: 1351815012}
   timerOn: 0
   delay: 0.3
-  doorKitchen: {fileID: 1903279499}
+  doorKitchen: {fileID: 0}
 --- !u!65 &665191238
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10701,7 +10717,7 @@ MonoBehaviour:
   mainObject: {fileID: 346935375}
   timerOn: 0
   delay: 0.3
-  doorKitchen: {fileID: 1903279499}
+  doorKitchen: {fileID: 0}
 --- !u!65 &837289386
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10717,7 +10733,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -11485,7 +11501,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
-  - {fileID: 1903279497}
   - {fileID: 1814688981}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -11572,7 +11587,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1903279499}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: DoorKitchen, Assembly-CSharp
         m_MethodName: AddDigit
         m_Mode: 5
@@ -12246,7 +12261,7 @@ MonoBehaviour:
   mainObject: {fileID: 1120564892}
   timerOn: 0
   delay: 0.3
-  doorKitchen: {fileID: 1903279499}
+  doorKitchen: {fileID: 0}
 --- !u!65 &1027294429
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12576,7 +12591,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1903279499}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: DoorKitchen, Assembly-CSharp
         m_MethodName: AddDigit
         m_Mode: 5
@@ -12709,7 +12724,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1903279499}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: DoorKitchen, Assembly-CSharp
         m_MethodName: AddDigit
         m_Mode: 5
@@ -13627,7 +13642,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1903279499}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: DoorKitchen, Assembly-CSharp
         m_MethodName: AddDigit
         m_Mode: 5
@@ -15148,7 +15163,7 @@ MonoBehaviour:
   mainObject: {fileID: 1446801950}
   timerOn: 0
   delay: 0.3
-  doorKitchen: {fileID: 1903279499}
+  doorKitchen: {fileID: 0}
 --- !u!54 &1446801956
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -15219,7 +15234,7 @@ MonoBehaviour:
   mainObject: {fileID: 585047799}
   timerOn: 0
   delay: 0.3
-  doorKitchen: {fileID: 1903279499}
+  doorKitchen: {fileID: 0}
 --- !u!65 &1457642488
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15524,7 +15539,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1903279499}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: DoorKitchen, Assembly-CSharp
         m_MethodName: AddDigit
         m_Mode: 5
@@ -16325,7 +16340,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1609180306
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16333,7 +16348,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1609180305}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
   m_Name: 
@@ -16353,7 +16368,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1609180305}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
   m_Name: 
@@ -17489,7 +17504,7 @@ MonoBehaviour:
   mainObject: {fileID: 1551641822}
   timerOn: 0
   delay: 0.3
-  doorKitchen: {fileID: 1903279499}
+  doorKitchen: {fileID: 0}
 --- !u!65 &1748836845
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18191,7 +18206,7 @@ MonoBehaviour:
   mainObject: {fileID: 1840563408}
   timerOn: 0
   delay: 0.3
-  doorKitchen: {fileID: 1903279499}
+  doorKitchen: {fileID: 0}
 --- !u!65 &1840563412
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -23392,7 +23407,7 @@ MonoBehaviour:
   mainObject: {fileID: 1003760064}
   timerOn: 0
   delay: 0.3
-  doorKitchen: {fileID: 1903279499}
+  doorKitchen: {fileID: 0}
 --- !u!65 &1889206720
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -23670,7 +23685,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1903279499}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: DoorKitchen, Assembly-CSharp
         m_MethodName: AddDigit
         m_Mode: 5
@@ -23720,166 +23735,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1898309898}
   m_CullTransparentMesh: 1
---- !u!1 &1903279493
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1903279497}
-  - component: {fileID: 1903279496}
-  - component: {fileID: 1903279495}
-  - component: {fileID: 1903279494}
-  - component: {fileID: 1903279498}
-  - component: {fileID: 1903279499}
-  m_Layer: 0
-  m_Name: Door
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!65 &1903279494
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1903279493}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!23 &1903279495
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1903279493}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 7d7b2de5c1a0b481bb3402c53fae25c5, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &1903279496
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1903279493}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &1903279497
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1903279493}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0.095998764, y: 1.0450001, z: -0.59000003}
-  m_LocalScale: {x: 1.1875005, y: 2.19, z: 0.15000007}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 983023364}
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
---- !u!54 &1903279498
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1903279493}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 0
---- !u!114 &1903279499
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1903279493}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 693a21b8225174dfe9293e2a74d63465, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  door: {fileID: 1903279493}
-  openDoor: 0
-  clockScript: {fileID: 0}
-  button1: {fileID: 1930588112}
-  codeText: {fileID: 33023905}
-  codeTextValue: 
-  doorCode: 1012
-  codePanel: {fileID: 1786158530}
-  addingDig: 0
-  freezePos: 1
-  freezeOthers: 1
-  doorRotate1: {fileID: 983023363}
-  doorRotate2: {fileID: 111386198}
-  gm: {fileID: 0}
 --- !u!1 &1928845180
 GameObject:
   m_ObjectHideFlags: 0
@@ -23963,7 +23818,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1903279499}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: DoorKitchen, Assembly-CSharp
         m_MethodName: AddDigit
         m_Mode: 5
@@ -24096,7 +23951,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1903279499}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: DoorKitchen, Assembly-CSharp
         m_MethodName: AddDigit
         m_Mode: 5
@@ -24527,7 +24382,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1903279499}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: DoorKitchen, Assembly-CSharp
         m_MethodName: AddDigit
         m_Mode: 5
@@ -25208,7 +25063,7 @@ MonoBehaviour:
   mainObject: {fileID: 927358057}
   timerOn: 0
   delay: 0.3
-  doorKitchen: {fileID: 1903279499}
+  doorKitchen: {fileID: 0}
 --- !u!65 &2121489932
 BoxCollider:
   m_ObjectHideFlags: 0

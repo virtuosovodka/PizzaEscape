@@ -76,15 +76,19 @@ public class DoorKitchen : MonoBehaviour
 
         //print(int.Parse(clockScript.theCode)+int.Parse(codeTextValue));
         //print(codeTextValue);
-       
 
-        if (((int.Parse(clockScript.theCode)+tolerance) >= int.Parse(codeTextValue)&& (int.Parse(clockScript.theCode) - tolerance)<= int.Parse(codeTextValue))) {
+        if (codeTextValue.Length == 4)
+        {
+            if (((int.Parse(clockScript.theCode) + tolerance) >= int.Parse(codeTextValue) && (int.Parse(clockScript.theCode) - tolerance) <= int.Parse(codeTextValue)))
+            {
 
-            //codeTextValue >= clockScript.theCode.int.Parse -8 && codeTextValue <= clockScript.theCode ++ 8
-            //DO THIS NEXT CLASS CONVERT TO INTEGER
-            //also figure out the issue with templayer chasing bool
-            //its working !!!!
-            openDoor = true;
+                //codeTextValue >= clockScript.theCode.int.Parse -8 && codeTextValue <= clockScript.theCode ++ 8
+                //DO THIS NEXT CLASS CONVERT TO INTEGER
+                //also figure out the issue with templayer chasing bool
+                //its working !!!!
+                openDoor = true;
+            }
+
         }
 
         if(codeTextValue.Length >= 5)

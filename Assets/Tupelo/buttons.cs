@@ -38,15 +38,15 @@ public class buttons : MonoBehaviour
     
     private void OnTriggerEnter(Collider collision)
     {
-        print("triggered " +collision.gameObject.name); 
+        
         if (collision.gameObject.CompareTag("player") && timerOne > delay)
         {
+            print("triggered " + collision.gameObject.name);
             timerOne = 0f;
             if (mainObject.tag == "0" )
             {
                 doorKitchen.AddDigit("0");
                 
-               
                 //mainObject.SetActive(false);
             }
             if (mainObject.tag == "1")
