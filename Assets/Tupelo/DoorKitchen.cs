@@ -40,6 +40,7 @@ public class DoorKitchen : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        doorRigid.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionY;
         if (openDoor)
         {
             doorRigid.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionY;
@@ -132,7 +133,8 @@ public class DoorKitchen : MonoBehaviour
     public void AddDigit(string digit)
     {
         codeTextValue += digit;
-        print("itar is working");
+
+        print(codeTextValue);
         
     }
     //private void OnCollisionEnter(Collision collision)
