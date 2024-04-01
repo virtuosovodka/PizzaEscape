@@ -9,9 +9,7 @@ public class PianoKeySounds : MonoBehaviour
     public List<string> password = new List<string>(){ "G", "C", "E" };
     public List<string> ipk = new List<string>();
     public TextMeshProUGUI text;
-    //bool enterLoop = true;
     //IPk, stands for Input Keys.
-    //public GameObject piano;
     public AudioSource C;
     public AudioSource D;
     public AudioSource E;
@@ -20,6 +18,11 @@ public class PianoKeySounds : MonoBehaviour
     public AudioSource A;
     public AudioSource B;
     public GameManager gm;
+    public bool notePlayed;
+
+    private void Update()
+    {
+    }
 
     private void C_play()
     {
@@ -74,34 +77,44 @@ public class PianoKeySounds : MonoBehaviour
     
     private void OnTriggerEnter(Collider collision)
     {
-        if (collision.gameObject.CompareTag("C"))
+        //if one note is played wait until trigger is over to play next note?
+        if (!notePlayed)
         {
-            C_play();
+            if (collision.gameObject.CompareTag("C"))
+            {
+                C_play();
+            }
+            else if (collision.gameObject.CompareTag("D"))
+            {
+                D_play();
+            }
+            else if (collision.gameObject.CompareTag("E"))
+            {
+                E_play();
+            }
+            else if (collision.gameObject.CompareTag("F"))
+            {
+                F_play();
+            }
+            else if (collision.gameObject.CompareTag("G"))
+            {
+                G_play();
+            }
+            else if (collision.gameObject.CompareTag("A"))
+            {
+                A_play();
+            }
+            else if (collision.gameObject.CompareTag("B"))
+            {
+                B_play();
+            }
+            notePlayed = true;
         }
-        else if (collision.gameObject.CompareTag("D"))
-        {
-            D_play();
-        }
-        else if (collision.gameObject.CompareTag("E"))
-        {
-            E_play();
-        }
-        else if (collision.gameObject.CompareTag("F"))
-        {
-            F_play();
-        }
-        else if (collision.gameObject.CompareTag("G"))
-        {
-            G_play();
-        }
-        else if (collision.gameObject.CompareTag("A"))
-        {
-            A_play();
-        }
-        else if (collision.gameObject.CompareTag("B"))
-        {
-            B_play();
-        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        notePlayed = false;
     }
 
     void Compare (List<string> password, List<string> keyList)
@@ -111,7 +124,7 @@ public class PianoKeySounds : MonoBehaviour
             return;
         }
 
-        if (password[0] == keyList[0] && password[1] == keyList[1] && password[2] == keyList[2])
+        if (password[0] == keyList[2] && password[1] == keyList[1] && password[2] == keyList[0])
         {
             gm.keyboardPlayed = true;
             text.text = "True";
