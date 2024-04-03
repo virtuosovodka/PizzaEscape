@@ -1357,7 +1357,7 @@ PrefabInstance:
     - target: {fileID: 2005229715816757442, guid: e03c6ed4b8e624fee9b1b463b7cf5f7e, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 2e5acbb98b8fb41efb841c94153da7a8, type: 2}
+      objectReference: {fileID: 2100000, guid: b6a8f1ce265b24902bf78e7462a178ca, type: 2}
     - target: {fileID: 2226256450759356391, guid: e03c6ed4b8e624fee9b1b463b7cf5f7e, type: 3}
       propertyPath: m_Name
       value: Celing
@@ -1417,6 +1417,10 @@ PrefabInstance:
     - target: {fileID: 4365148799288872377, guid: e03c6ed4b8e624fee9b1b463b7cf5f7e, type: 3}
       propertyPath: m_LocalPosition.z
       value: -4.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5769484663829117588, guid: e03c6ed4b8e624fee9b1b463b7cf5f7e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6124318214771875837, guid: e03c6ed4b8e624fee9b1b463b7cf5f7e, type: 3}
       propertyPath: m_Materials.Array.data[0]

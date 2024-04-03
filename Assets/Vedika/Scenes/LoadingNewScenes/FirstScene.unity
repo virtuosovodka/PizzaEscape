@@ -628,6 +628,7 @@ MonoBehaviour:
   endColor: {r: 0, g: 0, b: 0, a: 0}
   speed: 0
   startTime: 0
+  doorHinge: {fileID: 0}
 --- !u!1 &104569806
 GameObject:
   m_ObjectHideFlags: 0
@@ -2229,6 +2230,7 @@ MonoBehaviour:
   endColor: {r: 0, g: 0, b: 0, a: 0}
   speed: 0
   startTime: 0
+  doorHinge: {fileID: 0}
 --- !u!4 &265117546 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 753309369052854188, guid: c3bc422dd3f8349f78ba70b1885600cf, type: 3}
@@ -2339,6 +2341,7 @@ MonoBehaviour:
   endColor: {r: 0, g: 0, b: 0, a: 0}
   speed: 0
   startTime: 0
+  doorHinge: {fileID: 0}
 --- !u!1001 &296880119
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5313,6 +5316,7 @@ MonoBehaviour:
   endColor: {r: 0, g: 0, b: 0, a: 0}
   speed: 0
   startTime: 0
+  doorHinge: {fileID: 0}
 --- !u!1 &880230369
 GameObject:
   m_ObjectHideFlags: 0
@@ -5605,6 +5609,7 @@ MonoBehaviour:
   endColor: {r: 0, g: 0, b: 0, a: 0}
   speed: 0
   startTime: 0
+  doorHinge: {fileID: 0}
 --- !u!1001 &981723114
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8105,6 +8110,7 @@ MonoBehaviour:
   endColor: {r: 0, g: 0, b: 0, a: 0}
   speed: 0
   startTime: 0
+  doorHinge: {fileID: 0}
 --- !u!1 &1291613105
 GameObject:
   m_ObjectHideFlags: 0
@@ -8553,6 +8559,7 @@ MonoBehaviour:
   endColor: {r: 0, g: 0, b: 0, a: 0}
   speed: 0
   startTime: 0
+  doorHinge: {fileID: 0}
 --- !u!1001 &1339856395
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9017,6 +9024,7 @@ MonoBehaviour:
   endColor: {r: 0, g: 0, b: 0, a: 0}
   speed: 0
   startTime: 0
+  doorHinge: {fileID: 0}
 --- !u!4 &1421687792 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1542065273509741053, guid: 2a600560dcccd4e928d72dd7f41b9b0a, type: 3}
@@ -9283,11 +9291,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 299547a5233ca47ca82f756cdefede86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isFourthLevel: 0
   isSecondLevel: 0
   isThirdLevel: 0
   isFirstLevel: 0
   timer: 0
   doughPlacement: 0
+  kitchenDoor: 0
+  keyboardPlayed: 0
 --- !u!4 &1480705953
 Transform:
   m_ObjectHideFlags: 0
@@ -10116,6 +10127,7 @@ MonoBehaviour:
   endColor: {r: 0, g: 0, b: 0, a: 0}
   speed: 0
   startTime: 0
+  doorHinge: {fileID: 0}
 --- !u!4 &1571140717 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6129614959116301728, guid: a0154a9366f3748a2ae91ad56c003bac, type: 3}
@@ -10300,6 +10312,7 @@ MonoBehaviour:
   endColor: {r: 0, g: 0, b: 0, a: 0}
   speed: 0
   startTime: 0
+  doorHinge: {fileID: 0}
 --- !u!1 &1596675397
 GameObject:
   m_ObjectHideFlags: 0
@@ -10703,6 +10716,7 @@ MonoBehaviour:
   endColor: {r: 0, g: 0, b: 0, a: 1}
   speed: 0.5
   startTime: 0
+  doorHinge: {fileID: 0}
 --- !u!54 &1612864403
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -12513,11 +12527,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 299547a5233ca47ca82f756cdefede86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isFourthLevel: 0
   isSecondLevel: 0
   isThirdLevel: 0
   isFirstLevel: 0
   timer: 0
   doughPlacement: 0
+  kitchenDoor: 0
+  keyboardPlayed: 0
 --- !u!4 &1991237180
 Transform:
   m_ObjectHideFlags: 0
@@ -13605,6 +13622,7 @@ MonoBehaviour:
   endColor: {r: 0, g: 0, b: 0, a: 0}
   speed: 0
   startTime: 0
+  doorHinge: {fileID: 0}
 --- !u!1 &2136690118
 GameObject:
   m_ObjectHideFlags: 0
@@ -13892,6 +13910,7 @@ MonoBehaviour:
   endColor: {r: 0, g: 0, b: 0, a: 0}
   speed: 0
   startTime: 0
+  doorHinge: {fileID: 0}
 --- !u!4 &759252924224817817 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1542065273509741053, guid: 2a600560dcccd4e928d72dd7f41b9b0a, type: 3}
@@ -14139,7 +14158,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3372673044911787551, guid: 073d4b4af6b594247be164a87a4de342, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.4657578
+      value: -0.886
       objectReference: {fileID: 0}
     - target: {fileID: 3372673044911787551, guid: 073d4b4af6b594247be164a87a4de342, type: 3}
       propertyPath: m_LocalRotation.w
