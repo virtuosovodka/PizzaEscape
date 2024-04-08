@@ -1,15 +1,18 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using UnityEngine;
 using TMPro;
 
 public class PianoKeySounds : MonoBehaviour
 {
-    public List<string> password = new List<string>(){ "G", "C", "E" };
+    public List<string> password = new List<string>(){ "G", "E", "C" };
     public List<string> ipk = new List<string>();
-    public TextMeshProUGUI text;
-    //IPk, stands for Input Keys.
+    
+    [SerializeField]
+    private TextMeshProUGUI text;
+    //IPK, stands for Input Keys.
     public AudioSource C;
     public AudioSource D;
     public AudioSource E;
@@ -18,10 +21,16 @@ public class PianoKeySounds : MonoBehaviour
     public AudioSource A;
     public AudioSource B;
     public GameManager gm;
-    public bool notePlayed;
 
-    private void Update()
+    public void Start()
     {
+        text.text = "hello this is for sure unique";
+    }
+
+    public void Update()
+    {
+        //text.text = ipk.ToString();
+        Compare(password, ipk);
     }
 
     private void C_play()
@@ -77,9 +86,6 @@ public class PianoKeySounds : MonoBehaviour
     
     private void OnTriggerEnter(Collider collision)
     {
-        //if one note is played wait until trigger is over to play next note?
-        if (!notePlayed)
-        {
             if (collision.gameObject.CompareTag("C"))
             {
                 C_play();
@@ -108,34 +114,31 @@ public class PianoKeySounds : MonoBehaviour
             {
                 B_play();
             }
-            notePlayed = true;
-        }
     }
 
-    private void OnTriggerExit(Collider other)
+    bool Compare(List<string> password, List<string> keyList)
     {
-        notePlayed = false;
-    }
-
-    void Compare (List<string> password, List<string> keyList)
-    {
-        if (keyList.Count < 3)
-        {
-            return;
-        }
-
-        if (password[0] == keyList[2] && password[1] == keyList[1] && password[2] == keyList[0])
-        {
-            gm.keyboardPlayed = true;
-            text.text = "True";
-        }
-        else
+        //text.text = "Number of keys in string: " + keyList.Count + " Keys in string: " + keyList[0] + keyList[1] + keyList[2];
+        if (keyList.Count < password.Count)
         {
             gm.keyboardPlayed = false;
-            text.text = "False";
+            text.text = "false";
+            return false;
         }
+
+        if (password[2] == keyList[2] && password[1] == keyList[1] && password[0] == keyList[0])
+        {
+            gm.keyboardPlayed = true;
+            text.text = "true";
+            return true;
+        }
+        
+        gm.keyboardPlayed = false;
+        text.text = "false";
+        return false;
+            
     }
-    
+
 }
    
 

@@ -737,7 +737,6 @@ MonoBehaviour:
   A: {fileID: 0}
   B: {fileID: 0}
   gm: {fileID: 0}
-  notePlayed: 0
 --- !u!65 &199419050
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4542,7 +4541,6 @@ MonoBehaviour:
   A: {fileID: 1849938005}
   B: {fileID: 2018639271}
   gm: {fileID: 0}
-  notePlayed: 0
 --- !u!54 &1093062910
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5887,7 +5885,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Text
+  m_text: :)
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -7028,7 +7026,6 @@ MonoBehaviour:
   A: {fileID: 1951541442}
   B: {fileID: 1584175272}
   gm: {fileID: 0}
-  notePlayed: 0
 --- !u!54 &1436488251
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -10388,8 +10385,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   password:
   - G
-  - C
   - E
+  - C
   ipk: []
   text: {fileID: 1227690423}
   C: {fileID: 146215125}
@@ -10400,7 +10397,6 @@ MonoBehaviour:
   A: {fileID: 1951541442}
   B: {fileID: 1584175272}
   gm: {fileID: 0}
-  notePlayed: 0
 --- !u!114 &2042517723
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10415,10 +10411,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   password:
   - G
-  - C
   - E
+  - C
   ipk: []
-  text: {fileID: 0}
+  text: {fileID: 1227690423}
   C: {fileID: 146215125}
   D: {fileID: 289227827}
   E: {fileID: 1951374815}
@@ -10427,7 +10423,6 @@ MonoBehaviour:
   A: {fileID: 1951541442}
   B: {fileID: 1584175272}
   gm: {fileID: 0}
-  notePlayed: 0
 --- !u!54 &2042517732
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -5,7 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
+  - enabled: 1
     path: Assets/Game/Cold Room.unity
     guid: c4f37b9c9301d413ca0f919cdb319130
   - enabled: 0
