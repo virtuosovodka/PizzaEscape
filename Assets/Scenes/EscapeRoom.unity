@@ -593,7 +593,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 693a21b8225174dfe9293e2a74d63465, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  door: {fileID: 79651550}
+  door1: {fileID: 1814688980}
+  door2: {fileID: 79651550}
   openDoor: 0
   clockScript: {fileID: 0}
   button1: {fileID: 1446801950}
@@ -2127,9 +2128,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 656d944af6e7043698d93497307661ed, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1814688983}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 656d944af6e7043698d93497307661ed, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1814688982}
   m_SourcePrefab: {fileID: 100100000, guid: 656d944af6e7043698d93497307661ed, type: 3}
 --- !u!1 &262555990
 GameObject:
@@ -7972,6 +7970,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4976036365760679584, guid: 71d00e0c8f4944f25b605bd8fdcf0cfe, type: 3}
       insertIndex: -1
       addedObject: {fileID: 661556928}
+    - targetCorrespondingSourceObject: {fileID: 4976036365760679584, guid: 71d00e0c8f4944f25b605bd8fdcf0cfe, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 661556933}
   m_SourcePrefab: {fileID: 100100000, guid: 71d00e0c8f4944f25b605bd8fdcf0cfe, type: 3}
 --- !u!1 &509763069
 GameObject:
@@ -8983,6 +8984,8 @@ MonoBehaviour:
   pizza2Done: 0
   pizza3Done: 0
   menuPiece2: {fileID: 1009106198}
+  hand: {fileID: 0}
+  handScript: {fileID: 0}
 --- !u!136 &647818575
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -9253,6 +9256,19 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5000001
   m_Center: {x: -0.000030517578, y: 0, z: -0.00024414062}
+--- !u!114 &661556933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 661556924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a811085d4ee4c453c993c9d56d0b02b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hand: {fileID: 661556924}
 --- !u!1 &664433931
 GameObject:
   m_ObjectHideFlags: 0
@@ -16442,6 +16458,8 @@ MonoBehaviour:
   pizza2Done: 0
   pizza3Done: 0
   menuPiece2: {fileID: 1009106198}
+  hand: {fileID: 661556924}
+  handScript: {fileID: 0}
 --- !u!136 &1648806106
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -18052,32 +18070,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 656d944af6e7043698d93497307661ed, type: 3}
   m_PrefabInstance: {fileID: 242475028}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1814688982
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1814688980}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 693a21b8225174dfe9293e2a74d63465, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  door: {fileID: 1814688980}
-  openDoor: 0
-  clockScript: {fileID: 0}
-  button1: {fileID: 1446801950}
-  codeText: {fileID: 33023905}
-  codeTextValue: 
-  doorCode: 
-  codePanel: {fileID: 1786158530}
-  addingDig: 0
-  freezePos: 1
-  freezeOthers: 1
-  doorRotate1: {fileID: 983023363}
-  doorRotate2: {fileID: 111386198}
-  gm: {fileID: 0}
 --- !u!54 &1814688983
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -23291,6 +23283,8 @@ MonoBehaviour:
   pizza2Done: 0
   pizza3Done: 0
   menuPiece2: {fileID: 1009106198}
+  hand: {fileID: 0}
+  handScript: {fileID: 0}
 --- !u!136 &1859809795
 CapsuleCollider:
   m_ObjectHideFlags: 0
