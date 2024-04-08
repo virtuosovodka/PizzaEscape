@@ -4,7 +4,8 @@ using UnityEngine;
 using TMPro;
 public class DoorKitchen : MonoBehaviour
 {
-    public GameObject door;
+    public GameObject door1;
+    public GameObject door2;
     public bool openDoor;
     private bool isAtDoor = false;
     public ClockScript clockScript;
@@ -17,7 +18,8 @@ public class DoorKitchen : MonoBehaviour
     int doorCodeInt;
     int tolerance = 8;
     public bool addingDig;
-    Rigidbody doorRigid;
+    Rigidbody doorRigid1;
+    Rigidbody doorRigid2;
     public bool freezePos = true;
     public bool freezeOthers = true;
     public GameObject doorRotate1;
@@ -26,6 +28,8 @@ public class DoorKitchen : MonoBehaviour
     float speed = .002f;
     bool rotating;
     public GameManager gm;
+    float swingTime = 4.3f;
+
 
 
     // Start is called before the first frame update
@@ -34,17 +38,20 @@ public class DoorKitchen : MonoBehaviour
         clockScript = GameObject.FindObjectOfType<ClockScript>();
         gm = FindObjectOfType<GameManager>();
         //addingDig = false;
-        doorRigid = door.GetComponent<Rigidbody>();
+        doorRigid1 = door1.GetComponent<Rigidbody>();
+        doorRigid2 = door2.GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        doorRigid.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionY;
+        doorRigid1.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionY;
+        doorRigid2.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionY;
         if (openDoor)
         {
-            doorRigid.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionY;
-
+            swingTime -= Time.deltaTime;
+            doorRigid1.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionY;
+            doorRigid2.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionY;
             rotating = true;
             if (rotating)
             {
@@ -56,6 +63,11 @@ public class DoorKitchen : MonoBehaviour
                 doorRotate2.transform.rotation = Quaternion.Lerp(startRotation2, targetRotation2, lerpDuration * speed);
                 lerpDuration = lerpDuration + Time.deltaTime;
                 print(doorRotate1.transform.rotation.y);
+                if (swingTime <= 0f)
+                {
+                    openDoor = false;
+                    print("TIMERS DONE");
+                }
                 if (doorRotate1.transform.rotation.y <= -.97 && doorRotate2.transform.rotation.y >= .97)
                 {
                     rotating = false;
@@ -65,13 +77,16 @@ public class DoorKitchen : MonoBehaviour
                     TODO: Vedika put in the timer for the room change here
                      */
                 }
+               
             }
         }
 
         
 
-        doorRigid.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezePositionZ| RigidbodyConstraints.FreezeRotation;
+        doorRigid1.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezePositionZ| RigidbodyConstraints.FreezeRotation;
+        doorRigid2.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotation;
         codeText.text = codeTextValue;
+        
         //codeTextValueInt = int.Parse(codeTextValue.Trim());
         //doorCodeInt = int.Parse(doorCode.Trim());
 
@@ -97,24 +112,24 @@ public class DoorKitchen : MonoBehaviour
             codeTextValue = "";
         }
 
-        if (openDoor)
-        {
-            doorRigid.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionY;
+        //if (openDoor)
+        //{
+        //    doorRigid1.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionY;
             
-            rotating = true;
-            //if (rotating)
-            //{
-            //    Quaternion startRotation = doorRotate1.transform.rotation;
-            //    Quaternion targetRotation = doorRotate1.transform.rotation * Quaternion.Euler(0, -90, 0);
-            //    doorRotate1.transform.rotation = Quaternion.Lerp(startRotation, targetRotation, lerpDuration * speed);
-            //    lerpDuration = lerpDuration + Time.deltaTime;
-            //    print(doorRotate1.transform.rotation.y);
-            //    if (doorRotate1.transform.rotation.y <= -.97)// || doorRotate1.transform.rotation == targetRotation)
-            //    {
-            //        rotating = false;
-            //    }
-            //}
-        }
+        //    rotating = true;
+        //    //if (rotating)
+        //    //{
+        //    //    Quaternion startRotation = doorRotate1.transform.rotation;
+        //    //    Quaternion targetRotation = doorRotate1.transform.rotation * Quaternion.Euler(0, -90, 0);
+        //    //    doorRotate1.transform.rotation = Quaternion.Lerp(startRotation, targetRotation, lerpDuration * speed);
+        //    //    lerpDuration = lerpDuration + Time.deltaTime;
+        //    //    print(doorRotate1.transform.rotation.y);
+        //    //    if (doorRotate1.transform.rotation.y <= -.97)// || doorRotate1.transform.rotation == targetRotation)
+        //    //    {
+        //    //        rotating = false;
+        //    //    }
+        //    //}
+        //}
 
         
     }

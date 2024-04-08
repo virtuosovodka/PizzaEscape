@@ -17,6 +17,8 @@ public class PizzaMaking : MonoBehaviour
     float printerSpeed = .02f;
     private float startTime;
     private float journeyLength;
+    public GameObject hand;
+    public Hand handScript;
     //lerp
   
 
@@ -24,6 +26,7 @@ public class PizzaMaking : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        handScript = FindObjectOfType<Hand>();
         menuPiece2.transform.position = startPosition;
         endPosition = new Vector3(18.62f, 2.66f, 3.97f);
         startPosition = new Vector3(18.62f, 2.42f, 3.63f);
@@ -60,9 +63,11 @@ public class PizzaMaking : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
+        
         if (collision.gameObject.CompareTag("pepperoni"))
         {
             pepperoniNumber = pepperoniNumber + 1;
+            handScript.transform.SetParent(null);
         }
         if (collision.gameObject.CompareTag("mushroom"))
         {
