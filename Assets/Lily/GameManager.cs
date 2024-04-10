@@ -52,7 +52,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (doughPlacement == 12 || Input.GetButton("XRI_Right_SecondaryButton"))
+        if (doughPlacement == 12 || Input.GetButton("XRI_Right_SecondaryButton") || Input.GetKey(KeyCode.A))
         {
             //delete when done testing
             doughPlacement = 12;

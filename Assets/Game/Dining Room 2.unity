@@ -421,6 +421,7 @@ GameObject:
   - component: {fileID: 146215123}
   - component: {fileID: 146215122}
   - component: {fileID: 146215125}
+  - component: {fileID: 146215126}
   m_Layer: 0
   m_Name: KeyC
   m_TagString: C
@@ -610,6 +611,16 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &146215126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79a37e93913874474b9b6803195cf434, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &184997946
 GameObject:
   m_ObjectHideFlags: 0
@@ -723,19 +734,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70560aa2ce4944fdaaad5959ced5da35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  password:
-  - G
-  - C
-  - E
-  ipk: []
   text: {fileID: 0}
-  C: {fileID: 0}
-  D: {fileID: 0}
-  E: {fileID: 0}
-  F: {fileID: 0}
-  G: {fileID: 0}
-  A: {fileID: 0}
-  B: {fileID: 0}
   gm: {fileID: 0}
 --- !u!65 &199419050
 BoxCollider:
@@ -1498,6 +1497,7 @@ GameObject:
   - component: {fileID: 289227825}
   - component: {fileID: 289227824}
   - component: {fileID: 289227827}
+  - component: {fileID: 289227828}
   m_Layer: 0
   m_Name: KeyD
   m_TagString: D
@@ -1687,6 +1687,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &289227828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 289227822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79a37e93913874474b9b6803195cf434, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &302041417
 GameObject:
   m_ObjectHideFlags: 0
@@ -4527,19 +4539,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70560aa2ce4944fdaaad5959ced5da35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  password:
-  - G
-  - C
-  - E
-  ipk: []
   text: {fileID: 0}
-  C: {fileID: 358032740}
-  D: {fileID: 1189141656}
-  E: {fileID: 919685966}
-  F: {fileID: 1092235782}
-  G: {fileID: 919381273}
-  A: {fileID: 1849938005}
-  B: {fileID: 2018639271}
   gm: {fileID: 0}
 --- !u!54 &1093062910
 Rigidbody:
@@ -6494,6 +6494,7 @@ GameObject:
   - component: {fileID: 1314688281}
   - component: {fileID: 1314688280}
   - component: {fileID: 1314688283}
+  - component: {fileID: 1314688284}
   m_Layer: 0
   m_Name: KeyF
   m_TagString: F
@@ -6683,6 +6684,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1314688284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1314688278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79a37e93913874474b9b6803195cf434, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1326693450
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7012,19 +7025,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70560aa2ce4944fdaaad5959ced5da35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  password:
-  - G
-  - C
-  - E
-  ipk: []
   text: {fileID: 1022720486}
-  C: {fileID: 146215125}
-  D: {fileID: 289227827}
-  E: {fileID: 1951374815}
-  F: {fileID: 1314688283}
-  G: {fileID: 1677680008}
-  A: {fileID: 1951541442}
-  B: {fileID: 1584175272}
   gm: {fileID: 0}
 --- !u!54 &1436488251
 Rigidbody:
@@ -7520,6 +7521,7 @@ GameObject:
   - component: {fileID: 1584175274}
   - component: {fileID: 1584175273}
   - component: {fileID: 1584175272}
+  - component: {fileID: 1584175277}
   m_Layer: 0
   m_Name: KeyB
   m_TagString: B
@@ -7709,6 +7711,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 581503219}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1584175277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1584175271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79a37e93913874474b9b6803195cf434, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1596675397
 GameObject:
   m_ObjectHideFlags: 0
@@ -8294,6 +8308,7 @@ GameObject:
   - component: {fileID: 1677680006}
   - component: {fileID: 1677680005}
   - component: {fileID: 1677680008}
+  - component: {fileID: 1677680009}
   m_Layer: 0
   m_Name: KeyG
   m_TagString: G
@@ -8483,6 +8498,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1677680009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1677680003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79a37e93913874474b9b6803195cf434, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1698044607
 GameObject:
   m_ObjectHideFlags: 0
@@ -9567,6 +9594,7 @@ GameObject:
   - component: {fileID: 1951374813}
   - component: {fileID: 1951374812}
   - component: {fileID: 1951374815}
+  - component: {fileID: 1951374816}
   m_Layer: 0
   m_Name: KeyE
   m_TagString: E
@@ -9756,6 +9784,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1951374816
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1951374810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79a37e93913874474b9b6803195cf434, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1951541437
 GameObject:
   m_ObjectHideFlags: 0
@@ -9769,6 +9809,7 @@ GameObject:
   - component: {fileID: 1951541440}
   - component: {fileID: 1951541439}
   - component: {fileID: 1951541442}
+  - component: {fileID: 1951541443}
   m_Layer: 0
   m_Name: KeyA
   m_TagString: A
@@ -9958,6 +9999,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1951541443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1951541437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79a37e93913874474b9b6803195cf434, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2018639270
 GameObject:
   m_ObjectHideFlags: 0
@@ -10383,19 +10436,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70560aa2ce4944fdaaad5959ced5da35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  password:
-  - G
-  - E
-  - C
-  ipk: []
   text: {fileID: 1227690423}
-  C: {fileID: 146215125}
-  D: {fileID: 289227827}
-  E: {fileID: 1951374815}
-  F: {fileID: 1314688283}
-  G: {fileID: 1677680008}
-  A: {fileID: 1951541442}
-  B: {fileID: 1584175272}
   gm: {fileID: 0}
 --- !u!114 &2042517723
 MonoBehaviour:
@@ -10409,19 +10450,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70560aa2ce4944fdaaad5959ced5da35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  password:
-  - G
-  - E
-  - C
-  ipk: []
   text: {fileID: 1227690423}
-  C: {fileID: 146215125}
-  D: {fileID: 289227827}
-  E: {fileID: 1951374815}
-  F: {fileID: 1314688283}
-  G: {fileID: 1677680008}
-  A: {fileID: 1951541442}
-  B: {fileID: 1584175272}
   gm: {fileID: 0}
 --- !u!54 &2042517732
 Rigidbody:
