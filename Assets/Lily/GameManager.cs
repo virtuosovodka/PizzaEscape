@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public bool isSecondLevel;
     public bool isThirdLevel;
     public bool isFirstLevel;
+    public bool pizzaMonsterRelease;
 
     public float timer;
     //public TextMeshProUGUI text;
@@ -54,19 +55,21 @@ public class GameManager : MonoBehaviour
     {
         if (doughPlacement == 12 || Input.GetButton("XRI_Right_SecondaryButton") || Input.GetKey(KeyCode.A))
         {
-            //delete when done testing
+            //second level starts (random cube)
             doughPlacement = 12;
             
             timer += Time.deltaTime;
             isSecondLevel = true;
         }
-        else if (keyboardPlayed || Input.GetButtonDown("XRI_Right_PrimaryButton"))
+        else if (Input.GetButtonDown("XRI_Right_PrimaryButton"))
         {
+            //random cube level should change into the pizza monster
+            //timer += Time.deltaTime;
             isThirdLevel = true;
         }
-        else if (Input.GetButtonDown("XRI_Left_SecondaryButton"))
+        else if (keyboardPlayed)// || Input.GetButtonDown("XRI_Left_SecondaryButton"))
         {
-            //release the pizza monster
+            pizzaMonsterRelease = true;
         }
         else if (Input.GetButtonDown("XRI_Left_PrimaryButton"))
         {

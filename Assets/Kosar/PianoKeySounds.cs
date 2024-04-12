@@ -11,9 +11,9 @@ public class PianoKeySounds : MonoBehaviour
 {
     private List<string> _password = new();
     private List<string> _ipk = new();
+    public LoadNewScene lns;
     
     [SerializeField]
-    public TextMeshProUGUI text;
 
     public GameManager gm;
 
@@ -21,6 +21,9 @@ public class PianoKeySounds : MonoBehaviour
     {
         _password = new List<string>(){ "G", "E", "C" };
         gm = FindObjectOfType<GameManager>();
+        lns = FindObjectOfType<LoadNewScene>();
+        lns.pizzaMonster.SetActive(false);
+        lns.pizzaMonsterText.text = "CEG";
     }
     
     private void OnTriggerEnter(Collider collision)
