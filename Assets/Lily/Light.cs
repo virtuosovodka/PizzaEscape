@@ -30,7 +30,7 @@ public class Light : MonoBehaviour
         buttonCoolDownTimer += Time.deltaTime;
     }
 
-    private void OnCollisionEnter(Collision other)
+    private void OnTriggerEnter(Collider other)
     {
         //If the object touching the light switch (object this script is attached to) is the player and the button
         //cool down timer is greater than 0.5 frames, set the button cool down timer to zero, change the value of 

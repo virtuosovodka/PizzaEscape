@@ -7,18 +7,18 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     
-    //Vedika
+    //this is how new scenes load
     public bool isFourthLevel;
     public bool isSecondLevel;
     public bool isThirdLevel;
     public bool isFirstLevel;
     public bool pizzaMonsterRelease;
-
-    public float timer;
     //public TextMeshProUGUI text;
     
-    //Coldroom
+    //Cold Room
     public int doughPlacement;
+    //used to open door in cold room 
+    public float timer;
     
     //Kitchen
     public bool kitchenDoor;
@@ -29,7 +29,6 @@ public class GameManager : MonoBehaviour
     
     private void Awake()
     {
-        //text.text = "I exist!";
         if (instance != null && instance != this)
         {
             Destroy(this.gameObject);
@@ -41,7 +40,6 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(instance.gameObject);
     }
     
-    // Start is called before the first frame update
     void Start()
     {
         doughPlacement = 0;
@@ -55,25 +53,23 @@ public class GameManager : MonoBehaviour
     {
         if (doughPlacement == 12 || Input.GetButton("XRI_Right_SecondaryButton") || Input.GetKey(KeyCode.A))
         {
-            //second level starts (random cube)
+            //kitchen level starts (random cube)
             doughPlacement = 12;
             
             timer += Time.deltaTime;
             isSecondLevel = true;
         }
-        else if (Input.GetButtonDown("XRI_Right_PrimaryButton"))
+        else if (kitchenDoor || Input.GetButtonDown("XRI_Right_PrimaryButton")) //and whatever finishes the kitchen level
         {
-            //random cube level should change into the pizza monster
-            //timer += Time.deltaTime;
             isThirdLevel = true;
+        }
+        else if (Input.GetButtonDown("XRI_Left_SecondaryButton")) //this is the condition if basement is finished
+        {
+            isFourthLevel = true;
         }
         else if (keyboardPlayed)// || Input.GetButtonDown("XRI_Left_SecondaryButton"))
         {
             pizzaMonsterRelease = true;
-        }
-        else if (Input.GetButtonDown("XRI_Left_PrimaryButton"))
-        {
-            isFourthLevel = true;
         }
         else
         {

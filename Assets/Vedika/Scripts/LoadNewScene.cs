@@ -1,15 +1,6 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System;
-using System.Collections;
-using System.Net.Mime;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Rendering.Universal;
 using UnityEngine.SceneManagement;
-using UnityEngine.UIElements;
-using UnityEngine.XR.OpenXR;
 
 public class LoadNewScene : MonoBehaviour
 {
@@ -27,11 +18,11 @@ public class LoadNewScene : MonoBehaviour
         gm = FindObjectOfType<GameManager>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (gm.isSecondLevel)
         {
+            //this will take you to the kitchen scene
             //before loading the scene, start timer and rotate door for 1.5 seconds
             if (gm.timer <= 2.5f && gm.doughPlacement == 12)
             {
@@ -48,34 +39,25 @@ public class LoadNewScene : MonoBehaviour
         }
         if (gm.isThirdLevel)
         {
-            //release the pizza monster
+            //this will take you to the basement scene
             SceneManager.LoadScene(2);
-            /*
-            if (gm.timer <= 2.5f && gm.keyboardPlayed)
-            {
-                //change the y of the door to make it open
-                doorHinge.transform.Rotate(0,0,1);
-            }
-            else if (gm.timer > 2.5f)
-            {
-                //when timer is 1.5 seconds, the scene changes
-                SceneManager.LoadScene(2);
-                gm.keyboardPlayed = false;
-                gm.timer = 0;
-            }*/
         }
         if (gm.pizzaMonsterRelease)
         {
+            //this happens when the piano is played correctly 
             pizzaMonster.SetActive(true);
             pizzaMonsterText.text = "You must kill the pizza monster to stop the destruction it will unleash blah blah blah. Find the pieces of the menu and make the secret sauce blah blah.";
 
         }
         if (gm.isFirstLevel)
         {
+            //this happens on the beginning 
             SceneManager.LoadScene(0);
         }
         if (gm.isFourthLevel)
         {
+            //this happens if the stuff in the basement gets completely
+            //it loads the dining room 
             SceneManager.LoadScene(3);
         }
     }
