@@ -1346,11 +1346,10 @@ GameObject:
   - component: {fileID: 122472443}
   - component: {fileID: 122472442}
   - component: {fileID: 122472446}
-  - component: {fileID: 122472447}
   - component: {fileID: 122472448}
   m_Layer: 0
-  m_Name: flame
-  m_TagString: FLAME
+  m_Name: extuinguisher
+  m_TagString: extuinguisher
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1385,14 +1384,14 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 2.705432
-  m_Height: 5.4108644
+  m_Radius: 3.1551814
+  m_Height: 8.782201
   m_Direction: 1
-  m_Center: {x: -0.8906722, y: 1.0032219, z: -0.04967133}
+  m_Center: {x: -0.8906719, y: 2.6888907, z: -0.49942106}
 --- !u!23 &122472443
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1456,33 +1455,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   garlic: {fileID: 1269258239}
---- !u!54 &122472447
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 122472440}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 4
-  m_CollisionDetection: 0
 --- !u!95 &122472448
 Animator:
   serializedVersion: 5
@@ -8975,7 +8947,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 647818572}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c07ca7dea79154657b90017a7af12668, type: 3}
   m_Name: 
@@ -8986,6 +8958,10 @@ MonoBehaviour:
   menuPiece2: {fileID: 1009106198}
   hand: {fileID: 0}
   handScript: {fileID: 0}
+  order1: 0
+  order2: 0
+  order3: 0
+  rand: 0
 --- !u!136 &647818575
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -10564,6 +10540,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 803160247}
+  - component: {fileID: 803160249}
+  - component: {fileID: 803160248}
+  - component: {fileID: 803160250}
   m_Layer: 0
   m_Name: Particle parent
   m_TagString: Untagged
@@ -10580,7 +10559,7 @@ Transform:
   m_GameObject: {fileID: 803160246}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 26.65, y: 2.4850001, z: 1.485}
+  m_LocalPosition: {x: 26.02, y: 2.4850001, z: 1.485}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -10588,6 +10567,67 @@ Transform:
   - {fileID: 430182846}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &803160248
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 803160246}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 1.1430793
+  m_Center: {x: -0.032179356, y: 0, z: -0.6108999}
+--- !u!114 &803160249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 803160246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f2c990a4f6294785b0a28ed9ea420e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fireFlame: {fileID: 803160246}
+--- !u!54 &803160250
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 803160246}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &811861979
 GameObject:
   m_ObjectHideFlags: 0
@@ -16460,6 +16500,10 @@ MonoBehaviour:
   menuPiece2: {fileID: 1009106198}
   hand: {fileID: 661556924}
   handScript: {fileID: 0}
+  order1: 0
+  order2: 0
+  order3: 0
+  rand: 0
 --- !u!136 &1648806106
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -23274,7 +23318,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1859809792}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c07ca7dea79154657b90017a7af12668, type: 3}
   m_Name: 
@@ -23285,6 +23329,10 @@ MonoBehaviour:
   menuPiece2: {fileID: 1009106198}
   hand: {fileID: 0}
   handScript: {fileID: 0}
+  order1: 0
+  order2: 0
+  order3: 0
+  rand: 0
 --- !u!136 &1859809795
 CapsuleCollider:
   m_ObjectHideFlags: 0

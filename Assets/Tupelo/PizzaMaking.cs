@@ -21,10 +21,11 @@ public class PizzaMaking : MonoBehaviour
     public Hand handScript;
     public bool order1;
     public bool order2;
-
+    public bool order3;
+    public int rand;
 
     //lerp
-  
+
 
 
     // Start is called before the first frame update
@@ -36,28 +37,40 @@ public class PizzaMaking : MonoBehaviour
         startPosition = new Vector3(18.62f, 2.42f, 3.63f);
         startTime = Time.time;
         journeyLength = Vector3.Distance(startPosition, endPosition);
-        Main();
+        int rand = Random.Range(1, 4);
+       
     }
-    static void Main()
-    {
-
-        System.Random random = new System.Random();
-        int rand = random.Next(1, 3);
-
-        //work on referencing this number that is in the static void, in the update segment
-    }
+ 
     // Update is called once per frame
     void Update()
     {
-        System.Random random = new System.Random();
-        int rand = random.Next(1, 3);
+        //System.Random random = new System.Random();
         print(rand);
-        //if (rand == 1)
-        //{
-        //    order1 = true;
-        //}
+
+        if (rand == 1)
+        {
+            print("okay it is working till here");
+            order1 = true;
+            order2 = false;
+            order3 = false;
+        }
+        if (rand == 2)
+        {
+            print("okay it is working till here");
+            order1 = false;
+            order2 = true;
+            order3 = false;
+        }
+        if (rand == 3)
+        {
+            print("okay it is working till here");
+            order1 = false;
+            order2 = false;
+            order3 = true;
+        }
         if (order1)
         {
+            print("order 1 is up");
 
             if (pepperoniNumber == 5)
             {
@@ -74,7 +87,7 @@ public class PizzaMaking : MonoBehaviour
         }
         if (order2)
         {
-
+            print("order 2 is up");
             if (pepperoniNumber == 10)
             {
                 pizza1Done = true;
@@ -84,6 +97,22 @@ public class PizzaMaking : MonoBehaviour
                 pizza2Done = true;
             }
             if (pineappleNumber == 6 && hamNumber == 0)
+            {
+                pizza3Done = true;
+            }
+        }
+        if (order3)
+        {
+            print("order 3 is up");
+            if (pepperoniNumber == 1)
+            {
+                pizza1Done = true;
+            }
+            if (mushroomNumber == 6)
+            {
+                pizza2Done = true;
+            }
+            if (pineappleNumber == 0 && hamNumber == 8)
             {
                 pizza3Done = true;
             }
