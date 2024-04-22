@@ -5,8 +5,6 @@ using UnityEngine;
 
 public class Light : MonoBehaviour
 {
-    public GameObject rightHand;
-    public GameObject leftHand;
     public GameObject light;
     public GameObject lockerCombo;
 
@@ -28,6 +26,9 @@ public class Light : MonoBehaviour
     {
         //The button cool down timer makes it so the button will only be "activated" once when touched
         buttonCoolDownTimer += Time.deltaTime;
+        
+        light.SetActive(lightOn);
+        lockerCombo.SetActive(!lightOn);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -36,12 +37,11 @@ public class Light : MonoBehaviour
         //cool down timer is greater than 0.5 frames, set the button cool down timer to zero, change the value of 
         //lightOn. Then change whether or not the light is on based on the value of lightOn, make lockerCombo.SetActive
         //the opposite of lightOn.
-        if ((other.gameObject == rightHand || other.gameObject == leftHand) && buttonCoolDownTimer > .5f)
+        if (other.gameObject.CompareTag("player") && buttonCoolDownTimer > .5f)
         {
             buttonCoolDownTimer = 0;
             lightOn = !lightOn;
-            light.SetActive(lightOn);
-            lockerCombo.SetActive(!lightOn);
+            
         }
     }
 }

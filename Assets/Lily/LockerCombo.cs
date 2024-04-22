@@ -14,6 +14,8 @@ public class LockerCombo : MonoBehaviour
     private float prevPos;
     private float newPos;
     
+    
+    
     // Start is called before the first frame update
     void Start()
     {
