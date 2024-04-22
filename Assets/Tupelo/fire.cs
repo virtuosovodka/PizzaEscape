@@ -17,9 +17,11 @@ public class fire : MonoBehaviour
     {
         
     }
-    private void OnCollisionEnter(Collision collision)
+
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.CompareTag("extuinguisher"))
+        print("extuingisher");
+        if (other.gameObject.CompareTag("extuinguisher"))
         {
             print("flame is colliding");
             fireFlame.SetActive(false);

@@ -23,7 +23,10 @@ public class PizzaMaking : MonoBehaviour
     public bool order2;
     public bool order3;
     public int rand;
-
+    public GameObject cheese1;
+    public GameObject cheese2;
+    public GameObject cheese3;
+    float randomNumber;
     //lerp
 
 
@@ -31,13 +34,14 @@ public class PizzaMaking : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        randomNumber = Random.Range(1, 3);
         handScript = FindObjectOfType<Hand>();
         menuPiece2.transform.position = startPosition;
         endPosition = new Vector3(18.62f, 2.66f, 3.97f);
         startPosition = new Vector3(18.62f, 2.42f, 3.63f);
         startTime = Time.time;
         journeyLength = Vector3.Distance(startPosition, endPosition);
-        int rand = Random.Range(1, 4);
+       // int rand = Random.Range(1, 4);
        
     }
  
@@ -45,23 +49,23 @@ public class PizzaMaking : MonoBehaviour
     void Update()
     {
         //System.Random random = new System.Random();
-        print(rand);
+        print(randomNumber);
 
-        if (rand == 1)
+        if (randomNumber == 1)
         {
             print("okay it is working till here");
             order1 = true;
             order2 = false;
             order3 = false;
         }
-        if (rand == 2)
+        if (randomNumber == 2)
         {
             print("okay it is working till here");
             order1 = false;
             order2 = true;
             order3 = false;
         }
-        if (rand == 3)
+        if (randomNumber == 3)
         {
             print("okay it is working till here");
             order1 = false;
@@ -72,13 +76,15 @@ public class PizzaMaking : MonoBehaviour
         {
             print("order 1 is up");
 
-            if (pepperoniNumber == 5)
+            if (pepperoniNumber == 3)
             {
                 pizza1Done = true;
+                cheese1.SetActive(false);
             }
             if (mushroomNumber == 6)
             {
                 pizza2Done = true;
+
             }
             if (pineappleNumber == 5 && hamNumber == 4)
             {
@@ -88,9 +94,10 @@ public class PizzaMaking : MonoBehaviour
         if (order2)
         {
             print("order 2 is up");
-            if (pepperoniNumber == 10)
+            if (pepperoniNumber == 3)
             {
                 pizza1Done = true;
+                cheese1.SetActive(false);
             }
             if (mushroomNumber == 5)
             {
@@ -104,9 +111,10 @@ public class PizzaMaking : MonoBehaviour
         if (order3)
         {
             print("order 3 is up");
-            if (pepperoniNumber == 1)
+            if (pepperoniNumber == 3)
             {
                 pizza1Done = true;
+                cheese1.SetActive(false);
             }
             if (mushroomNumber == 6)
             {
@@ -132,11 +140,15 @@ public class PizzaMaking : MonoBehaviour
         
         if (collision.gameObject.CompareTag("pepperoni"))
         {
+            transform.parent = cheese1.transform;
             pepperoniNumber = pepperoniNumber + 1;
             handScript.transform.SetParent(null);
         }
         if (collision.gameObject.CompareTag("mushroom"))
         {
+            var mushroom = collision.gameObject;
+            mushroom.transform.parent = cheese2.transform;
+            print("mushroom parented");
             mushroomNumber = mushroomNumber + 1;
         }
         if (collision.gameObject.CompareTag("pineapple"))
