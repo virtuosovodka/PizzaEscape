@@ -9664,6 +9664,8 @@ MonoBehaviour:
   cheese1: {fileID: 0}
   cheese2: {fileID: 0}
   cheese3: {fileID: 0}
+  delay: 0.3
+  timerOne: 0
 --- !u!136 &647818575
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -20424,8 +20426,8 @@ GameObject:
   - component: {fileID: 1648806104}
   - component: {fileID: 1648806108}
   - component: {fileID: 1648806107}
-  - component: {fileID: 1648806106}
   - component: {fileID: 1648806105}
+  - component: {fileID: 1648806109}
   m_Layer: 0
   m_Name: Cylinder (3)
   m_TagString: Untagged
@@ -20471,31 +20473,10 @@ MonoBehaviour:
   order3: 0
   rand: 0
   cheese1: {fileID: 1648806103}
-  cheese2: {fileID: 0}
-  cheese3: {fileID: 0}
---- !u!136 &1648806106
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1648806103}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+  cheese2: {fileID: 1859809792}
+  cheese3: {fileID: 647818572}
+  delay: 0.3
+  timerOne: 0
 --- !u!23 &1648806107
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -20546,6 +20527,27 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1648806103}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &1648806109
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1648806103}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.8777891, y: 0, z: 0.87537223}
+  m_Center: {x: 0.006340572, y: -1.0039656, z: -0.0020514217}
 --- !u!1 &1667732364
 GameObject:
   m_ObjectHideFlags: 0
@@ -27836,6 +27838,8 @@ MonoBehaviour:
   cheese1: {fileID: 1648806103}
   cheese2: {fileID: 1859809792}
   cheese3: {fileID: 647818572}
+  delay: 0.3
+  timerOne: 0
 --- !u!136 &1859809795
 CapsuleCollider:
   m_ObjectHideFlags: 0
