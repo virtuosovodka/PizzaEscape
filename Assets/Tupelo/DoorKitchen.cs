@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel.Design;
 using UnityEngine;
 using TMPro;
 public class DoorKitchen : MonoBehaviour
@@ -36,6 +37,7 @@ public class DoorKitchen : MonoBehaviour
     void Start()
     {
         clockScript = GameObject.FindObjectOfType<ClockScript>();
+        //Debug.Log(clockScript);
         gm = FindObjectOfType<GameManager>();
         //addingDig = false;
         doorRigid1 = door1.GetComponent<Rigidbody>();
@@ -95,13 +97,24 @@ public class DoorKitchen : MonoBehaviour
 
         if (codeTextValue.Length == 4)
         {
-            if (((int.Parse(clockScript.theCode) + tolerance) >= int.Parse(codeTextValue) && (int.Parse(clockScript.theCode) - tolerance) <= int.Parse(codeTextValue)))
+            //one way to open the door is to check the clock
+            //first check to see if a clock is in the room
+            if (clockScript !=null)
             {
+                if (((int.Parse(clockScript.theCode) + tolerance) >= int.Parse(codeTextValue) &&
+                     (int.Parse(clockScript.theCode) - tolerance) <= int.Parse(codeTextValue)))
+                {
 
-                //codeTextValue >= clockScript.theCode.int.Parse -8 && codeTextValue <= clockScript.theCode ++ 8
-                //DO THIS NEXT CLASS CONVERT TO INTEGER
-                //also figure out the issue with templayer chasing bool
-                //its working !!!!
+                    //codeTextValue >= clockScript.theCode.int.Parse -8 && codeTextValue <= clockScript.theCode ++ 8
+                    //DO THIS NEXT CLASS CONVERT TO INTEGER
+                    //also figure out the issue with templayer chasing bool
+                    //its working !!!!
+                    openDoor = true;
+                }
+            }
+            //there is no clock in this room
+            else
+            {
                 openDoor = true;
             }
 
