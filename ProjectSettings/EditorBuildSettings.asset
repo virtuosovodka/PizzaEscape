@@ -5,10 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
-    path: Assets/Game/Cold Room.unity
-    guid: c4f37b9c9301d413ca0f919cdb319130
-  - enabled: 1
+  - enabled: 0
     path: Assets/Game/Tutorial Scene.unity
     guid: edd85c9de2398449f808ce1b24f98ccf
   - enabled: 0
@@ -17,7 +14,10 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Lily/Lock Scene.unity
     guid: 519ac7438608a468e84e6a442b370b0e
-  - enabled: 0
+  - enabled: 1
+    path: Assets/Game/Cold Room.unity
+    guid: c4f37b9c9301d413ca0f919cdb319130
+  - enabled: 1
     path: Assets/Game/Dining Room 2.unity
     guid: 406c0ba45d2274af59d6f51d3a11c0ce
   m_configObjects:

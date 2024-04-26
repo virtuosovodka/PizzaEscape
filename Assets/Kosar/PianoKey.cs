@@ -6,19 +6,18 @@ using UnityEngine;
 public class PianoKey : MonoBehaviour
 {
     private AudioSource _audioSource;
-    private string _note;
+    public string note { get; private set; }
 
     private void Start()
     {
         _audioSource = GetComponent<AudioSource>();
 
         // Note is set by tag
-        _note = tag;
+        note = tag;
     }
 
-    public string Play()
+    public void Play()
     {
         _audioSource.Play();
-        return _note;
     }
 }
