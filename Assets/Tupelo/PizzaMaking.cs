@@ -17,27 +17,18 @@ public class PizzaMaking : MonoBehaviour
     float printerSpeed = .02f;
     private float startTime;
     private float journeyLength;
-   
-   
+    public GameObject hand;
+    public Hand handScript;
     public bool order1;
     public bool order2;
     public bool order3;
-    public GameObject orderOne;
-    public GameObject orderTwo;
-    public GameObject orderThree;
-
+    public int rand;
     public GameObject cheese1;
     public GameObject cheese2;
     public GameObject cheese3;
     float randomNumber;
     public float delay = 4f;
     public float timerOne = 0f;
-
-    public List<string> toppingsAdded;
-    //public List<string> mushroomsAdded;
-    //public List<string> pineappleAdded;
-    //public List<string> pineappleAdded;
-
     //lerp
 
 
@@ -45,12 +36,9 @@ public class PizzaMaking : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        orderOne.SetActive(false);
-        orderTwo.SetActive(false);
-        orderThree.SetActive(false);
-
+      
         randomNumber = Random.Range(1, 3);
-        
+        handScript = FindObjectOfType<Hand>();
         menuPiece2.transform.position = startPosition;
         endPosition = new Vector3(18.62f, 2.66f, 3.97f);
         startPosition = new Vector3(18.62f, 2.42f, 3.63f);
@@ -89,27 +77,26 @@ public class PizzaMaking : MonoBehaviour
         }
         if (order1)
         {
-            // print("order 1 is up");
-            orderOne.SetActive(true);
+           // print("order 1 is up");
+
             if (pepperoniNumber == 4)
             {
                 pizza1Done = true;
                 cheese1.SetActive(false);
             }
-            if (mushroomNumber == 8)
+            if (mushroomNumber == 6)
             {
                 pizza2Done = true;
                 cheese2.SetActive(false);
 
             }
-            if (pineappleNumber == 4 && hamNumber == 3)
+            if (pineappleNumber == 5 && hamNumber == 4)
             {
                 pizza3Done = true;
             }
         }
         if (order2)
         {
-            orderTwo.SetActive(true);
             //print("order 2 is up");
             if (pepperoniNumber == 4)
             {
@@ -128,7 +115,6 @@ public class PizzaMaking : MonoBehaviour
         }
         if (order3)
         {
-            orderThree.SetActive(true);
             //print("order 3 is up");
             if (pepperoniNumber == 4)
             {
@@ -157,26 +143,18 @@ public class PizzaMaking : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        //if (timerOne > delay)
-        //    print("past delay");
-
-        if (collision.gameObject.CompareTag("pepperoni"))
+        if (timerOne > delay)
+            print("past delay");
         {
-            if (!toppingsAdded.Contains(collision.gameObject.name))
+            if (collision.gameObject.CompareTag("pepperoni"))
             {
-
                 timerOne = 0f;
-                print(pepperoniNumber);
                 //transform.parent = cheese1.transform;
                 //pepperoniNumber = pepperoniNumber + 1;
                 //handScript.transform.SetParent(null);
                 pepperoniNumber = pepperoniNumber + 1;
-                toppingsAdded.Add(collision.gameObject.name);
             }
-        }
             if (collision.gameObject.CompareTag("mushroom"))
-            {
-            if (!toppingsAdded.Contains(collision.gameObject.name))
             {
                 timerOne = 0f;
                 //var mushroom = collision.gameObject;
@@ -184,24 +162,17 @@ public class PizzaMaking : MonoBehaviour
                 //print("mushroom parented");
                 mushroomNumber = mushroomNumber + 1;
             }
-            }
             if (collision.gameObject.CompareTag("pineapple"))
-            {
-            if (!toppingsAdded.Contains(collision.gameObject.name))
             {
                 timerOne = 0f;
                 pineappleNumber = pineappleNumber + 1;
             }
-            }
             if (collision.gameObject.CompareTag("ham"))
-            {
-            if (!toppingsAdded.Contains(collision.gameObject.name))
             {
                 timerOne = 0f;
                 hamNumber = hamNumber + 1;
             }
-            }
-        
+        }
     }
     
 }
