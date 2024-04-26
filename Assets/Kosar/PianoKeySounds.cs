@@ -41,7 +41,7 @@ public class PianoKeySounds : MonoBehaviour
 
     public void Update()
     {
-       // lns.pizzaMonsterText.text = "CEG " + "" + _ipk.Count; //+ gm.keyboardPlayed;
+       lns.pizzaMonsterText.text = "CEG " + "" + _ipk.Count + " " + gm.keyboardPlayed;
     }
 
     private void OnTriggerEnter(Collider collision)
@@ -51,7 +51,7 @@ public class PianoKeySounds : MonoBehaviour
             _ipk.Insert(0, key.note);
             key.Play();
             
-            //gm.keyboardPlayed = Compare(_password, _ipk);
+            gm.keyboardPlayed = Compare(_password, _ipk);
         }
     }
 
