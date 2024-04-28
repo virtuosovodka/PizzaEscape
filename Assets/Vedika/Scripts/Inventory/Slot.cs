@@ -35,7 +35,7 @@ public class Slot : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Grabby"))
         {
-            //text.text = "" + other.name + name;
+            //textMesh.textMesh = "" + other.name + name;
             if (itemInSlot) return;
             GameObject obj = other.gameObject;
             if (!ItemCheck(obj)) return;

@@ -169,7 +169,7 @@ public class DoorKitchen : MonoBehaviour
     //{
     //    if (button1.coll)
     //    {
-    //        codeText.text = codeTextValue;
+    //        codeText.textMesh = codeTextValue;
     //    }
     //}
 }

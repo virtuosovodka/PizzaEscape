@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
     public bool isThirdLevel;
     public bool isFirstLevel;
     public bool pizzaMonsterRelease;
-    //public TextMeshProUGUI text;
+    //public TextMeshProUGUI textMesh;
     
     //Cold Room
     public int doughPlacement;

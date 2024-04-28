@@ -6,60 +6,75 @@ using UnityEngine;
 
 public class DoughPuzzle : MonoBehaviour
 {
-    public GameManager gm;
+    public GameManager gameManager;
     public GameObject placemat;
-    public TextMeshProUGUI text;
+
+    public TextMeshProUGUI textMesh;
+
     public float timer = 0.0f;
     private bool onSurface;
-    private Rigidbody rb;
-    public LoadNewScene lns;
-    
+
+    private Rigidbody rigidBody;
+
+    public LoadNewScene loadNewScene;
+
     // Start is called before the first frame update
     void Start()
     {
-       
-        //provide gm with a value (the script "GameManager")
-        gm = FindObjectOfType<GameManager>();
-        lns = FindObjectOfType<LoadNewScene>();
-        rb = this.GetComponent<Rigidbody>();
+        gameManager = FindObjectOfType<GameManager>();
+        loadNewScene = FindObjectOfType<LoadNewScene>();
+
+        rigidBody = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        text.text = "" + gm.doughPlacement + " " + "" + gm.timer;
-        if (onSurface && rb.constraints != RigidbodyConstraints.FreezeAll)
+        UpdateText(gameManager);
+
+        if (onSurface && rigidBody.constraints != RigidbodyConstraints.FreezeAll)
         {
             timer += Time.deltaTime;
-            if (timer > .3f)
+            if (timer > 0.3f)
             {
-                rb.constraints = RigidbodyConstraints.FreezeAll;
+                rigidBody.constraints = RigidbodyConstraints.FreezeAll;
             }
         }
     }
 
     private void OnCollisionEnter(Collision other)
     {
-        timer = 0f;
+        timer = 0.0f;
         onSurface = true;
-      
-        //if the object the dough bag collided with is the placemat, add 1 to doughPlacement
-        if (other.gameObject == placemat)// && timer == 0f)
+
+        // If the object the dough bag collided with is the placemat...
+        if (other.gameObject == placemat)
         {
-            gm.doughPlacement++;
+            gameManager.doughPlacement++;
         }
     }
 
     private void OnCollisionExit(Collision other)
     {
-        this.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+        rigidBody.constraints = RigidbodyConstraints.None;
         onSurface = false;
-        
-        //if the dough bag is removed from/ is no longer touching the placemat, subtract 1 from doughPlacement
+
+        // If the dough bag is removed from placemat...
         if (other.gameObject == placemat)
         {
-            gm.doughPlacement--;
+            gameManager.doughPlacement--;
         }
+    }
+
+    private void UpdateText(GameManager gameManager)
+    {
+        if (!gameManager || !textMesh) { return; }
+
+        string newText = gameManager.doughPlacement.ToString()
+            + ' '
+            + gameManager.timer.ToString();
+
+        textMesh.text = newText;
     }
 }
 
