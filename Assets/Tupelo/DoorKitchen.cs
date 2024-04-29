@@ -7,7 +7,6 @@ public class DoorKitchen : MonoBehaviour
 {
     public GameObject door1;
     public GameObject door2;
-    public bool openDoor;
     private bool isAtDoor = false;
     public ClockScript clockScript;
     public GameObject button1;
@@ -49,7 +48,7 @@ public class DoorKitchen : MonoBehaviour
     {
         doorRigid1.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionY;
         doorRigid2.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionY;
-        if (openDoor)
+        if (gm.openDoor)
         {
             swingTime -= Time.deltaTime;
             doorRigid1.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionY;
@@ -67,13 +66,14 @@ public class DoorKitchen : MonoBehaviour
                 print(doorRotate1.transform.rotation.y);
                 if (swingTime <= 0f)
                 {
-                    openDoor = false;
+                    gm.openDoor = false;
+                    gm.kitchenDoor = true;
                     print("TIMERS DONE");
                 }
                 if (doorRotate1.transform.rotation.y <= -.97 && doorRotate2.transform.rotation.y >= .97)
                 {
                     rotating = false;
-                    openDoor = false;
+                    gm.openDoor = false;
                     gm.kitchenDoor = true;
                     /*
                     TODO: Vedika put in the timer for the room change here
@@ -87,8 +87,11 @@ public class DoorKitchen : MonoBehaviour
 
         doorRigid1.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezePositionZ| RigidbodyConstraints.FreezeRotation;
         doorRigid2.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotation;
-        codeText.text = codeTextValue;
-        
+        if (codeText != null)
+        {
+            codeText.text = codeTextValue;
+        }
+
         //codeTextValueInt = int.Parse(codeTextValue.Trim());
         //doorCodeInt = int.Parse(doorCode.Trim());
 
@@ -99,7 +102,7 @@ public class DoorKitchen : MonoBehaviour
         {
             //one way to open the door is to check the clock
             //first check to see if a clock is in the room
-            if (clockScript !=null)
+            if (clockScript != null)
             {
                 if (((int.Parse(clockScript.theCode) + tolerance) >= int.Parse(codeTextValue) &&
                      (int.Parse(clockScript.theCode) - tolerance) <= int.Parse(codeTextValue)))
@@ -109,13 +112,13 @@ public class DoorKitchen : MonoBehaviour
                     //DO THIS NEXT CLASS CONVERT TO INTEGER
                     //also figure out the issue with templayer chasing bool
                     //its working !!!!
-                    openDoor = true;
+                    gm.openDoor = true;
                 }
             }
             //there is no clock in this room
             else
             {
-                openDoor = true;
+                gm.openDoor = true;
             }
 
         }

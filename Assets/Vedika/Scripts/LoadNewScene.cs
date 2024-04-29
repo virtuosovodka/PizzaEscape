@@ -20,7 +20,16 @@ public class LoadNewScene : MonoBehaviour
 
     void Update()
     {
-        if (gm.isSecondLevel)
+        if (gm.isLevelZero)
+        {
+            SceneManager.LoadScene(0);
+        }
+        else if (gm.isFirstLevel)
+        {
+            //this happens on the beginning 
+            SceneManager.LoadScene(1);
+        }
+        else if (gm.isSecondLevel)
         {
             //this will take you to the kitchen scene
             //before loading the scene, start timer and rotate door for 1.5 seconds
@@ -32,33 +41,28 @@ public class LoadNewScene : MonoBehaviour
             else if (gm.timer > 2.5f)
             {
                 //when timer is 1.5 seconds, the scene changes
-                SceneManager.LoadScene(1);
+                SceneManager.LoadScene(2);
                 gm.doughPlacement = 0;
                 gm.timer = 0;
             }
         }
-        if (gm.isThirdLevel)
+        else if (gm.isThirdLevel)
         {
             //this will take you to the basement scene
-            SceneManager.LoadScene(2);
+            SceneManager.LoadScene(3);
         }
-        if (gm.pizzaMonsterRelease)
+        else if (gm.isFourthLevel)
+        {
+            //this happens if the stuff in the basement gets completely
+            //it loads the dining room 
+            SceneManager.LoadScene(4);
+        }
+        else if (gm.pizzaMonsterRelease)
         {
             //this happens when the piano is played correctly 
             pizzaMonster.SetActive(true);
             pizzaMonsterText.text = "You must kill the pizza monster to stop the destruction it will unleash blah blah blah. Find the pieces of the menu and make the secret sauce blah blah.";
-
         }
-        if (gm.isFirstLevel)
-        {
-            //this happens on the beginning 
-            SceneManager.LoadScene(0);
-        }
-        if (gm.isFourthLevel)
-        {
-            //this happens if the stuff in the basement gets completely
-            //it loads the dining room 
-            SceneManager.LoadScene(3);
-        }
+        
     }
 }

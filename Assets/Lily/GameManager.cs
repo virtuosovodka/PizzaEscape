@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public bool isSecondLevel;
     public bool isThirdLevel;
     public bool isFirstLevel;
+    public bool isLevelZero;
     public bool pizzaMonsterRelease;
     //public TextMeshProUGUI text;
     
@@ -22,6 +23,7 @@ public class GameManager : MonoBehaviour
     
     //Kitchen
     public bool kitchenDoor;
+    public bool openDoor;
     
     //Dining Room
     public bool keyboardPlayed;
@@ -46,14 +48,20 @@ public class GameManager : MonoBehaviour
         timer = 0;
         kitchenDoor = false;
         keyboardPlayed = false;
+        isLevelZero = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (doughPlacement == 12 || Input.GetButton("XRI_Right_SecondaryButton") || Input.GetKey(KeyCode.A))
+        if (Input.GetButtonDown("XRI_Left_PrimaryButton") || Input.GetKey(KeyCode.B)) //|| the keypad is pressed
         {
-            //kitchen level starts (random cube)
+            //tutorial level has been finished, moves on to cold room
+            isFirstLevel = true;
+        }
+        else if (doughPlacement == 12 || Input.GetButtonDown("XRI_Right_SecondaryButton") || Input.GetKey(KeyCode.A))
+        {
+            //kitchen level starts 
             doughPlacement = 12;
             
             timer += Time.deltaTime;
@@ -73,7 +81,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            isFirstLevel = isSecondLevel = isThirdLevel = isFourthLevel = false;
+            isFirstLevel = isSecondLevel = isThirdLevel = isFourthLevel = isLevelZero = false;
         }
     }
 }

@@ -383,74 +383,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 71d00e0c8f4944f25b605bd8fdcf0cfe, type: 3}
---- !u!1 &68147948
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 68147951}
-  - component: {fileID: 68147950}
-  - component: {fileID: 68147949}
-  m_Layer: 0
-  m_Name: EventSystem
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &68147949
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 68147948}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SendPointerHoverToParent: 1
-  m_HorizontalAxis: Horizontal
-  m_VerticalAxis: Vertical
-  m_SubmitButton: Submit
-  m_CancelButton: Cancel
-  m_InputActionsPerSecond: 10
-  m_RepeatDelay: 0.5
-  m_ForceModuleActive: 0
---- !u!114 &68147950
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 68147948}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
-  m_sendNavigationEvents: 1
-  m_DragThreshold: 10
---- !u!4 &68147951
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 68147948}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &112501969
 GameObject:
   m_ObjectHideFlags: 0
@@ -921,6 +853,60 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 315277123}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &320610800
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 320610802}
+  - component: {fileID: 320610801}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &320610801
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 320610800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 299547a5233ca47ca82f756cdefede86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isFourthLevel: 0
+  isSecondLevel: 0
+  isThirdLevel: 0
+  isFirstLevel: 0
+  isLevelZero: 1
+  pizzaMonsterRelease: 0
+  doughPlacement: 0
+  timer: 0
+  kitchenDoor: 0
+  keyboardPlayed: 0
+--- !u!4 &320610802
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 320610800}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.16406217, y: 2.2443068, z: -3.9936936}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &330976852
 GameObject:
   m_ObjectHideFlags: 0
@@ -1089,7 +1075,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c930a24d4d420417983ab100b972b317, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gm: {fileID: 0}
+  gm: {fileID: 320610801}
   doorHinge: {fileID: 0}
   pizzaMonster: {fileID: 0}
   pizzaMonsterText: {fileID: 0}
@@ -2548,7 +2534,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_VertexColorAlwaysGammaSpace: 0
+  m_VertexColorAlwaysGammaSpace: 1
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
@@ -2822,12 +2808,17 @@ PrefabInstance:
     - {fileID: -7955790086967878477, guid: e03c6ed4b8e624fee9b1b463b7cf5f7e, type: 3}
     - {fileID: -3225959511443494117, guid: e03c6ed4b8e624fee9b1b463b7cf5f7e, type: 3}
     - {fileID: -874037503667884591, guid: e03c6ed4b8e624fee9b1b463b7cf5f7e, type: 3}
+    - {fileID: -3860296973579803333, guid: e03c6ed4b8e624fee9b1b463b7cf5f7e, type: 3}
+    - {fileID: -2254652766286573184, guid: e03c6ed4b8e624fee9b1b463b7cf5f7e, type: 3}
+    - {fileID: 8343248208569102210, guid: e03c6ed4b8e624fee9b1b463b7cf5f7e, type: 3}
+    - {fileID: 2337188658737072289, guid: e03c6ed4b8e624fee9b1b463b7cf5f7e, type: 3}
+    - {fileID: -2400706592724798529, guid: e03c6ed4b8e624fee9b1b463b7cf5f7e, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: e03c6ed4b8e624fee9b1b463b7cf5f7e, type: 3}
-      insertIndex: 9
+      insertIndex: 4
       addedObject: {fileID: 31080589}
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: e03c6ed4b8e624fee9b1b463b7cf5f7e, type: 3}
-      insertIndex: 12
+      insertIndex: 7
       addedObject: {fileID: 1651621107}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e03c6ed4b8e624fee9b1b463b7cf5f7e, type: 3}
@@ -5729,8 +5720,8 @@ SceneRoots:
   - {fileID: 931559906}
   - {fileID: 583670353}
   - {fileID: 823400653}
-  - {fileID: 68147951}
   - {fileID: 23587218}
   - {fileID: 465506241}
   - {fileID: 182042985}
   - {fileID: 854487969}
+  - {fileID: 320610802}
