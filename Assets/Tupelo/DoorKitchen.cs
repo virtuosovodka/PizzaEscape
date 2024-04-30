@@ -28,7 +28,7 @@ public class DoorKitchen : MonoBehaviour
     float speed = .002f;
     bool rotating;
     public GameManager gm;
-    float swingTime = 4.3f;
+    float swingTime = 0f;
 
 
 
@@ -48,9 +48,9 @@ public class DoorKitchen : MonoBehaviour
     {
         doorRigid1.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionY;
         doorRigid2.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionY;
-        if (gm.openDoor)
+        while (gm.openDoor)
         {
-            swingTime -= Time.deltaTime;
+            swingTime += Time.deltaTime;
             doorRigid1.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionY;
             doorRigid2.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionY;
             rotating = true;
@@ -64,21 +64,21 @@ public class DoorKitchen : MonoBehaviour
                 doorRotate2.transform.rotation = Quaternion.Lerp(startRotation2, targetRotation2, lerpDuration * speed);
                 lerpDuration = lerpDuration + Time.deltaTime;
                 print(doorRotate1.transform.rotation.y);
-                if (swingTime <= 0f)
+                if (swingTime >= 4.3f)
                 {
                     gm.openDoor = false;
                     gm.kitchenDoor = true;
-                    print("TIMERS DONE");
+                    //print("TIMERS DONE");
                 }
+                /*
                 if (doorRotate1.transform.rotation.y <= -.97 && doorRotate2.transform.rotation.y >= .97)
                 {
                     rotating = false;
                     gm.openDoor = false;
                     gm.kitchenDoor = true;
-                    /*
-                    TODO: Vedika put in the timer for the room change here
-                     */
-                }
+                    //TODO: Vedika put in the timer for the room change here
+                }*/
+            
                
             }
         }
