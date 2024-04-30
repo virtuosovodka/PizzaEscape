@@ -23,7 +23,6 @@ public class GameManager : MonoBehaviour
     
     //Kitchen
     public bool kitchenDoor;
-    public bool openDoor;
     
     //Dining Room
     public bool keyboardPlayed;
