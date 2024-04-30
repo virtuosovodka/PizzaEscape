@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.ComponentModel.Design;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
+
 public class DoorKitchen : MonoBehaviour
 {
     public GameObject door1;
@@ -68,7 +70,14 @@ public class DoorKitchen : MonoBehaviour
                 if (swingTime >= 4.3f)
                 {
                     openDoor = false;
-                    gm.kitchenDoor = true;
+                    if (SceneManager.GetActiveScene().buildIndex == 2)
+                    {
+                        gm.kitchenDoor = true;
+                    }
+                    if (SceneManager.GetActiveScene().buildIndex == 0)
+                    {
+                        gm.tutorialDoorOpen = true;
+                    }
                     //print("TIMERS DONE");
                 }
                 
@@ -76,7 +85,14 @@ public class DoorKitchen : MonoBehaviour
                 {
                     rotating = false;
                     openDoor = false;
-                    gm.kitchenDoor = true;
+                    if (SceneManager.GetActiveScene().buildIndex == 2)
+                    {
+                        gm.kitchenDoor = true;
+                    }
+                    if (SceneManager.GetActiveScene().buildIndex == 0)
+                    {
+                        gm.tutorialDoorOpen = true;
+                    }
                     //TODO: Vedika put in the timer for the room change here
                 }
             

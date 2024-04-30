@@ -16,6 +16,8 @@ public class GameManager : MonoBehaviour
     public bool pizzaMonsterRelease;
     //public TextMeshProUGUI text;
     
+    //Tutorial Scene
+    public bool tutorialDoorOpen;
     //Cold Room
     public int doughPlacement;
     //used to open door in cold room 
@@ -53,7 +55,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("XRI_Left_PrimaryButton") || Input.GetKey(KeyCode.B)) //|| the keypad is pressed
+        if (tutorialDoorOpen || Input.GetButtonDown("XRI_Left_PrimaryButton") || Input.GetKey(KeyCode.B)) //|| the keypad is pressed
         {
             //tutorial level has been finished, moves on to cold room
             isFirstLevel = true;
@@ -66,7 +68,7 @@ public class GameManager : MonoBehaviour
             timer += Time.deltaTime;
             isSecondLevel = true;
         }
-        else if (kitchenDoor || Input.GetButtonDown("XRI_Right_PrimaryButton")) //and whatever finishes the kitchen level
+        else if (kitchenDoor || Input.GetButtonDown("XRI_Right_PrimaryButton") || Input.GetKey(KeyCode.C)) //and whatever finishes the kitchen level
         {
             isThirdLevel = true;
         }

@@ -26,7 +26,7 @@ public class LoadNewScene : MonoBehaviour
         }
         else if (gm.isFirstLevel)
         {
-            //this happens on the beginning 
+            //this happens after tutorial scene is complete 
             SceneManager.LoadScene(1);
         }
         else if (gm.isSecondLevel)
