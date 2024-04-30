@@ -772,7 +772,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   door1: {fileID: 1814688980}
   door2: {fileID: 79651550}
-  openDoor: 0
   clockScript: {fileID: 0}
   button1: {fileID: 1446801950}
   codeText: {fileID: 33023905}
@@ -785,6 +784,7 @@ MonoBehaviour:
   doorRotate1: {fileID: 983023363}
   doorRotate2: {fileID: 111386198}
   gm: {fileID: 0}
+  openDoor: 0
 --- !u!54 &79651553
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -9654,18 +9654,19 @@ MonoBehaviour:
   pizza1Done: 0
   pizza2Done: 0
   pizza3Done: 0
-  menuPiece2: {fileID: 1009106198}
-  hand: {fileID: 0}
-  handScript: {fileID: 0}
+  menuPiece2: {fileID: 0}
   order1: 0
   order2: 0
   order3: 0
-  rand: 0
+  orderOne: {fileID: 0}
+  orderTwo: {fileID: 0}
+  orderThree: {fileID: 0}
   cheese1: {fileID: 0}
   cheese2: {fileID: 0}
   cheese3: {fileID: 0}
-  delay: 0.3
+  delay: 4
   timerOne: 0
+  toppingsAdded: []
 --- !u!136 &647818575
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -12138,7 +12139,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &803160247
 Transform:
   m_ObjectHideFlags: 0
@@ -14202,7 +14203,7 @@ GameObject:
   - component: {fileID: 1009106204}
   - component: {fileID: 1009106203}
   m_Layer: 0
-  m_Name: Cube (1)
+  m_Name: menupiece 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20426,8 +20427,8 @@ GameObject:
   - component: {fileID: 1648806104}
   - component: {fileID: 1648806108}
   - component: {fileID: 1648806107}
-  - component: {fileID: 1648806105}
   - component: {fileID: 1648806109}
+  - component: {fileID: 1648806110}
   m_Layer: 0
   m_Name: Cylinder (3)
   m_TagString: Untagged
@@ -20450,33 +20451,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 603039596}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1648806105
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1648806103}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c07ca7dea79154657b90017a7af12668, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pizza1Done: 0
-  pizza2Done: 0
-  pizza3Done: 0
-  menuPiece2: {fileID: 1009106198}
-  hand: {fileID: 661556924}
-  handScript: {fileID: 0}
-  order1: 0
-  order2: 0
-  order3: 0
-  rand: 0
-  cheese1: {fileID: 1648806103}
-  cheese2: {fileID: 1859809792}
-  cheese3: {fileID: 647818572}
-  delay: 0.3
-  timerOne: 0
 --- !u!23 &1648806107
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -20548,6 +20522,34 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.8777891, y: 0, z: 0.87537223}
   m_Center: {x: 0.006340572, y: -1.0039656, z: -0.0020514217}
+--- !u!114 &1648806110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1648806103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c07ca7dea79154657b90017a7af12668, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pizza1Done: 0
+  pizza2Done: 0
+  pizza3Done: 0
+  menuPiece2: {fileID: 1009106198}
+  order1: 0
+  order2: 0
+  order3: 0
+  orderOne: {fileID: 0}
+  orderTwo: {fileID: 0}
+  orderThree: {fileID: 0}
+  cheese1: {fileID: 0}
+  cheese2: {fileID: 0}
+  cheese3: {fileID: 0}
+  delay: 4
+  timerOne: 0
+  toppingsAdded: []
 --- !u!1 &1667732364
 GameObject:
   m_ObjectHideFlags: 0
@@ -27828,18 +27830,19 @@ MonoBehaviour:
   pizza1Done: 0
   pizza2Done: 0
   pizza3Done: 0
-  menuPiece2: {fileID: 1009106198}
-  hand: {fileID: 0}
-  handScript: {fileID: 0}
+  menuPiece2: {fileID: 0}
   order1: 0
   order2: 0
   order3: 0
-  rand: 0
-  cheese1: {fileID: 1648806103}
-  cheese2: {fileID: 1859809792}
-  cheese3: {fileID: 647818572}
-  delay: 0.3
+  orderOne: {fileID: 0}
+  orderTwo: {fileID: 0}
+  orderThree: {fileID: 0}
+  cheese1: {fileID: 0}
+  cheese2: {fileID: 0}
+  cheese3: {fileID: 0}
+  delay: 4
   timerOne: 0
+  toppingsAdded: []
 --- !u!136 &1859809795
 CapsuleCollider:
   m_ObjectHideFlags: 0
