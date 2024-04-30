@@ -105,25 +105,27 @@ public class PizzaMaking : MonoBehaviour
             if (pineappleNumber == 4 && hamNumber == 3)
             {
                 pizza3Done = true;
+                cheese3.SetActive(false);
             }
         }
         if (order2)
         {
             orderTwo.SetActive(true);
             //print("order 2 is up");
-            if (pepperoniNumber == 4)
+            if (pepperoniNumber == 6)
             {
                 pizza1Done = true;
                 cheese1.SetActive(false);
             }
-            if (mushroomNumber == 5)
+            if (mushroomNumber == 4)
             {
                 pizza2Done = true;
                 cheese2.SetActive(false);
             }
-            if (pineappleNumber == 6 && hamNumber == 0)
+            if (pineappleNumber == 0 && hamNumber == 5)
             {
                 pizza3Done = true;
+                cheese3.SetActive(false);
             }
         }
         if (order3)
@@ -140,9 +142,10 @@ public class PizzaMaking : MonoBehaviour
                 pizza2Done = true;
                 cheese2.SetActive(false);
             }
-            if (pineappleNumber == 0 && hamNumber == 8)
+            if (pineappleNumber == 3 && hamNumber == 5)
             {
                 pizza3Done = true;
+                cheese3.SetActive(false);
             }
         }
 
@@ -183,6 +186,7 @@ public class PizzaMaking : MonoBehaviour
                 //mushroom.transform.parent = cheese2.transform;
                 //print("mushroom parented");
                 mushroomNumber = mushroomNumber + 1;
+                toppingsAdded.Add(collision.gameObject.name);
             }
         }
         if (collision.gameObject.CompareTag("pineapple"))
@@ -191,6 +195,7 @@ public class PizzaMaking : MonoBehaviour
             {
                 timerOne = 0f;
                 pineappleNumber = pineappleNumber + 1;
+                toppingsAdded.Add(collision.gameObject.name);
             }
         }
         if (collision.gameObject.CompareTag("ham"))
@@ -199,6 +204,7 @@ public class PizzaMaking : MonoBehaviour
             {
                 timerOne = 0f;
                 hamNumber = hamNumber + 1;
+                toppingsAdded.Add(collision.gameObject.name);
             }
         }
 
