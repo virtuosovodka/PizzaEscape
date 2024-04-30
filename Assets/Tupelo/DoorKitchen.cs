@@ -29,6 +29,7 @@ public class DoorKitchen : MonoBehaviour
     bool rotating;
     public GameManager gm;
     float swingTime = 0f;
+    private bool openDoor = false;
 
 
 
@@ -48,7 +49,7 @@ public class DoorKitchen : MonoBehaviour
     {
         doorRigid1.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionY;
         doorRigid2.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionY;
-        while (gm.openDoor)
+        while (openDoor)
         {
             swingTime += Time.deltaTime;
             doorRigid1.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionY;
@@ -66,18 +67,18 @@ public class DoorKitchen : MonoBehaviour
                 print(doorRotate1.transform.rotation.y);
                 if (swingTime >= 4.3f)
                 {
-                    gm.openDoor = false;
+                    openDoor = false;
                     gm.kitchenDoor = true;
                     //print("TIMERS DONE");
                 }
-                /*
+                
                 if (doorRotate1.transform.rotation.y <= -.97 && doorRotate2.transform.rotation.y >= .97)
                 {
                     rotating = false;
-                    gm.openDoor = false;
+                    openDoor = false;
                     gm.kitchenDoor = true;
                     //TODO: Vedika put in the timer for the room change here
-                }*/
+                }
             
                
             }
@@ -112,13 +113,13 @@ public class DoorKitchen : MonoBehaviour
                     //DO THIS NEXT CLASS CONVERT TO INTEGER
                     //also figure out the issue with templayer chasing bool
                     //its working !!!!
-                    gm.openDoor = true;
+                    openDoor = true;
                 }
             }
             //there is no clock in this room
             else
             {
-                gm.openDoor = true;
+                openDoor = true;
             }
 
         }
