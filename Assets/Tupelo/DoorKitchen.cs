@@ -29,7 +29,7 @@ public class DoorKitchen : MonoBehaviour
     bool rotating;
     public GameManager gm;
     float swingTime = 0f;
-    private bool openDoor = false;
+    public bool openDoor = false;
 
 
 
@@ -49,7 +49,7 @@ public class DoorKitchen : MonoBehaviour
     {
         doorRigid1.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionY;
         doorRigid2.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionY;
-        while (openDoor)
+        if (openDoor)
         {
             swingTime += Time.deltaTime;
             doorRigid1.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionY;
