@@ -49,7 +49,10 @@ public class DoorKitchen : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        text.text = "" + gm.kitchenDoor + " " + doorRotate1.transform.rotation.y + " " + swingTime;
+        if (SceneManager.GetActiveScene().buildIndex == 2)
+        {
+            text.text = "" + gm.kitchenDoor + " " + doorRotate1.transform.rotation.y + " " + swingTime;
+        }
 
         doorRigid1.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionY;
         doorRigid2.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionY;
