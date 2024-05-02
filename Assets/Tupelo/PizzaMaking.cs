@@ -9,16 +9,16 @@ public class PizzaMaking : MonoBehaviour
     public bool pizza3Done;
     public GameObject menuPiece2;
     int pepperoniNumber = 0;
-    int mushroomNumber = 0;
-    int pineappleNumber = 0;
-    int hamNumber = 0;
-    Vector3 endPosition;
-    Vector3 startPosition;
-    float printerSpeed = .02f;
+    public int mushroomNumber = 0;
+    public int pineappleNumber = 0;
+    public int hamNumber = 0;
+    public Vector3 endPosition;
+    public Vector3 startPosition;
+    //float printerSpeed = .02f;
     private float startTime;
     private float journeyLength;
 
-
+    public bool pizzasDone;
     public bool order1;
     public bool order2;
     public bool order3;
@@ -37,10 +37,11 @@ public class PizzaMaking : MonoBehaviour
     //public List<string> mushroomsAdded;
     //public List<string> pineappleAdded;
     //public List<string> pineappleAdded;
+    public float smoothTime = .5f;
+    public float speed;
+    Vector3 velocity;
 
     //lerp
-
-
 
     // Start is called before the first frame update
     void Start()
@@ -51,12 +52,14 @@ public class PizzaMaking : MonoBehaviour
 
         randomNumber = Random.Range(1, 3);
 
-        menuPiece2.transform.position = startPosition;
-        endPosition = new Vector3(18.62f, 2.66f, 3.97f);
-        startPosition = new Vector3(18.62f, 2.42f, 3.63f);
+        
+        //endPosition = new Vector3(18.62f, 2.66f, 3.97f);
+        //menuPiece2.transform.position = startPosition;
         startTime = Time.time;
-        journeyLength = Vector3.Distance(startPosition, endPosition);
+        //journeyLength = Vector3.Distance(startPosition, endPosition);
         // int rand = Random.Range(1, 4);
+
+        
 
     }
 
@@ -149,13 +152,14 @@ public class PizzaMaking : MonoBehaviour
             }
         }
 
-
         if (pizza1Done && pizza2Done && pizza3Done)
         {
-            float distCovered = (Time.time - startTime) * printerSpeed;
-            float fractionOfJourney = distCovered / journeyLength;
-            menuPiece2.transform.position = Vector3.Lerp(startPosition, endPosition, fractionOfJourney);
-            //menuPiece2.transform.position = Vector3.MoveTowards(startPosition, endPosition, printerSpeed * Time.deltaTime);
+            pizzasDone = true;
+            //float distCovered = (Time.time - startTime) * printerSpeed;
+            //float fractionOfJourney = distCovered / journeyLength;
+            //menuPiece2.transform.position = Vector3.Lerp(startPosition, endPosition, fractionOfJourney);
+
+            //menuPiece2.transform.position = Vector3.SmoothDamp(transform.position, endPosition, ref velocity, smoothTime, speed);
         }
     }
     private void OnCollisionEnter(Collision collision)
@@ -177,36 +181,36 @@ public class PizzaMaking : MonoBehaviour
                 toppingsAdded.Add(collision.gameObject.name);
             }
         }
-        if (collision.gameObject.CompareTag("mushroom"))
-        {
-            if (!toppingsAdded.Contains(collision.gameObject.name))
-            {
-                timerOne = 0f;
-                //var mushroom = collision.gameObject;
-                //mushroom.transform.parent = cheese2.transform;
-                //print("mushroom parented");
-                mushroomNumber = mushroomNumber + 1;
-                toppingsAdded.Add(collision.gameObject.name);
-            }
-        }
-        if (collision.gameObject.CompareTag("pineapple"))
-        {
-            if (!toppingsAdded.Contains(collision.gameObject.name))
-            {
-                timerOne = 0f;
-                pineappleNumber = pineappleNumber + 1;
-                toppingsAdded.Add(collision.gameObject.name);
-            }
-        }
-        if (collision.gameObject.CompareTag("ham"))
-        {
-            if (!toppingsAdded.Contains(collision.gameObject.name))
-            {
-                timerOne = 0f;
-                hamNumber = hamNumber + 1;
-                toppingsAdded.Add(collision.gameObject.name);
-            }
-        }
+        //if (collision.gameObject.CompareTag("mushroom"))
+        //{
+        //    if (!toppingsAdded.Contains(collision.gameObject.name))
+        //    {
+        //        timerOne = 0f;
+        //        //var mushroom = collision.gameObject;
+        //        //mushroom.transform.parent = cheese2.transform;
+        //        //print("mushroom parented");
+        //        mushroomNumber = mushroomNumber + 1;
+        //        toppingsAdded.Add(collision.gameObject.name);
+        //    }
+        //}
+        //if (collision.gameObject.CompareTag("pineapple"))
+        //{
+        //    if (!toppingsAdded.Contains(collision.gameObject.name))
+        //    {
+        //        timerOne = 0f;
+        //        pineappleNumber = pineappleNumber + 1;
+        //        toppingsAdded.Add(collision.gameObject.name);
+        //    }
+        //}
+        //if (collision.gameObject.CompareTag("ham"))
+        //{
+        //    if (!toppingsAdded.Contains(collision.gameObject.name))
+        //    {
+        //        timerOne = 0f;
+        //        hamNumber = hamNumber + 1;
+        //        toppingsAdded.Add(collision.gameObject.name);
+        //    }
+        //}
 
     }
 

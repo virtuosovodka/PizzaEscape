@@ -9722,6 +9722,7 @@ GameObject:
   - component: {fileID: 647818576}
   - component: {fileID: 647818574}
   - component: {fileID: 647818578}
+  - component: {fileID: 647818579}
   m_Layer: 0
   m_Name: Cylinder (5)
   m_TagString: Untagged
@@ -9760,6 +9761,12 @@ MonoBehaviour:
   pizza2Done: 0
   pizza3Done: 0
   menuPiece2: {fileID: 0}
+  mushroomNumber: 0
+  pineappleNumber: 0
+  hamNumber: 0
+  endPosition: {x: 0, y: 0, z: 0}
+  startPosition: {x: 0, y: 0, z: 0}
+  pizzasDone: 0
   order1: 0
   order2: 0
   order3: 0
@@ -9772,6 +9779,8 @@ MonoBehaviour:
   delay: 4
   timerOne: 0
   toppingsAdded: []
+  smoothTime: 0.5
+  speed: 0
 --- !u!23 &647818576
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9841,8 +9850,21 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.0000002, y: 2.0000002, z: 1.0000004}
-  m_Center: {x: 0.00000005960465, y: 0, z: -0.0000005662441}
+  m_Size: {x: 0.98282605, y: 4.889971, z: 1.0798446}
+  m_Center: {x: -0.008586773, y: -1.4449852, z: -0.039921235}
+--- !u!114 &647818579
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 647818572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbc49e165e184457b8d8739a171e47b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pizzaMakingScript: {fileID: 1648806110}
 --- !u!1 &648655030
 GameObject:
   m_ObjectHideFlags: 0
@@ -14305,6 +14327,7 @@ GameObject:
   - component: {fileID: 1009106200}
   - component: {fileID: 1009106204}
   - component: {fileID: 1009106203}
+  - component: {fileID: 1009106205}
   m_Layer: 0
   m_Name: menupiece 2
   m_TagString: Untagged
@@ -14321,7 +14344,7 @@ Transform:
   m_GameObject: {fileID: 1009106198}
   serializedVersion: 2
   m_LocalRotation: {x: -0.4737808, y: 0, z: 0, w: 0.8806428}
-  m_LocalPosition: {x: 1.040966, y: 0.158, z: 0.046}
+  m_LocalPosition: {x: 1.040966, y: -0.049, z: -0.09}
   m_LocalScale: {x: 0.25499785, y: 0.0019893672, z: 0.29}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -14573,6 +14596,22 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1009106205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1009106198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0667db51ce19d4b898c5f6824d2bbc8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  endPosition: {x: 1.040966, y: 0.171, z: 0.055}
+  pizzaMakingScript: {fileID: 1648806110}
+  doorKitchen: {fileID: 0}
+  startPos: {x: 1.040966, y: -0.06, z: -0.097}
 --- !u!1 &1021179076
 GameObject:
   m_ObjectHideFlags: 0
@@ -21030,6 +21069,12 @@ MonoBehaviour:
   pizza2Done: 0
   pizza3Done: 0
   menuPiece2: {fileID: 1009106198}
+  mushroomNumber: 0
+  pineappleNumber: 0
+  hamNumber: 0
+  endPosition: {x: 1.040966, y: 0.167, z: 0.052}
+  startPosition: {x: 1.040966, y: -0.055, z: -0.095}
+  pizzasDone: 0
   order1: 0
   order2: 0
   order3: 0
@@ -21042,6 +21087,8 @@ MonoBehaviour:
   delay: 4
   timerOne: 0
   toppingsAdded: []
+  smoothTime: 0.5
+  speed: 0
 --- !u!1 &1667732364
 GameObject:
   m_ObjectHideFlags: 0
@@ -28286,6 +28333,7 @@ GameObject:
   - component: {fileID: 1859809796}
   - component: {fileID: 1859809794}
   - component: {fileID: 1859809798}
+  - component: {fileID: 1859809799}
   m_Layer: 0
   m_Name: Cylinder (4)
   m_TagString: Untagged
@@ -28324,6 +28372,12 @@ MonoBehaviour:
   pizza2Done: 0
   pizza3Done: 0
   menuPiece2: {fileID: 0}
+  mushroomNumber: 0
+  pineappleNumber: 0
+  hamNumber: 0
+  endPosition: {x: 0, y: 0, z: 0}
+  startPosition: {x: 0, y: 0, z: 0}
+  pizzasDone: 0
   order1: 0
   order2: 0
   order3: 0
@@ -28336,6 +28390,8 @@ MonoBehaviour:
   delay: 4
   timerOne: 0
   toppingsAdded: []
+  smoothTime: 0.5
+  speed: 0
 --- !u!23 &1859809796
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -28407,6 +28463,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.0000002, y: 2.0000002, z: 1.0000004}
   m_Center: {x: 0.00000005960465, y: 0, z: -0.00000008940698}
+--- !u!114 &1859809799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1859809792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60d784be0f362415cbb5933a90ae613c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pizzaMakingScript: {fileID: 1648806110}
 --- !u!54 &1889206718
 Rigidbody:
   m_ObjectHideFlags: 0
