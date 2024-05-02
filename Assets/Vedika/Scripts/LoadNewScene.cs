@@ -28,6 +28,7 @@ public class LoadNewScene : MonoBehaviour
         {
             //this happens after tutorial scene is complete 
             SceneManager.LoadScene(1);
+            gm.tutorialDoorOpen = false;
         }
         else if (gm.isSecondLevel)
         {
@@ -50,6 +51,7 @@ public class LoadNewScene : MonoBehaviour
         {
             //this will take you to the basement scene
             SceneManager.LoadScene(3);
+            gm.kitchenDoor = false;
         }
         else if (gm.isFourthLevel)
         {

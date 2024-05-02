@@ -32,7 +32,7 @@ public class DoorKitchen : MonoBehaviour
     public GameManager gm;
     float swingTime = 0f;
     public bool openDoor = false;
-
+    public TextMeshProUGUI text; 
 
 
     // Start is called before the first frame update
@@ -49,6 +49,8 @@ public class DoorKitchen : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        text.text = "" + gm.kitchenDoor + " " + doorRotate1.transform.rotation.y + " " + swingTime;
+
         doorRigid1.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionY;
         doorRigid2.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionY;
         if (openDoor)
