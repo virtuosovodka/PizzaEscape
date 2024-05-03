@@ -43,14 +43,14 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - IgnoreCollision
   - Water
   - UI
   - RaycastYes
   - leftPoint
   - rightPoint
-  - 
-  - 
+  - Hands
+  - Interactable
   - 
   - 
   - 

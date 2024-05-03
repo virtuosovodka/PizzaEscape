@@ -2,9 +2,17 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class LockerCombo : MonoBehaviour
 {
+    [SerializeField]
+    TextMeshProUGUI first;
+    [SerializeField]
+    TextMeshProUGUI second;
+    [SerializeField]
+    TextMeshProUGUI third;
+
     private float numOne; // right fly up at 0 degrees
     private float numTwo; // right fly up, left fly down
     private float numThree; // left fly down
@@ -13,7 +21,8 @@ public class LockerCombo : MonoBehaviour
     
     private float prevPos;
     private float newPos;
-    
+
+    private Vector3 combo;
     
     
     // Start is called before the first frame update
@@ -23,6 +32,9 @@ public class LockerCombo : MonoBehaviour
         numTwo = 0.5f;
         numThree = 0f;
 
+        // First number, second number, third number
+        combo = new Vector3(1f, 15f, 24f);
+
         prevPos = position();
     }
 
@@ -30,34 +42,52 @@ public class LockerCombo : MonoBehaviour
     void Update()
     {
         newPos = position();
+
+        int display = (int)Mathf.Round(newPos * 40f);
+        if(display == 40)
+        {
+            display = 0;
+        }
+        second.text = display.ToString();
+
         rotate(newPos - prevPos);
         prevPos = newPos;
 
         if (checkCombo())
         {
-            // Do something when solved
+            first.text = "Solved!";
+            second.text = "Solved!";
+            third.text = "Solved!";
         }
+
+        /*
+        first.text = (Mathf.Round(numOne * 40f)).ToString();
+        second.text = (Mathf.Round(numTwo * 40f)).ToString();
+        third.text = (Mathf.Round(numThree * 40f)).ToString();
+        */
     }
 
     // Rotation of next wheel once they have locked together
     float calcRotationTogether(float pos1, float pos2, float rotation)
     {
         float rot1 = 0f;
-        float diff = pos2 - pos1; // should have opposite sign of degrees
+        float diff = (pos2 - pos1); // should have opposite sign of rotation
+
         if (rotation > 0f)
         {
+
             if (diff > 0f)
             {
-                diff -= 1;
+                diff -= 1f;
             }
-            
+
             // diff2 + fraction is distance past dial2 that dial3 would turn
-            if ((diff + rotation) + flySize > 0f)
+            if (diff + rotation + flySize > 0f)
             {
-                rot1 = (diff + rotation) + flySize;
+                rot1 = diff + rotation + flySize;
             }
         }
-        else
+        else if(rotation < 0f)
         {
             if (diff < 0f)
             {
@@ -75,6 +105,15 @@ public class LockerCombo : MonoBehaviour
 
     void rotate(float fraction)
     {
+        if (fraction > 0.5f)
+        {
+            fraction -= 1f;
+        }
+        else if (fraction < -0.5f)
+        {
+            fraction += 1f;
+        }
+
         float rotation3 = fraction;
         float rotation2 = calcRotationTogether(numTwo, numThree, rotation3);
         float rotation1 = calcRotationTogether(numOne, numTwo, rotation2);
@@ -111,12 +150,12 @@ public class LockerCombo : MonoBehaviour
 
     float position()
     {
-        return transform.localRotation.eulerAngles.x;
+        return (transform.localRotation.eulerAngles.y / 360f);
     }
 
     bool checkCombo()
     {
-        if (Mathf.Abs((numOne + 2f * flySize) - 1f / 40f) <= error && Mathf.Abs((numTwo - flySize) - 15f / 40f) <= error && Mathf.Abs(numThree - 24f / 40f) <= error)
+        if (Mathf.Abs((numOne - 2f * flySize) - combo.x / 40f) <= error && Mathf.Abs((numTwo - flySize) - combo.y / 40f) <= error && Mathf.Abs(numThree - combo.z / 40f) <= error)
         {
             return true;
         }
