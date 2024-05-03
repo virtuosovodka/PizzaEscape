@@ -12,6 +12,7 @@ public class PianoKeySounds : MonoBehaviour
     private List<string> _password = new();
     private List<string> _ipk = new();
     public LoadNewScene lns;
+    public TextMeshProUGUI text;
     
     [SerializeField]
 
@@ -21,16 +22,34 @@ public class PianoKeySounds : MonoBehaviour
     {
         _password = new List<string>(){ "G", "E", "C" };
         gm = FindObjectOfType<GameManager>();
+        
+        
+
+        print(gm);
         lns = FindObjectOfType<LoadNewScene>();
         lns.pizzaMonster.SetActive(false);
-        lns.pizzaMonsterText.text = "CEG";
+        
+        if (gm != null)
+        {
+            lns.pizzaMonsterText.text = "there is a game manager";
+        }
+        else
+        {
+            lns.pizzaMonsterText.text = "there is not a game manager";
+        }
     }
-    
+
+    public void Update()
+    {
+       lns.pizzaMonsterText.text = "CEG " + "" + _ipk.Count + " " + gm.keyboardPlayed;
+    }
+
     private void OnTriggerEnter(Collider collision)
     {
         if (collision.TryGetComponent(out PianoKey key))
         {
-            _ipk.Insert(0, key.Play());
+            _ipk.Insert(0, key.note);
+            key.Play();
             
             gm.keyboardPlayed = Compare(_password, _ipk);
         }

@@ -6,17 +6,18 @@ using UnityEngine;
 
 public class DoughPuzzle : MonoBehaviour
 {
-   public GameManager gm;
-   public GameObject placemat;
-   public TextMeshProUGUI text;
-   public float timer = 0.0f;
-   private bool onSurface;
-   private Rigidbody rb;
-   public LoadNewScene lns;
-        
+    public GameManager gm;
+    public GameObject placemat;
+    public TextMeshProUGUI text;
+    public float timer = 0.0f;
+    private bool onSurface;
+    private Rigidbody rb;
+    public LoadNewScene lns;
+    
     // Start is called before the first frame update
     void Start()
     {
+       
         //provide gm with a value (the script "GameManager")
         gm = FindObjectOfType<GameManager>();
         lns = FindObjectOfType<LoadNewScene>();

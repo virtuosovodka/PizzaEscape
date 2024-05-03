@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel.Design;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
+
 public class DoorKitchen : MonoBehaviour
 {
     public GameObject door1;
     public GameObject door2;
-    public bool openDoor;
     private bool isAtDoor = false;
     public ClockScript clockScript;
     public GameObject button1;
@@ -28,14 +30,16 @@ public class DoorKitchen : MonoBehaviour
     float speed = .002f;
     bool rotating;
     public GameManager gm;
-    float swingTime = 4.3f;
-
+    float swingTime = 0f;
+    public bool openDoor = false;
+    public TextMeshProUGUI text; 
 
 
     // Start is called before the first frame update
     void Start()
     {
         clockScript = GameObject.FindObjectOfType<ClockScript>();
+        //Debug.Log(clockScript);
         gm = FindObjectOfType<GameManager>();
         //addingDig = false;
         doorRigid1 = door1.GetComponent<Rigidbody>();
@@ -45,11 +49,16 @@ public class DoorKitchen : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (SceneManager.GetActiveScene().buildIndex == 2)
+        {
+            text.text = "" + gm.kitchenDoor + " " + doorRotate1.transform.rotation.y + " " + swingTime;
+        }
+
         doorRigid1.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionY;
         doorRigid2.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionY;
         if (openDoor)
         {
-            swingTime -= Time.deltaTime;
+            swingTime += Time.deltaTime;
             doorRigid1.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionY;
             doorRigid2.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionY;
             rotating = true;
@@ -63,20 +72,35 @@ public class DoorKitchen : MonoBehaviour
                 doorRotate2.transform.rotation = Quaternion.Lerp(startRotation2, targetRotation2, lerpDuration * speed);
                 lerpDuration = lerpDuration + Time.deltaTime;
                 print(doorRotate1.transform.rotation.y);
-                if (swingTime <= 0f)
+                if (swingTime >= 4.3f)
                 {
                     openDoor = false;
-                    print("TIMERS DONE");
+                    if (SceneManager.GetActiveScene().buildIndex == 2)
+                    {
+                        gm.kitchenDoor = true;
+                    }
+                    if (SceneManager.GetActiveScene().buildIndex == 0)
+                    {
+                        gm.tutorialDoorOpen = true;
+                    }
+                    //print("TIMERS DONE");
                 }
+                
                 if (doorRotate1.transform.rotation.y <= -.97 && doorRotate2.transform.rotation.y >= .97)
                 {
                     rotating = false;
                     openDoor = false;
-                    gm.kitchenDoor = true;
-                    /*
-                    TODO: Vedika put in the timer for the room change here
-                     */
+                    if (SceneManager.GetActiveScene().buildIndex == 2)
+                    {
+                        gm.kitchenDoor = true;
+                    }
+                    if (SceneManager.GetActiveScene().buildIndex == 0)
+                    {
+                        gm.tutorialDoorOpen = true;
+                    }
+                    //TODO: Vedika put in the timer for the room change here
                 }
+            
                
             }
         }
@@ -85,8 +109,11 @@ public class DoorKitchen : MonoBehaviour
 
         doorRigid1.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezePositionZ| RigidbodyConstraints.FreezeRotation;
         doorRigid2.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotation;
-        codeText.text = codeTextValue;
-        
+        if (codeText != null)
+        {
+            codeText.text = codeTextValue;
+        }
+
         //codeTextValueInt = int.Parse(codeTextValue.Trim());
         //doorCodeInt = int.Parse(doorCode.Trim());
 
@@ -95,13 +122,24 @@ public class DoorKitchen : MonoBehaviour
 
         if (codeTextValue.Length == 4)
         {
-            if (((int.Parse(clockScript.theCode) + tolerance) >= int.Parse(codeTextValue) && (int.Parse(clockScript.theCode) - tolerance) <= int.Parse(codeTextValue)))
+            //one way to open the door is to check the clock
+            //first check to see if a clock is in the room
+            if (clockScript != null)
             {
+                if (((int.Parse(clockScript.theCode) + tolerance) >= int.Parse(codeTextValue) &&
+                     (int.Parse(clockScript.theCode) - tolerance) <= int.Parse(codeTextValue)))
+                {
 
-                //codeTextValue >= clockScript.theCode.int.Parse -8 && codeTextValue <= clockScript.theCode ++ 8
-                //DO THIS NEXT CLASS CONVERT TO INTEGER
-                //also figure out the issue with templayer chasing bool
-                //its working !!!!
+                    //codeTextValue >= clockScript.theCode.int.Parse -8 && codeTextValue <= clockScript.theCode ++ 8
+                    //DO THIS NEXT CLASS CONVERT TO INTEGER
+                    //also figure out the issue with templayer chasing bool
+                    //its working !!!!
+                    openDoor = true;
+                }
+            }
+            //there is no clock in this room
+            else
+            {
                 openDoor = true;
             }
 
