@@ -35,6 +35,7 @@ public class collided3 : MonoBehaviour
                 pizzaMakingScript.toppingsAdded.Add(collision.gameObject.name);
                 pizzaMakingScript.hamNumber = pizzaMakingScript.hamNumber + 1;
                 pizzaMakingScript.timerOne = 0f;
+
             }
         }
     }

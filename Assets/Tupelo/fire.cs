@@ -6,6 +6,7 @@ public class fire : MonoBehaviour
 {
 
     public GameObject fireFlame;
+    public GameObject spout;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +26,7 @@ public class fire : MonoBehaviour
         {
             print("flame is colliding");
             fireFlame.SetActive(false);
+            spout.SetActive(false);
         }
     }
 }

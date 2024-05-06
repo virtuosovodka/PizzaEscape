@@ -26,6 +26,7 @@ public class Cheese2 : MonoBehaviour
                 pizzaMakingScript.toppingsAdded.Add(collision.gameObject.name);
                 pizzaMakingScript.mushroomNumber = pizzaMakingScript.mushroomNumber + 1;
                 pizzaMakingScript.timerOne = 0f;
+               
             }
         }
     } 

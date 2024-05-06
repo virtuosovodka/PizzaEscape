@@ -17,11 +17,17 @@ public class blowTorch : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.L))
+        if (Input.GetButtonDown("XRI_Right_TriggerButton"))
         {
             print("L key is down");
             fire.SetActive(true);
         }
+        if (Input.GetButtonDown("XRI_Left_Trigger"))
+        {
+            print("L key is down");
+            fire.SetActive(true);
+        }
+
         if (Input.GetKeyDown(KeyCode.K))
         {
             print("K key is down");
