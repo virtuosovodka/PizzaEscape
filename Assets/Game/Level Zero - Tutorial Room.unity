@@ -2794,42 +2794,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1096359326605671017, guid: 1d99d3baec76240fcbf83049b1b048a2, type: 3}
-      propertyPath: m_VideoClip
-      value: 
-      objectReference: {fileID: 32900000, guid: 2c6615cadf8a44b728c91da7b478e294, type: 3}
-    - target: {fileID: 1096359326605671017, guid: 1d99d3baec76240fcbf83049b1b048a2, type: 3}
-      propertyPath: m_ControlledAudioTrackCount
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1096359326605671017, guid: 1d99d3baec76240fcbf83049b1b048a2, type: 3}
-      propertyPath: m_DirectAudioMutes.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1096359326605671017, guid: 1d99d3baec76240fcbf83049b1b048a2, type: 3}
-      propertyPath: m_DirectAudioVolumes.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1096359326605671017, guid: 1d99d3baec76240fcbf83049b1b048a2, type: 3}
-      propertyPath: m_EnabledAudioTracks.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1096359326605671017, guid: 1d99d3baec76240fcbf83049b1b048a2, type: 3}
-      propertyPath: m_TargetAudioSources.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1096359326605671017, guid: 1d99d3baec76240fcbf83049b1b048a2, type: 3}
-      propertyPath: m_DirectAudioVolumes.Array.data[0]
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1096359326605671017, guid: 1d99d3baec76240fcbf83049b1b048a2, type: 3}
-      propertyPath: m_EnabledAudioTracks.Array.data[0]
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6607791794894029522, guid: 1d99d3baec76240fcbf83049b1b048a2, type: 3}
-      propertyPath: m_Texture
-      value: 
-      objectReference: {fileID: 2800000, guid: d2c6e57499adb45438e6a3530c944ae9, type: 3}
     - target: {fileID: 7598534885395194820, guid: 1d99d3baec76240fcbf83049b1b048a2, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.018000007
@@ -6900,10 +6864,6 @@ PrefabInstance:
     - target: {fileID: 7598534885395194820, guid: 1d99d3baec76240fcbf83049b1b048a2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 16.96
-      objectReference: {fileID: 0}
-    - target: {fileID: 7598534885395194820, guid: 1d99d3baec76240fcbf83049b1b048a2, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8568213103072364753, guid: 1d99d3baec76240fcbf83049b1b048a2, type: 3}
       propertyPath: m_Name

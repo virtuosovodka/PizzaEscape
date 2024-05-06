@@ -4,6 +4,38 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 0
+    path: Assets/Game/Level Zero - Tutorial Room.unity
+    guid: edd85c9de2398449f808ce1b24f98ccf
+  - enabled: 0
+    path: Assets/Game/Level One - Cold Room.unity
+    guid: c4f37b9c9301d413ca0f919cdb319130
+  - enabled: 0
+<<<<<<< Updated upstream
+=======
+    path: Assets/Lily/Lock Scene.unity
+    guid: 519ac7438608a468e84e6a442b370b0e
+  - enabled: 0
+    path: Assets/Game/Level Four - Dining Room.unity
+    guid: 406c0ba45d2274af59d6f51d3a11c0ce
+  - enabled: 0
+    path: Assets/Game/Kitchen2.unity
+    guid: e0b702d2b7436474192e5410dab41b01
+  - enabled: 1
+>>>>>>> Stashed changes
+    path: Assets/Game/EscapeRoom.unity
+    guid: 4088a16c2d8fc4cdf8a1a9975442637e
+  - enabled: 1
+    path: Assets/Game/Level Three - Basement.unity
+    guid: ba318009ee1fd48f1b8947477e0fd7ae
+  - enabled: 0
+    path: Assets/Game/Level Four - Dining Room.unity
+    guid: 406c0ba45d2274af59d6f51d3a11c0ce
   m_configObjects:
-    com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 1d93616721872484b981b402cacf7d3a, type: 2}
+    Unity.XR.Oculus.Settings: {fileID: 11400000, guid: bfa1182bd221b4ca89619141f66f1260, type: 2}
+    Unity.XR.WindowsMR.Settings: {fileID: 11400000, guid: dc5a169419fa04987b057f65238cf3ba, type: 2}
+    UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 9bec1ce6a03ccba4b9a8215241b32e63, type: 2}
+    UnityEditor.XR.ARKit.ARKitSettings: {fileID: 11400000, guid: a49cadc1a815591479693b955ccf08c1, type: 2}
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 1a4c68ca72a83449f938d669337cb305, type: 2}
+    com.unity.xr.openxr.settings4: {fileID: 11400000, guid: a9a6963505ddf7f4d886008c6dc86122, type: 2}
