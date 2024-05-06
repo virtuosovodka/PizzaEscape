@@ -63,7 +63,8 @@ public class LoadNewScene : MonoBehaviour
         {
             //this happens when the piano is played correctly 
             pizzaMonster.SetActive(true);
-            pizzaMonsterText.text = "You must kill the pizza monster to stop the destruction it will unleash. Find the pieces of the menu for the secret sauce to succeed in your mission.";
+            pizzaMonsterText.text = "Thank you for playing our game! You successfully made the pizza monster show himself but we have yet to implement the next part of the game.";
+            //You must kill the pizza monster to stop the destruction it will unleash. Find the pieces of the menu for the secret sauce to succeed in your mission.
         }
         
     }
