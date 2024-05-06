@@ -34,30 +34,33 @@ public class LoadNewScene : MonoBehaviour
         {
             //this will take you to the kitchen scene
             //before loading the scene, start timer and rotate door for 1.5 seconds
-            if (gm.timer <= 2.5f && gm.doughPlacement == 12)
-            {
-               //change the y of the door to make it open
-               doorHinge.transform.Rotate(0,0,1);
-            }
-            else if (gm.timer > 2.5f)
-            {
-                //when timer is 1.5 seconds, the scene changes
-                SceneManager.LoadScene(2);
-                gm.doughPlacement = 0;
-                gm.timer = 0;
-            }
-        }
+            SceneManager.LoadScene(2);
+            gm.kitchenDoor = false;
+        }/*
         else if (gm.isThirdLevel)
         {
             //this will take you to the basement scene
             SceneManager.LoadScene(3);
             gm.kitchenDoor = false;
         }
+        */
         else if (gm.isFourthLevel)
         {
             //this happens if the stuff in the basement gets completely
             //it loads the dining room 
-            SceneManager.LoadScene(4);
+            SceneManager.LoadScene(3);
+            if (gm.timer <= 2.5f && gm.doughPlacement == 12)
+            {
+                //change the y of the door to make it open
+                doorHinge.transform.Rotate(0, 0, 1);
+            }
+            else if (gm.timer > 2.5f)
+            {
+                //when timer is 1.5 seconds, the scene changes
+                SceneManager.LoadScene(3);
+                gm.doughPlacement = 0;
+                gm.timer = 0;
+            }
         }
         else if (gm.pizzaMonsterRelease)
         {

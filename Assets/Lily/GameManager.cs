@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class GameManager : MonoBehaviour
@@ -60,17 +61,17 @@ public class GameManager : MonoBehaviour
             //tutorial level has been finished, moves on to cold room
             isFirstLevel = true;
         }
-        else if (doughPlacement == 12 || Input.GetButtonDown("XRI_Right_SecondaryButton") || Input.GetKey(KeyCode.A))
+        else if (kitchenDoor || Input.GetButtonDown("XRI_Right_SecondaryButton") || Input.GetKey(KeyCode.A))
         {
-            //kitchen level starts 
-            doughPlacement = 12;
-            
-            timer += Time.deltaTime;
             isSecondLevel = true;
         }
-        else if (kitchenDoor || Input.GetButtonDown("XRI_Right_PrimaryButton") || Input.GetKey(KeyCode.C)) //and whatever finishes the kitchen level
+        else if (doughPlacement == 12|| Input.GetButtonDown("XRI_Right_PrimaryButton") || Input.GetKey(KeyCode.C)) //and whatever finishes the kitchen level
         {
-            isThirdLevel = true;
+            SceneManager.LoadScene(3);
+            doughPlacement = 12;
+            isFourthLevel = true;
+
+            timer += Time.deltaTime;
         }
         else if (Input.GetButtonDown("XRI_Left_SecondaryButton")) //this is the condition if basement is finished
         {

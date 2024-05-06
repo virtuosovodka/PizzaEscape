@@ -75,7 +75,7 @@ public class DoorKitchen : MonoBehaviour
                 if (swingTime >= 4.3f)
                 {
                     openDoor = false;
-                    if (SceneManager.GetActiveScene().buildIndex == 2)
+                    if (SceneManager.GetActiveScene().buildIndex == 1)
                     {
                         gm.kitchenDoor = true;
                     }
@@ -90,8 +90,9 @@ public class DoorKitchen : MonoBehaviour
                 {
                     rotating = false;
                     openDoor = false;
-                    if (SceneManager.GetActiveScene().buildIndex == 2)
+                    if (SceneManager.GetActiveScene().buildIndex == 1)
                     {
+                        SceneManager.LoadScene(2);
                         gm.kitchenDoor = true;
                     }
                     if (SceneManager.GetActiveScene().buildIndex == 0)
