@@ -7,12 +7,12 @@ using UnityEngine.AI;
 public class PizzaMan : MonoBehaviour
 {
     [SerializeField] private Transform movePositionTransform;
-    private NavMeshAgent navMeshAgent;
+    public NavMeshAgent navMeshAgent;
 
     // Start is called before the first frame update
     void Start()
     {
-        navMeshAgent = GetComponent<NavMeshAgent>();
+        //navMeshAgent = GetComponent<NavMeshAgent>();
     }
 
     // Update is called once per frame

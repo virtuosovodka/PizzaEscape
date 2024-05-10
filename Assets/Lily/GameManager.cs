@@ -67,15 +67,16 @@ public class GameManager : MonoBehaviour
         }
         else if (doughPlacement == 12|| Input.GetButtonDown("XRI_Right_PrimaryButton") || Input.GetKey(KeyCode.C)) //and whatever finishes the kitchen level
         {
-            SceneManager.LoadScene(3);
             doughPlacement = 12;
+            SceneManager.LoadScene(3);
             isFourthLevel = true;
+            doughPlacement = 0;
 
-            timer += Time.deltaTime;
+            //timer += Time.deltaTime;
         }
         else if (Input.GetButtonDown("XRI_Left_SecondaryButton")) //this is the condition if basement is finished
         {
-            isFourthLevel = true;
+            //isFourthLevel = true;
         }
         else if (keyboardPlayed)// || Input.GetButtonDown("XRI_Left_SecondaryButton"))
         {

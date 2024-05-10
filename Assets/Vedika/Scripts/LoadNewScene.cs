@@ -48,7 +48,6 @@ public class LoadNewScene : MonoBehaviour
         {
             //this happens if the stuff in the basement gets completely
             //it loads the dining room 
-            SceneManager.LoadScene(3);
             if (gm.timer <= 2.5f && gm.doughPlacement == 12)
             {
                 //change the y of the door to make it open

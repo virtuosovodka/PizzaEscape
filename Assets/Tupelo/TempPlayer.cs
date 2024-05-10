@@ -19,7 +19,7 @@ public class TempPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        garlicKnot = knot.GetComponent<GarlicKnot>();
+        //garlicKnot = knot.GetComponent<GarlicKnot>();
         var dir = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
         // vector 3 is shrthand for (0,0,1)
 
