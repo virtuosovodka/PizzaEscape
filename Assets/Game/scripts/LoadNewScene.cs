@@ -22,32 +22,27 @@ public class LoadNewScene : MonoBehaviour
     {
         if (gm.isLevelZero)
         {
+            //change to tutorial room
+            
             SceneManager.LoadScene(0);
         }
         else if (gm.isFirstLevel)
         {
+            //change to kitchen
             //this happens after tutorial scene is complete 
             SceneManager.LoadScene(1);
             gm.tutorialDoorOpen = false;
         }
         else if (gm.isSecondLevel)
         {
-            //this will take you to the kitchen scene
-            //before loading the scene, start timer and rotate door for 1.5 seconds
+            //changes to cold room
             SceneManager.LoadScene(2);
             gm.kitchenDoor = false;
-        }/*
+        }
         else if (gm.isThirdLevel)
         {
             //this will take you to the basement scene
             SceneManager.LoadScene(3);
-            gm.kitchenDoor = false;
-        }
-        */
-        else if (gm.isFourthLevel)
-        {
-            //this happens if the stuff in the basement gets completely
-            //it loads the dining room 
             if (gm.timer <= 2.5f && gm.doughPlacement == 12)
             {
                 //change the y of the door to make it open
@@ -61,11 +56,18 @@ public class LoadNewScene : MonoBehaviour
                 gm.timer = 0;
             }
         }
-        else if (gm.pizzaMonsterRelease)
+        else if (gm.isFourthLevel)
         {
+            //this happens if the stuff in the basement gets completely
+            //it loads the dining room 
+            SceneManager.LoadScene(4);
+            
+        }
+        else if (gm.makePestoToKill)
+        {
+            //takes you to kitchen
+            SceneManager.LoadScene(1);
             //this happens when the piano is played correctly 
-            pizzaMonster.SetActive(true);
-            pizzaMonsterText.text = "Thank you for playing our game! You successfully made the pizza monster show himself but we have yet to implement the next part of the game.";
             //You must kill the pizza monster to stop the destruction it will unleash. Find the pieces of the menu for the secret sauce to succeed in your mission.
         }
         

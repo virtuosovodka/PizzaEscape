@@ -8,7 +8,6 @@ public class DoughPuzzle : MonoBehaviour
 {
     public GameManager gm;
     public GameObject placemat;
-    public TextMeshProUGUI text;
     public float timer = 0.0f;
     private bool onSurface;
     private Rigidbody rb;
@@ -17,7 +16,6 @@ public class DoughPuzzle : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       
         //provide gm with a value (the script "GameManager")
         gm = FindObjectOfType<GameManager>();
         lns = FindObjectOfType<LoadNewScene>();
@@ -27,7 +25,7 @@ public class DoughPuzzle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        text.text = "" + gm.doughPlacement + " " + "" + gm.timer;
+        //text.text = "" + gm.doughPlacement + " " + "" + gm.timer;
         if (onSurface && rb.constraints != RigidbodyConstraints.FreezeAll)
         {
             timer += Time.deltaTime;

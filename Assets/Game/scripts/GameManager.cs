@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
     public bool isThirdLevel;
     public bool isFirstLevel;
     public bool isLevelZero;
-    public bool pizzaMonsterRelease;
+    public bool makePestoToKill;
     //public TextMeshProUGUI text;
     
     //Tutorial Scene
@@ -56,16 +56,16 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (tutorialDoorOpen || Input.GetButtonDown("XRI_Left_PrimaryButton") || Input.GetKey(KeyCode.B)) //|| the keypad is pressed
+        if (tutorialDoorOpen)// || Input.GetButtonDown("XRI_Left_PrimaryButton") || Input.GetKey(KeyCode.B)) //|| the keypad is pressed
         {
             //tutorial level has been finished, moves on to cold room
             isFirstLevel = true;
         }
-        else if (kitchenDoor || Input.GetButtonDown("XRI_Right_SecondaryButton") || Input.GetKey(KeyCode.A))
+        else if (kitchenDoor)// || Input.GetButtonDown("XRI_Right_SecondaryButton") || Input.GetKey(KeyCode.A))
         {
             isSecondLevel = true;
         }
-        else if (doughPlacement == 12|| Input.GetButtonDown("XRI_Right_PrimaryButton") || Input.GetKey(KeyCode.C)) //and whatever finishes the kitchen level
+        else if (doughPlacement == 12)//|| Input.GetButtonDown("XRI_Right_PrimaryButton") || Input.GetKey(KeyCode.C)) //and whatever finishes the kitchen level
         {
             doughPlacement = 12;
             SceneManager.LoadScene(3);
@@ -80,7 +80,7 @@ public class GameManager : MonoBehaviour
         }
         else if (keyboardPlayed)// || Input.GetButtonDown("XRI_Left_SecondaryButton"))
         {
-            pizzaMonsterRelease = true;
+            makePestoToKill = true;
         }
         else
         {
