@@ -8,7 +8,9 @@ public class PizzaMan : MonoBehaviour
 {
     [SerializeField] private Transform movePositionTransform;
     public NavMeshAgent navMeshAgent;
-
+    public float speed = 10;
+    public GameObject pizzaMonsterMan;
+    public bool gameWon = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,5 +29,13 @@ public class PizzaMan : MonoBehaviour
         //}
 
 
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("pesto"))
+        {
+            pizzaMonsterMan.SetActive(false);
+            gameWon = true;
+        }
     }
 }

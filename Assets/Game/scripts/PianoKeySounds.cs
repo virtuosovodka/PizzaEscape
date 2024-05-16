@@ -13,7 +13,7 @@ public class PianoKeySounds : MonoBehaviour
     private List<string> _ipk = new();
     public LoadNewScene lns;
     public TextMeshProUGUI text;
-    
+    public PizzaMan pizzaMan;
     [SerializeField]
 
     public GameManager gm;
@@ -27,7 +27,7 @@ public class PianoKeySounds : MonoBehaviour
 
         print(gm);
         lns = FindObjectOfType<LoadNewScene>();
-        lns.pizzaMonster.SetActive(false);
+        lns.pizzaMonster.SetActive(true);
         
         if (gm != null)
         {
@@ -36,6 +36,11 @@ public class PianoKeySounds : MonoBehaviour
         else
         {
             lns.pizzaMonsterText.text = "there is not a game manager";
+        }
+
+        if(pizzaMan.gameWon == true)
+        {
+            //gm.makePesto = true;
         }
     }
 
