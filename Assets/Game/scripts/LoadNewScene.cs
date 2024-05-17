@@ -48,6 +48,7 @@ public class LoadNewScene : MonoBehaviour
         {
             //takes you to kitchen
             SceneManager.LoadScene(1);
+            gm.keyboardPlayed = false;
             //this happens when the piano is played correctly 
             //You must kill the pizza monster to stop the destruction it will unleash. Find the pieces of the menu for the secret sauce to succeed in your mission.
         }
