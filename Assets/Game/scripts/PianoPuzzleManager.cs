@@ -7,7 +7,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.Rendering;
 
-public class PianoKeySounds : MonoBehaviour
+public class PianoPuzzleManager : MonoBehaviour
 {
     private List<string> _password = new();
     private List<string> _ipk = new();

@@ -5,19 +5,19 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Game/Scenes/Level Zero - Tutorial Room.unity
     guid: edd85c9de2398449f808ce1b24f98ccf
-  - enabled: 1
+  - enabled: 0
     path: Assets/Game/Scenes/Level One - Kitchen.unity
     guid: 4088a16c2d8fc4cdf8a1a9975442637e
-  - enabled: 1
+  - enabled: 0
     path: Assets/Game/Scenes/Level Two - Cold Room.unity
     guid: c4f37b9c9301d413ca0f919cdb319130
   - enabled: 1
     path: Assets/Game/Scenes/Level Four - Dining Room.unity
     guid: 406c0ba45d2274af59d6f51d3a11c0ce
-  - enabled: 1
+  - enabled: 0
     path: Assets/Game/Scenes/Winner.unity
     guid: 6077bfacd653e4279b97236e1e662f65
   m_configObjects:
