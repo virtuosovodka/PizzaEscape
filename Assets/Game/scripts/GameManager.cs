@@ -65,7 +65,7 @@ public class GameManager : MonoBehaviour
         {
             isSecondLevel = true;
         }
-        else if (doughPlacement == 12)//|| Input.GetButtonDown("XRI_Right_PrimaryButton") || Input.GetKey(KeyCode.C)) //and whatever finishes the kitchen level
+        else if ((doughPlacement == 12) || Input.GetButtonDown("XRI_Right_PrimaryButton")) // || Input.GetKey(KeyCode.C)) //and whatever finishes the kitchen level
         {
             doughPlacement = 12;
             SceneManager.LoadScene(3);
@@ -89,7 +89,7 @@ public class GameManager : MonoBehaviour
 
         if (pizzaMan.gameWon)
         {
-            SceneManager.LoadScene(5);
+            SceneManager.LoadScene(4);
         }
     }
 }
