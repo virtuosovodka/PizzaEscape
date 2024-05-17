@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
     public bool isLevelZero;
     public bool makePestoToKill;
     //public TextMeshProUGUI text;
-    
+    public PizzaMan pizzaMan;
     //Tutorial Scene
     public bool tutorialDoorOpen;
     //Cold Room
@@ -85,6 +85,11 @@ public class GameManager : MonoBehaviour
         else
         {
             isFirstLevel = isSecondLevel = isThirdLevel = isFourthLevel = isLevelZero = false;
+        }
+
+        if (pizzaMan.gameWon)
+        {
+            SceneManager.LoadScene(5);
         }
     }
 }
