@@ -49,15 +49,17 @@ public class DoorKitchen : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (SceneManager.GetActiveScene().buildIndex == 2)
-        {
-            text.text = "" + gm.kitchenDoor + " " + doorRotate1.transform.rotation.y + " " + swingTime;
-        }
+        //if (SceneManager.GetActiveScene().buildIndex == 2)
+        //{
+        //    text.text = "" + gm.kitchenDoor + " " + doorRotate1.transform.rotation.y + " " + swingTime;
+        //}
 
         doorRigid1.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionY;
         doorRigid2.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionY;
         if (openDoor)
         {
+
+
             swingTime += Time.deltaTime;
             doorRigid1.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionY;
             doorRigid2.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionY;
@@ -88,17 +90,13 @@ public class DoorKitchen : MonoBehaviour
                 
                 if (doorRotate1.transform.rotation.y <= -.97 && doorRotate2.transform.rotation.y >= .97)
                 {
+
                     rotating = false;
                     openDoor = false;
-                    if (SceneManager.GetActiveScene().buildIndex == 1)
-                    {
-                        SceneManager.LoadScene(2);
-                        gm.kitchenDoor = true;
-                    }
-                    if (SceneManager.GetActiveScene().buildIndex == 0)
-                    {
-                        gm.tutorialDoorOpen = true;
-                    }
+                    gm.kitchenDoor = true;
+
+                    rotating = false;
+                    openDoor = false;
                     //TODO: Vedika put in the timer for the room change here
                 }
             

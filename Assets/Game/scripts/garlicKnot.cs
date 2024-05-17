@@ -85,7 +85,7 @@ public class GarlicKnot : MonoBehaviour
                 transform.eulerAngles = new Vector3(0, 270, 0);
                 start2ndTimer = true;
                 startTimer = false;
-                forwardTimer = 4;
+                forwardTimer = 12;
             }
         }
         else if (start2ndTimer)
@@ -97,7 +97,7 @@ public class GarlicKnot : MonoBehaviour
                 transform.eulerAngles = new Vector3(0, 180, 0);
                 start2ndTimer = false;
                 start3rdTimer = true;
-                secondTimer = 1;
+                secondTimer = 2;
             }
         }
      
@@ -110,7 +110,7 @@ public class GarlicKnot : MonoBehaviour
               transform.eulerAngles = new Vector3(0, 90, 0);
               start3rdTimer = false;
               start4thTimer = true;
-              thirdTimer = 8;
+              thirdTimer = 24;
           }
         }
         else if (start4thTimer)
@@ -122,7 +122,7 @@ public class GarlicKnot : MonoBehaviour
               transform.eulerAngles = new Vector3(0, 0, 0);
               start4thTimer = false;
               start5thTimer = true;
-                fourthTimer = 1;
+                fourthTimer = 2;
           }
       }
       //   else if (start3rdTimer)
@@ -145,7 +145,7 @@ public class GarlicKnot : MonoBehaviour
               transform.eulerAngles = new Vector3(0, -90, 0);
               start5thTimer = false;
               start2ndTimer = true;
-              fifthTimer = 8;
+              fifthTimer = 24;
           }
       }
     
