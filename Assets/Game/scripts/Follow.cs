@@ -11,11 +11,12 @@ public class Follow : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+
+        rb.MovePosition(target.position);
     }
 
     // Update is called once per frame
     void Update()
     {
-        rb.MovePosition(target.position);
     }
 }

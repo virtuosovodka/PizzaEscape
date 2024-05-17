@@ -5,24 +5,17 @@ using TMPro;
 
 public class IngredientsCorrect : MonoBehaviour
 {
-    GameManager gm;
-    TextMeshProUGUI text;
-
     GameObject[] indicators;
 
     // Start is called before the first frame update
     void Start()
     {
-        gm = FindObjectOfType<GameManager>();
-        text = GetComponent<TextMeshProUGUI>();
-
         indicators = GameObject.FindGameObjectsWithTag("indicator");
     }
 
     // Update is called once per frame
     void Update()
     {
-        text.text = gm.doughPlacement.ToString();
     }
 
     public void changeIndicator(int shelf, bool green)
@@ -34,10 +27,10 @@ public class IngredientsCorrect : MonoBehaviour
             {
                 if(props.green == green)
                 {
-                    indicators[i].SetActive(true);
+                    props.Show();
                 } else
                 {
-                    indicators[i].SetActive(false);
+                    props.Hide();
                 }
             }
         }
