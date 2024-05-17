@@ -88,9 +88,13 @@ public class GameManager : MonoBehaviour
             isFirstLevel = isSecondLevel = isThirdLevel = isFourthLevel = isLevelZero = false;
         }
 
-        if (pizzaMan.gameWon)
+        if (pizzaMan != null)
         {
-            SceneManager.LoadScene(4);
+            if (pizzaMan.gameWon)
+            {
+                SceneManager.LoadScene(4);
+            }
         }
+        
     }
 }
