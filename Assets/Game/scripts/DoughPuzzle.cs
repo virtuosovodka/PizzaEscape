@@ -77,6 +77,8 @@ public class DoughPuzzle : MonoBehaviour
         {
             cansOnEachShelf[correctShelf]++;
             gm.doughPlacement++;
+
+            UpdateIndicators();
         }
     }
 
@@ -90,6 +92,8 @@ public class DoughPuzzle : MonoBehaviour
         {
             cansOnEachShelf[correctShelf]--;
             gm.doughPlacement--;
+
+            UpdateIndicators();
         }
     }
 
@@ -99,7 +103,10 @@ public class DoughPuzzle : MonoBehaviour
         {
             if(cansOnEachShelf[i] == cansPerShelf)
             {
-
+                ic.changeIndicator(i + 1, true);
+            } else
+            {
+                ic.changeIndicator(i + 1, false);
             }
         }
     }
