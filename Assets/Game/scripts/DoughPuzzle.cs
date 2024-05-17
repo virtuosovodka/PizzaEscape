@@ -14,20 +14,25 @@ public class DoughPuzzle : MonoBehaviour
         { "Pineapple", "Olives", "Mushrooms", "Tomatoes" },
         { "Gorgonzola", "Parmesan", "Ricotta", "Mozzarella" } };
 
+    private static int[] cansOnEachShelf = new int[numberOfShelves];
+
     public GameManager gm;
     public float timer = 0.0f;
     private bool onSurface;
     private Rigidbody rb;
-    public LoadNewScene lns;
 
+    private int correctShelf;
     private string shelfTag;
+
+    private IngredientsCorrect ic;
     
     // Start is called before the first frame update
     void Start()
     {
         //provide gm with a value (the script "GameManager")
         gm = FindObjectOfType<GameManager>();
-        lns = FindObjectOfType<LoadNewScene>();
+        ic = FindObjectOfType<IngredientsCorrect>();
+
         rb = GetComponent<Rigidbody>();
 
         for(int shelfNum = 0; shelfNum < numberOfShelves; shelfNum++)
@@ -36,6 +41,7 @@ public class DoughPuzzle : MonoBehaviour
             {
                 if(gameObject.name == shelfAssignments[shelfNum, canNum])
                 {
+                    correctShelf = shelfNum;
                     shelfTag = "Shelf" + (shelfNum + 1).ToString();
                 }
             }
@@ -69,6 +75,7 @@ public class DoughPuzzle : MonoBehaviour
         //if the object the dough bag collided with is the placemat, add 1 to doughPlacement
         if (other.gameObject.CompareTag(shelfTag)) // && timer == 0f)
         {
+            cansOnEachShelf[correctShelf]++;
             gm.doughPlacement++;
         }
     }
@@ -81,7 +88,19 @@ public class DoughPuzzle : MonoBehaviour
         //if the dough bag is removed from/ is no longer touching the placemat, subtract 1 from doughPlacement
         if (other.gameObject.CompareTag(shelfTag))
         {
+            cansOnEachShelf[correctShelf]--;
             gm.doughPlacement--;
+        }
+    }
+
+    private void UpdateIndicators()
+    {
+        for(int i = 0; i < numberOfShelves; i++)
+        {
+            if(cansOnEachShelf[i] == cansPerShelf)
+            {
+
+            }
         }
     }
 }
