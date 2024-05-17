@@ -6,12 +6,21 @@ using UnityEngine;
 
 public class DoughPuzzle : MonoBehaviour
 {
+    private static int numberOfShelves = 3;
+    private static int cansPerShelf = 4;
+
+    private static string[,] shelfAssignments = {
+        { "Pepperoni", "Salami", "Chicken", "Sausage" },
+        { "Pineapple", "Olives", "Mushrooms", "Tomatoes" },
+        { "Gorgonzola", "Parmesan", "Ricotta", "Mozzarella" } };
+
     public GameManager gm;
-    public GameObject placemat;
     public float timer = 0.0f;
     private bool onSurface;
     private Rigidbody rb;
     public LoadNewScene lns;
+
+    private string shelfTag;
     
     // Start is called before the first frame update
     void Start()
@@ -19,7 +28,23 @@ public class DoughPuzzle : MonoBehaviour
         //provide gm with a value (the script "GameManager")
         gm = FindObjectOfType<GameManager>();
         lns = FindObjectOfType<LoadNewScene>();
-        rb = this.GetComponent<Rigidbody>();
+        rb = GetComponent<Rigidbody>();
+
+        for(int shelfNum = 0; shelfNum < numberOfShelves; shelfNum++)
+        {
+            for(int canNum = 0; canNum < cansPerShelf; canNum++)
+            {
+                if(gameObject.name == shelfAssignments[shelfNum, canNum])
+                {
+                    shelfTag = "Shelf" + (shelfNum + 1).ToString();
+                }
+            }
+        }
+
+        if (shelfTag == "")
+        {
+            Debug.LogWarning("Ingredient Can name " + gameObject.name + " not found in shelf assignment list.");
+        }
     }
 
     // Update is called once per frame
@@ -42,7 +67,7 @@ public class DoughPuzzle : MonoBehaviour
         onSurface = true;
       
         //if the object the dough bag collided with is the placemat, add 1 to doughPlacement
-        if (other.gameObject == placemat)// && timer == 0f)
+        if (other.gameObject.CompareTag(shelfTag)) // && timer == 0f)
         {
             gm.doughPlacement++;
         }
@@ -54,7 +79,7 @@ public class DoughPuzzle : MonoBehaviour
         onSurface = false;
         
         //if the dough bag is removed from/ is no longer touching the placemat, subtract 1 from doughPlacement
-        if (other.gameObject == placemat)
+        if (other.gameObject.CompareTag(shelfTag))
         {
             gm.doughPlacement--;
         }

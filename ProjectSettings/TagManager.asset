@@ -39,6 +39,11 @@ TagManager:
   - pineapple
   - ham
   - extuinguisher
+  - Shelf1
+  - Shelf2
+  - Shelf3
+  - Shelf4
+  - Shelf5
   layers:
   - Default
   - TransparentFX
