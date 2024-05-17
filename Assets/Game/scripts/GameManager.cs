@@ -73,8 +73,8 @@ public class GameManager : MonoBehaviour
         else if ((doughPlacement == 12))// || Input.GetButtonDown("XRI_Right_PrimaryButton")) // || Input.GetKey(KeyCode.C)) //and whatever finishes the kitchen level
         {
             doughPlacement = 12;
-            SceneManager.LoadScene(3);
-            isFourthLevel = true;
+            // SceneManager.LoadScene(3);
+            isThirdLevel = true;
             doughPlacement = 0;
 
             //timer += Time.deltaTime;
