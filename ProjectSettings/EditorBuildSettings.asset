@@ -14,7 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Game/Scenes/Level Two - Cold Room.unity
     guid: c4f37b9c9301d413ca0f919cdb319130
-  - enabled: 0
+  - enabled: 1
     path: Assets/Game/Scenes/Level Three - Basement.unity
     guid: ba318009ee1fd48f1b8947477e0fd7ae
   - enabled: 1

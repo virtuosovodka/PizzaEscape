@@ -2902,10 +2902,11 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -9.24, y: -2.26, z: -1.49}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.53, y: 0.53, z: 0.53}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1628188273}
+  - {fileID: 1704985443}
   m_Father: {fileID: 1681865137}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &197338323
@@ -10332,7 +10333,6 @@ MonoBehaviour:
   navMeshAgent: {fileID: 501924875}
   speed: 10
   pizzariaMan: {fileID: 501924873}
-  gameWon: 0
   gameManager: {fileID: 1834298172}
   fire: {fileID: 803160246}
 --- !u!195 &501924875
@@ -14918,6 +14918,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 8f24bebc383b7403686fbddbc746d8a7, type: 3}
       propertyPath: m_Name
       value: tinker
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8f24bebc383b7403686fbddbc746d8a7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 8f24bebc383b7403686fbddbc746d8a7, type: 3}
       propertyPath: m_TagString
@@ -33258,6 +33262,11 @@ Transform:
   - {fileID: 1028055557}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1704985443 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: bbdb3711f203e4d8690cc7f5bb3e2d3c, type: 3}
+  m_PrefabInstance: {fileID: 2030775225}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1705534656
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -33765,27 +33774,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8f24bebc383b7403686fbddbc746d8a7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.89
+      value: 23.114573
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8f24bebc383b7403686fbddbc746d8a7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.96
+      value: 1.207
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8f24bebc383b7403686fbddbc746d8a7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.06
+      value: -0.17381015
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8f24bebc383b7403686fbddbc746d8a7, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7071068
+      value: 0.9520136
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8f24bebc383b7403686fbddbc746d8a7, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.7071068
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8f24bebc383b7403686fbddbc746d8a7, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: -0.30605584
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8f24bebc383b7403686fbddbc746d8a7, type: 3}
       propertyPath: m_LocalRotation.z
@@ -33793,11 +33802,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8f24bebc383b7403686fbddbc746d8a7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: -90
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8f24bebc383b7403686fbddbc746d8a7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: -35.643
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8f24bebc383b7403686fbddbc746d8a7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -33889,9 +33898,8 @@ MonoBehaviour:
   navMeshAgent: {fileID: 1739149730}
   speed: 10
   pizzariaMan: {fileID: 1739149726}
-  gameWon: 0
-  gameManager: {fileID: 0}
-  fire: {fileID: 0}
+  gameManager: {fileID: 1834298172}
+  fire: {fileID: 803160246}
 --- !u!195 &1739149730
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -34911,7 +34919,6 @@ MonoBehaviour:
   navMeshAgent: {fileID: 1791918502}
   speed: 10
   pizzariaMan: {fileID: 1791918499}
-  gameWon: 0
   gameManager: {fileID: 0}
   fire: {fileID: 803160246}
 --- !u!1 &1800190125
@@ -35182,7 +35189,7 @@ GameObject:
   - component: {fileID: 1834298171}
   - component: {fileID: 1834298172}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35217,12 +35224,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: 0
   pizzaMan: {fileID: 0}
-  kitchen: {fileID: 0}
   tutorialDoorOpen: 0
   kitchenDoor: 0
   doughPlacement: 0
   lockerCombo: 0
   keyboardPlayed: 0
+  gameWon: 0
   timer: 0
   finalLevel: 4
 --- !u!1 &1840563408
@@ -42816,6 +42823,75 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f73e174acf1194dfc80be499efa0cf39, type: 3}
+--- !u!1001 &2030775225
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 197338322}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: bbdb3711f203e4d8690cc7f5bb3e2d3c, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bbdb3711f203e4d8690cc7f5bb3e2d3c, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bbdb3711f203e4d8690cc7f5bb3e2d3c, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bbdb3711f203e4d8690cc7f5bb3e2d3c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.44657707
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bbdb3711f203e4d8690cc7f5bb3e2d3c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.38999987
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bbdb3711f203e4d8690cc7f5bb3e2d3c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.071159005
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bbdb3711f203e4d8690cc7f5bb3e2d3c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7584851
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bbdb3711f203e4d8690cc7f5bb3e2d3c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bbdb3711f203e4d8690cc7f5bb3e2d3c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.6516905
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bbdb3711f203e4d8690cc7f5bb3e2d3c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bbdb3711f203e4d8690cc7f5bb3e2d3c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bbdb3711f203e4d8690cc7f5bb3e2d3c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 81.338
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: bbdb3711f203e4d8690cc7f5bb3e2d3c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: bbdb3711f203e4d8690cc7f5bb3e2d3c, type: 3}
+      propertyPath: m_Name
+      value: BreadstickShell
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: bbdb3711f203e4d8690cc7f5bb3e2d3c, type: 3}
 --- !u!1 &2072387776
 GameObject:
   m_ObjectHideFlags: 0
