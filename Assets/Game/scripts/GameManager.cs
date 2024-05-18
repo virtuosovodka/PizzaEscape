@@ -77,7 +77,7 @@ public class GameManager : MonoBehaviour
         {
             level = Level.Two;
         }
-        else if ((doughPlacement == 12)|| Input.GetButtonDown("XRI_Right_PrimaryButton")) // || Input.GetKey(KeyCode.C)) //and whatever finishes the kitchen level
+        else if ((doughPlacement == 12))// || Input.GetKey(KeyCode.C)) //and whatever finishes the kitchen level
         {
             level = Level.Three;
 
