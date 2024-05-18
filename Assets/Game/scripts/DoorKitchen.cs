@@ -7,9 +7,10 @@ using UnityEngine.SceneManagement;
 
 public class DoorKitchen : MonoBehaviour
 {
+    //public GameObject cameraSpot;
     public GameObject door1;
     public GameObject door2;
-    private bool isAtDoor = false;
+    //private bool isAtDoor = false;
     public ClockScript clockScript;
     public GameObject button1;
     [SerializeField]private TextMeshProUGUI codeText;
@@ -44,6 +45,7 @@ public class DoorKitchen : MonoBehaviour
         //addingDig = false;
         doorRigid1 = door1.GetComponent<Rigidbody>();
         doorRigid2 = door2.GetComponent<Rigidbody>();
+        //cameraSpot.transform.position = new Vector3(18, 2, 1);
     }
 
     // Update is called once per frame
@@ -174,12 +176,12 @@ public class DoorKitchen : MonoBehaviour
     {
         if (other.tag=="player")
         {
-            isAtDoor = true;
+            //isAtDoor = true;
         }
     }
     private void OnTriggerExit(Collider other)
     {
-        isAtDoor = false;
+       // isAtDoor = false;
     }
 
     public void AddDigit(string digit)
