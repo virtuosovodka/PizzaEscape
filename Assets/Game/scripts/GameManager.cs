@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour
     public Level level = Level.Zero;
     //public TextMeshProUGUI text;
     public PizzaMan pizzaMan;
+    public kitchenPizzaMan kitchen;
     //Tutorial Scene
     public bool tutorialDoorOpen;
     //Kitchen
@@ -90,13 +91,11 @@ public class GameManager : MonoBehaviour
             level = Level.Five;
         }
 
-        if (pizzaMan != null)
-        {
-            if (pizzaMan.gameWon)
+        if (kitchen.gameWon)
             {
-                SceneManager.LoadScene(5);
+                SceneManager.LoadScene(4);
             }
-        }
+       
         
     }
 
