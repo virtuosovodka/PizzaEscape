@@ -4,8 +4,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+
 public class LockerCombo : MonoBehaviour
 {
+    static float size = 50f;
+
     [SerializeField]
     private TextMeshProUGUI first;
     [SerializeField]
@@ -16,8 +19,8 @@ public class LockerCombo : MonoBehaviour
     private float numOne; // right fly up at 0 degrees
     private float numTwo; // right fly up, left fly down
     private float numThree; // left fly down
-    private float error = 2f / 40f;
-    private float flySize = 1f / 40f;
+    private float error = 4f / size;
+    private float flySize = 1f / size;
     
     private float prevPos;
     private float newPos;
@@ -37,7 +40,7 @@ public class LockerCombo : MonoBehaviour
         numThree = 0f;
 
         // First number, second number, third number
-        combo = new Vector3(1f, 15f, 24f);
+        combo = new Vector3(41f, 15f, 24f);
 
         prevPos = position();
     }
@@ -48,7 +51,7 @@ public class LockerCombo : MonoBehaviour
         newPos = position();
 
         /*
-        int display = (int)Mathf.Round(newPos * 40f);
+        int display = (int)Mathf.Round(newPos * size);
         if(display == 40)
         {
             display = 0;
@@ -67,9 +70,9 @@ public class LockerCombo : MonoBehaviour
             gm.lockerCombo = true;
         }
     
-        first.text = (Mathf.Round(numOne * 40f)).ToString();
-        second.text = (Mathf.Round(numTwo * 40f)).ToString();
-        third.text = (Mathf.Round(numThree * 40f)).ToString();
+        first.text = (Mathf.Round(numOne * size)).ToString();
+        second.text = (Mathf.Round(numTwo * size)).ToString();
+        third.text = (Mathf.Round(numThree * size)).ToString();
     }
 
     // Rotation of next wheel once they have locked together
@@ -155,12 +158,12 @@ public class LockerCombo : MonoBehaviour
 
     float position()
     {
-        return (transform.localRotation.eulerAngles.y / 360f);
+        return transform.localRotation.eulerAngles.y / 360f;
     }
 
     bool checkCombo()
     {
-        if (Mathf.Abs((numOne - 2f * flySize) - combo.x / 40f) <= error && Mathf.Abs((numTwo + flySize) - combo.y / 40f) <= error && Mathf.Abs(numThree - combo.z / 40f) <= error)
+        if (Mathf.Abs((numOne + 2f * flySize) - combo.x / size) <= error && Mathf.Abs((numTwo - flySize) - combo.y / size) <= error && Mathf.Abs(numThree - combo.z / size) <= error)
         {
             return true;
         }

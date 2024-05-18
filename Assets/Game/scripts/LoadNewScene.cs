@@ -53,14 +53,16 @@ public class LoadNewScene : MonoBehaviour
             }
             else if (gm.level == Level.Four)
             {
+                SceneManager.LoadScene(4);
+                previous = Level.Four;
+            }
+            else if (gm.level == Level.Five)
+            {
                 //takes you to kitchen
                 SceneManager.LoadScene(1);
-                previous = Level.Four;
+                previous = Level.Five;
                 //this happens when the piano is played correctly 
                 //You must kill the pizza monster to stop the destruction it will unleash. Find the pieces of the menu for the secret sauce to succeed in your mission.
-            } else if (gm.level == Level.Five)
-            {
-                SceneManager.LoadScene(4);
             }
 
             gm.ResetLevelClears();
