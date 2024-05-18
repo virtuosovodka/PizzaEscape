@@ -45,6 +45,7 @@ TagManager:
   - Shelf4
   - Shelf5
   - indicator
+  - pesto
   layers:
   - Default
   - TransparentFX

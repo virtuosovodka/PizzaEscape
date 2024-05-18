@@ -32,8 +32,15 @@ public class GameManager : MonoBehaviour
     public bool lockerCombo;
     //Dining Room
     public bool keyboardPlayed;
+<<<<<<< Updated upstream
+=======
+    //Pizza Monster
+    public bool killerPesto;
+>>>>>>> Stashed changes
     //used to open door in cold room
     public float timer;
+
+    public Level finalLevel = Level.Four;
     
     
 
@@ -85,7 +92,6 @@ public class GameManager : MonoBehaviour
         }
         else if (keyboardPlayed)// || Input.GetButtonDown("XRI_Left_SecondaryButton"))
         {
-            // makePestoToKill = true;
             level = Level.Four;
         }
 

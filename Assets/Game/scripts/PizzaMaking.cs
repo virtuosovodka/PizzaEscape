@@ -152,7 +152,7 @@ public class PizzaMaking : MonoBehaviour
             }
         }
 
-        if (pizza1Done && pizza2Done && pizza3Done)
+        if (pizza1Done && pizza2Done || pizza1Done && pizza3Done || pizza2Done && pizza3Done || pizza1Done && pizza2Done && pizza3Done)
         {
             pizzasDone = true;
             //float distCovered = (Time.time - startTime) * printerSpeed;

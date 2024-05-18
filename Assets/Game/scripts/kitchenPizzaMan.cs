@@ -20,7 +20,15 @@ public class kitchenPizzaMan : MonoBehaviour
             //navMeshAgent = GetComponent<NavMeshAgent>();
             pizzariaMan.SetActive(false);
             gameManager = FindObjectOfType<GameManager>();
+
+
+        if (gameManager.level == gameManager.finalLevel)
+        {
+            pizzariaMan.SetActive(true);
+            fire.SetActive(false);
+            //gameManager.level == Level.Four
         }
+    }
 
     // Update is called once per frame
     void Update()
@@ -35,6 +43,7 @@ public class kitchenPizzaMan : MonoBehaviour
 
 
     }
+
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("pesto"))
@@ -43,10 +52,5 @@ public class kitchenPizzaMan : MonoBehaviour
             gameWon = true;
         }
 
-        if (gameManager.level == Level.Four)
-        {
-            pizzariaMan.SetActive(true);
-            fire.SetActive(false);
-        }
     }
 }
