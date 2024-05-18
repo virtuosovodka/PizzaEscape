@@ -9,12 +9,14 @@ public class LockerCombo : MonoBehaviour
 {
     static float size = 50f;
 
+    /*
     [SerializeField]
     private TextMeshProUGUI first;
     [SerializeField]
     private TextMeshProUGUI second;
     [SerializeField]
     private TextMeshProUGUI third;
+    */
 
     private float numOne; // right fly up at 0 degrees
     private float numTwo; // right fly up, left fly down
@@ -64,15 +66,19 @@ public class LockerCombo : MonoBehaviour
 
         if (checkCombo())
         {
+            /*
             first.text = "Solved!";
             second.text = "Solved!";
             third.text = "Solved!";
+            */
             gm.lockerCombo = true;
         }
-    
+
+        /*
         first.text = (Mathf.Round(numOne * size)).ToString();
         second.text = (Mathf.Round(numTwo * size)).ToString();
         third.text = (Mathf.Round(numThree * size)).ToString();
+        */
     }
 
     // Rotation of next wheel once they have locked together
