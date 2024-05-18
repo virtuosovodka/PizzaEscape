@@ -13,44 +13,54 @@ public class LoadNewScene : MonoBehaviour
     public GameObject pizzaMonster;
     public TextMeshProUGUI pizzaMonsterText;
 
+    private Level previous;
+
     void Start()
     {
         gm = FindObjectOfType<GameManager>();
+
+        previous = gm.level;
     }
 
     void Update()
     {
-        if (gm.isLevelZero)
+        if (gm.level != previous)
         {
-            //change to tutorial room
-            SceneManager.LoadScene(0);
-        }
-        else if (gm.isFirstLevel)
-        {
-            //change to kitchen
-            //this happens after tutorial scene is complete 
-            SceneManager.LoadScene(1);
-            gm.tutorialDoorOpen = false;
-        }
-        else if (gm.isSecondLevel)
-        {
-            //changes to cold room
-            SceneManager.LoadScene(2);
-            gm.kitchenDoor = false;
-        }
-        else if (gm.isThirdLevel)
-        {
-            //takes you to dining room
-            SceneManager.LoadScene(3);
-            gm.doughPlacement = 0;
-        }
-        else if (gm.makePestoToKill)
-        {
-            //takes you to kitchen
-            SceneManager.LoadScene(1);
-            gm.keyboardPlayed = false;
-            //this happens when the piano is played correctly 
-            //You must kill the pizza monster to stop the destruction it will unleash. Find the pieces of the menu for the secret sauce to succeed in your mission.
+            if (gm.level == Level.Zero)
+            {
+                //change to tutorial room
+                SceneManager.LoadScene(0);
+                previous = Level.Zero;
+            }
+            else if (gm.level == Level.One)
+            {
+                //change to kitchen
+                //this happens after tutorial scene is complete 
+                SceneManager.LoadScene(1);
+                previous = Level.One;
+            }
+            else if (gm.level == Level.Two)
+            {
+                //changes to cold room
+                SceneManager.LoadScene(2);
+                previous = Level.Two;
+            }
+            else if (gm.level == Level.Three)
+            {
+                //takes you to dining room
+                SceneManager.LoadScene(3);
+                previous = Level.Three;
+            }
+            else if (gm.level == Level.Four)
+            {
+                //takes you to kitchen
+                SceneManager.LoadScene(1);
+                previous = Level.Four;
+                //this happens when the piano is played correctly 
+                //You must kill the pizza monster to stop the destruction it will unleash. Find the pieces of the menu for the secret sauce to succeed in your mission.
+            }
+
+            gm.ResetLevelClears();
         }
     }
 }

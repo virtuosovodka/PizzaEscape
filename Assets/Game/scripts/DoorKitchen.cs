@@ -56,7 +56,7 @@ public class DoorKitchen : MonoBehaviour
 
         doorRigid1.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionY;
         doorRigid2.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionY;
-        if (openDoor)
+        if (openDoor && gm.level != Level.Four)
         {
 
 
