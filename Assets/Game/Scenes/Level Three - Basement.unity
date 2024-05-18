@@ -4160,7 +4160,7 @@ Transform:
   m_GameObject: {fileID: 1727977751}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.282, y: 1.14, z: 0.299}
+  m_LocalPosition: {x: 3.282, y: 1.405, z: 0.299}
   m_LocalScale: {x: 0.02, y: 0.04, z: 0.01}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4640,8 +4640,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -5175,7 +5175,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0

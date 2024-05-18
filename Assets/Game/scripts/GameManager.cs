@@ -6,12 +6,12 @@ using TMPro;
 
 public enum Level
 {
-    Zero,
-    One,
-    Two,
-    Three,
-    Four,
-    Five
+    Zero = 0,
+    One = 1,
+    Two = 2,
+    Three = 3,
+    Four = 4,
+    Five = 5
 }
 
 public class GameManager : MonoBehaviour
@@ -102,7 +102,7 @@ public class GameManager : MonoBehaviour
 
     public void ResetLevelClears()
     {
-        timer = 0;
+        timer = 0f;
         tutorialDoorOpen = false; // Level Zero
         kitchenDoor = false; // Level One
         doughPlacement = 0; // Level Two

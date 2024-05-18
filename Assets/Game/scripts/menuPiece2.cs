@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class menuPiece2 : MonoBehaviour
 {
@@ -11,11 +12,18 @@ public class menuPiece2 : MonoBehaviour
     Vector3 startPos;
     Rigidbody rb;
     public float timer;
+    private GameManager gm;
+
+    [SerializeField] private GameObject pesto;
+
     // Start is called before the first frame update
     void Start()
     {
         startPos = transform.position;
         rb = GetComponent<Rigidbody>();
+        gm = FindObjectOfType<GameManager>();
+
+        pesto.GetComponent<XRGrabInteractable>().enabled = false;
    }
 
     // Update is called once per frame
@@ -24,9 +32,12 @@ public class menuPiece2 : MonoBehaviour
         if (pizzaMakingScript.pizzasDone)
         {
             timer -= Time.deltaTime;
-            if (timer > 0)
+            if (timer > 0) // && gm.level == Level.Four)
             {
-
+                if(gm.level == gm.finalLevel)
+                {
+                    pesto.GetComponent<XRGrabInteractable>().enabled = true;
+                }
 
                 Vector3 velocity = new Vector3(0, .1f, 0);
                 transform.position = Vector3.SmoothDamp(transform.position, endPosition, ref velocity, 2, speed);

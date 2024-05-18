@@ -31,7 +31,7 @@ public class DoorKitchen : MonoBehaviour
     float speed = .002f;
     bool rotating;
     public GameManager gm;
-    float swingTime = 0f;
+    private float swingTime;
     public bool openDoor = false;
     public TextMeshProUGUI text; 
 
@@ -46,6 +46,8 @@ public class DoorKitchen : MonoBehaviour
         doorRigid1 = door1.GetComponent<Rigidbody>();
         doorRigid2 = door2.GetComponent<Rigidbody>();
         //cameraSpot.transform.position = new Vector3(18, 2, 1);
+
+        swingTime = 0f;
     }
 
     // Update is called once per frame
@@ -75,7 +77,7 @@ public class DoorKitchen : MonoBehaviour
                 doorRotate1.transform.rotation = Quaternion.Lerp(startRotation, targetRotation, lerpDuration * speed);
                 doorRotate2.transform.rotation = Quaternion.Lerp(startRotation2, targetRotation2, lerpDuration * speed);
                 lerpDuration = lerpDuration + Time.deltaTime;
-                print(doorRotate1.transform.rotation.y);
+                // print(doorRotate1.transform.rotation.y);
                 if (swingTime >= 4.3f)
                 {
                     openDoor = false;
@@ -90,7 +92,7 @@ public class DoorKitchen : MonoBehaviour
                     //print("TIMERS DONE");
                 }
                 
-                if (doorRotate1.transform.rotation.y <= -.97 && doorRotate2.transform.rotation.y >= .97)
+                if (doorRotate1.transform.rotation.y <= -.90f && doorRotate2.transform.rotation.y >= .90f)
                 {
 
                     rotating = false;
@@ -104,6 +106,7 @@ public class DoorKitchen : MonoBehaviour
             
                
             }
+
         }
 
         

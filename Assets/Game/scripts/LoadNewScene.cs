@@ -26,6 +26,8 @@ public class LoadNewScene : MonoBehaviour
     {
         if (gm.level != previous)
         {
+            SceneManager.UnloadSceneAsync((int)previous);
+
             if (gm.level == Level.Zero)
             {
                 //change to tutorial room
