@@ -22,7 +22,7 @@ public class kitchenPizzaMan : MonoBehaviour
             gameManager = FindObjectOfType<GameManager>();
 
 
-        if (gameManager.level == gameManager.finalLevel || gameManager.killerPesto)
+        if (gameManager.level == gameManager.finalLevel )
         {
             pizzariaMan.SetActive(true);
             fire.SetActive(false);
