@@ -10,7 +10,8 @@ public enum Level
     One,
     Two,
     Three,
-    Four
+    Four,
+    Five
 }
 
 public class GameManager : MonoBehaviour
@@ -27,10 +28,10 @@ public class GameManager : MonoBehaviour
     public bool kitchenDoor;
     //Cold Room
     public int doughPlacement;
+    //Basement
+    public bool lockerCombo;
     //Dining Room
     public bool keyboardPlayed;
-    //Pizza Monster
-    // public bool makePestoToKill;
     //used to open door in cold room
     public float timer;
     
@@ -78,6 +79,10 @@ public class GameManager : MonoBehaviour
 
             //timer += Time.deltaTime;
         }
+        else if (lockerCombo)
+        {
+            level = Level.Five;
+        }
         else if (keyboardPlayed)// || Input.GetButtonDown("XRI_Left_SecondaryButton"))
         {
             // makePestoToKill = true;
@@ -100,6 +105,7 @@ public class GameManager : MonoBehaviour
         tutorialDoorOpen = false; // Level Zero
         kitchenDoor = false; // Level One
         doughPlacement = 0; // Level Two
+        lockerCombo = false;
         keyboardPlayed = false; // Level Three
         // makePestoToKill = false; // Final Level
     }
