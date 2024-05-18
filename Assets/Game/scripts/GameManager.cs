@@ -22,7 +22,6 @@ public class GameManager : MonoBehaviour
     public Level level = Level.Zero;
     //public TextMeshProUGUI text;
     public PizzaMan pizzaMan;
-    public kitchenPizzaMan kitchen;
     //Tutorial Scene
     public bool tutorialDoorOpen;
     //Kitchen
@@ -33,6 +32,8 @@ public class GameManager : MonoBehaviour
     public bool lockerCombo;
     //Dining Room
     public bool keyboardPlayed;
+    // Pizza Man defeated
+    public bool gameWon = false;
     //used to open door in cold room
     public float timer;
 
@@ -91,9 +92,9 @@ public class GameManager : MonoBehaviour
             level = Level.Five;
         }
 
-        if (kitchen.gameWon)
+        if (gameWon)
             {
-                SceneManager.LoadScene(4);
+                SceneManager.LoadScene(5);
             }
        
         

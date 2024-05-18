@@ -10,7 +10,6 @@ public class kitchenPizzaMan : MonoBehaviour
     public NavMeshAgent navMeshAgent;
     public float speed = 10;
     public GameObject pizzariaMan;
-    public bool gameWon = false;
     public GameManager gameManager;
     public GameObject fire;
 
@@ -49,7 +48,7 @@ public class kitchenPizzaMan : MonoBehaviour
         if (collision.gameObject.CompareTag("pesto"))
         {
             pizzariaMan.SetActive(false);
-            gameWon = true;
+            gameManager.gameWon = true;
         }
 
     }
