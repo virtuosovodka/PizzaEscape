@@ -97,18 +97,18 @@ public class PizzaMaking : MonoBehaviour
             if (pepperoniNumber == 4)
             {
                 pizza1Done = true;
-                cheese1.SetActive(false);
+                //cheese1.SetActive(false);
             }
             if (mushroomNumber == 8)
             {
                 pizza2Done = true;
-                cheese2.SetActive(false);
+                //cheese2.SetActive(false);
 
             }
             if (pineappleNumber == 4 && hamNumber == 3)
             {
                 pizza3Done = true;
-                cheese3.SetActive(false);
+                //cheese3.SetActive(false);
             }
         }
         if (order2)
@@ -118,17 +118,17 @@ public class PizzaMaking : MonoBehaviour
             if (pepperoniNumber == 6)
             {
                 pizza1Done = true;
-                cheese1.SetActive(false);
+                //cheese1.SetActive(false);
             }
             if (mushroomNumber == 4)
             {
                 pizza2Done = true;
-                cheese2.SetActive(false);
+                //heese2.SetActive(false);
             }
             if (pineappleNumber == 0 && hamNumber == 5)
             {
                 pizza3Done = true;
-                cheese3.SetActive(false);
+                //cheese3.SetActive(false);
             }
         }
         if (order3)
@@ -138,17 +138,17 @@ public class PizzaMaking : MonoBehaviour
             if (pepperoniNumber == 4)
             {
                 pizza1Done = true;
-                cheese1.SetActive(false);
+                //cheese1.SetActive(false);
             }
             if (mushroomNumber == 6)
             {
                 pizza2Done = true;
-                cheese2.SetActive(false);
+                //cheese2.SetActive(false);
             }
             if (pineappleNumber == 3 && hamNumber == 5)
             {
                 pizza3Done = true;
-                cheese3.SetActive(false);
+                //cheese3.SetActive(false);
             }
         }
 
